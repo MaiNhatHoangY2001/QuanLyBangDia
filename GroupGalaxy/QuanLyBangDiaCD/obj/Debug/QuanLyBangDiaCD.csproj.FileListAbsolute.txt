@@ -1,0 +1,12 @@
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe.config
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.pdb
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csprojAssemblyReference.cache
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmNhanVien.resources
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.Properties.Resources.resources
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.GenerateResource.cache
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmPhieuThue.resources
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmBangDia.resources
