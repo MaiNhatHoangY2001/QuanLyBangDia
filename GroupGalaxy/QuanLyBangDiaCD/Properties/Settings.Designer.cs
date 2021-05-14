@@ -22,5 +22,16 @@ namespace QuanLyBangDiaCD.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5MHUIA8\\SQLEXPRESS2014;Initial Catalog=QuanLyBangDia;User ID=" +
+            "sa;Password=123456789")]
+        public string QuanLyBangDiaConnectionString {
+            get {
+                return ((string)(this["QuanLyBangDiaConnectionString"]));
+            }
+        }
     }
 }

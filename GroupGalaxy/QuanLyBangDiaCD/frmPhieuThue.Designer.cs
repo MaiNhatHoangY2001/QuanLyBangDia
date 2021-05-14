@@ -29,6 +29,7 @@ namespace QuanLyBangDiaCD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuThue));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lvwKHMua = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -426,6 +427,7 @@ namespace QuanLyBangDiaCD
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPhieuThue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

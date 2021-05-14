@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyBangDia" Class="qlCDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5MHUIA8\SQLEXPRESS2014;Initial Catalog=QuanLyBangDia;User ID=sa" SettingsObjectName="QuanLyBangDiaCD.Properties.Settings" SettingsPropertyName="QuanLyBangDiaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChiTietPhieuThue" Member="ChiTietPhieuThues">
+    <Type Name="ChiTietPhieuThue">
+      <Column Name="maCTHD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maPhieu" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChiTietPhieuThue_ThongTinBangDia" Member="ThongTinBangDias" ThisKey="maCTHD" OtherKey="maCTHD" Type="ThongTinBangDia" />
+      <Association Name="PhieuThue_ChiTietPhieuThue" Member="PhieuThue" ThisKey="maPhieu" OtherKey="maPhieu" Type="PhieuThue" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CongTy" Member="CongTies">
+    <Type Name="CongTy">
+      <Column Name="maCongTy" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenCongTy" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="soDienThoai" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Association Name="CongTy_ThongTinBangDia" Member="ThongTinBangDias" ThisKey="maCongTy" OtherKey="maCongTy" Type="ThongTinBangDia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="maKH" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="hoTenKH" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KhachHang_PhieuThue" Member="PhieuThues" ThisKey="maKH" OtherKey="maKH" Type="PhieuThue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiBangDia" Member="LoaiBangDias">
+    <Type Name="LoaiBangDia">
+      <Column Name="maLoai" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiBangDia_ThongTinBangDia" Member="ThongTinBangDias" ThisKey="maLoai" OtherKey="maLoai" Type="ThongTinBangDia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="maNV" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="hoTenNV" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="caLamViec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhanVien_PhieuThue" Member="PhieuThues" ThisKey="maNV" OtherKey="maNV" Type="PhieuThue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuThue" Member="PhieuThues">
+    <Type Name="PhieuThue">
+      <Column Name="maPhieu" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maKH" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="maNV" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ngayMuon" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ngayTra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="PhieuThue_ChiTietPhieuThue" Member="ChiTietPhieuThues" ThisKey="maPhieu" OtherKey="maPhieu" Type="ChiTietPhieuThue" />
+      <Association Name="KhachHang_PhieuThue" Member="KhachHang" ThisKey="maKH" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="NhanVien_PhieuThue" Member="NhanVien" ThisKey="maNV" OtherKey="maNV" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThongTinBangDia" Member="ThongTinBangDias">
+    <Type Name="ThongTinBangDia">
+      <Column Name="maBangDia" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maLoai" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="maCongTy" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="maCTHD" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="tenBangDia" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="theLoai" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="tinhTrang" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ngaySX" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="CongTy_ThongTinBangDia" Member="CongTy" ThisKey="maCongTy" OtherKey="maCongTy" Type="CongTy" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ChiTietPhieuThue_ThongTinBangDia" Member="ChiTietPhieuThue" ThisKey="maCTHD" OtherKey="maCTHD" Type="ChiTietPhieuThue" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="LoaiBangDia_ThongTinBangDia" Member="LoaiBangDia" ThisKey="maLoai" OtherKey="maLoai" Type="LoaiBangDia" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>

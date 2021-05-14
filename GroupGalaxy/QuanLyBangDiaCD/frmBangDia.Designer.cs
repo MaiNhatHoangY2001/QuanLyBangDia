@@ -29,37 +29,41 @@ namespace QuanLyBangDiaCD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBangDia));
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.trePhong = new System.Windows.Forms.TreeView();
-            this.btnThemPhong = new System.Windows.Forms.Button();
+            this.treCongTy = new System.Windows.Forms.TreeView();
+            this.btnThemCongTy = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lvwDSMay = new System.Windows.Forms.ListView();
+            this.lvwDSBangDia = new System.Windows.Forms.ListView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dtpNgaySX = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnXoaRong = new System.Windows.Forms.Button();
-            this.btnTim = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radCu = new System.Windows.Forms.RadioButton();
+            this.radMoi = new System.Windows.Forms.RadioButton();
+            this.txtMaBangDia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTenBangDia = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtTheLoai = new System.Windows.Forms.TextBox();
+            this.txtCongTy = new System.Windows.Forms.TextBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.imgLon = new System.Windows.Forms.ImageList(this.components);
+            this.imgNho = new System.Windows.Forms.ImageList(this.components);
+            this.imgTree = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,8 +98,8 @@ namespace QuanLyBangDiaCD
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.trePhong);
-            this.splitContainer1.Panel1.Controls.Add(this.btnThemPhong);
+            this.splitContainer1.Panel1.Controls.Add(this.treCongTy);
+            this.splitContainer1.Panel1.Controls.Add(this.btnThemCongTy);
             // 
             // splitContainer1.Panel2
             // 
@@ -104,23 +108,24 @@ namespace QuanLyBangDiaCD
             this.splitContainer1.SplitterDistance = 286;
             this.splitContainer1.TabIndex = 12;
             // 
-            // trePhong
+            // treCongTy
             // 
-            this.trePhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trePhong.Location = new System.Drawing.Point(0, 0);
-            this.trePhong.Name = "trePhong";
-            this.trePhong.Size = new System.Drawing.Size(282, 564);
-            this.trePhong.TabIndex = 1;
+            this.treCongTy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treCongTy.Location = new System.Drawing.Point(0, 0);
+            this.treCongTy.Name = "treCongTy";
+            this.treCongTy.Size = new System.Drawing.Size(282, 564);
+            this.treCongTy.TabIndex = 1;
+            this.treCongTy.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treCongTy_AfterSelect);
             // 
-            // btnThemPhong
+            // btnThemCongTy
             // 
-            this.btnThemPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnThemPhong.Location = new System.Drawing.Point(0, 564);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(282, 34);
-            this.btnThemPhong.TabIndex = 0;
-            this.btnThemPhong.Text = "Thêm công ty";
-            this.btnThemPhong.UseVisualStyleBackColor = true;
+            this.btnThemCongTy.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnThemCongTy.Location = new System.Drawing.Point(0, 564);
+            this.btnThemCongTy.Name = "btnThemCongTy";
+            this.btnThemCongTy.Size = new System.Drawing.Size(282, 34);
+            this.btnThemCongTy.TabIndex = 0;
+            this.btnThemCongTy.Text = "Thêm công ty";
+            this.btnThemCongTy.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
@@ -132,7 +137,7 @@ namespace QuanLyBangDiaCD
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.lvwDSMay);
+            this.splitContainer2.Panel1.Controls.Add(this.lvwDSBangDia);
             // 
             // splitContainer2.Panel2
             // 
@@ -141,37 +146,36 @@ namespace QuanLyBangDiaCD
             this.splitContainer2.SplitterDistance = 256;
             this.splitContainer2.TabIndex = 0;
             // 
-            // lvwDSMay
+            // lvwDSBangDia
             // 
-            this.lvwDSMay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwDSMay.HideSelection = false;
-            this.lvwDSMay.Location = new System.Drawing.Point(0, 0);
-            this.lvwDSMay.Name = "lvwDSMay";
-            this.lvwDSMay.Size = new System.Drawing.Size(878, 252);
-            this.lvwDSMay.TabIndex = 2;
-            this.lvwDSMay.UseCompatibleStateImageBehavior = false;
+            this.lvwDSBangDia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwDSBangDia.HideSelection = false;
+            this.lvwDSBangDia.Location = new System.Drawing.Point(0, 0);
+            this.lvwDSBangDia.Name = "lvwDSBangDia";
+            this.lvwDSBangDia.Size = new System.Drawing.Size(878, 252);
+            this.lvwDSBangDia.TabIndex = 2;
+            this.lvwDSBangDia.UseCompatibleStateImageBehavior = false;
+            this.lvwDSBangDia.SelectedIndexChanged += new System.EventHandler(this.lvwDSBangDia_SelectedIndexChanged);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.dtpNgaySX);
             this.groupBox6.Controls.Add(this.groupBox4);
-            this.groupBox6.Controls.Add(this.radioButton2);
-            this.groupBox6.Controls.Add(this.radioButton1);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.radCu);
+            this.groupBox6.Controls.Add(this.radMoi);
+            this.groupBox6.Controls.Add(this.txtMaBangDia);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Controls.Add(this.txtTenBangDia);
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox8);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.textBox7);
+            this.groupBox6.Controls.Add(this.txtGia);
+            this.groupBox6.Controls.Add(this.txtTheLoai);
+            this.groupBox6.Controls.Add(this.txtCongTy);
+            this.groupBox6.Controls.Add(this.txtGhiChu);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(3, -2);
@@ -181,10 +185,18 @@ namespace QuanLyBangDiaCD
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin băng đĩa";
             // 
+            // dtpNgaySX
+            // 
+            this.dtpNgaySX.Location = new System.Drawing.Point(595, 140);
+            this.dtpNgaySX.Name = "dtpNgaySX";
+            this.dtpNgaySX.Size = new System.Drawing.Size(213, 26);
+            this.dtpNgaySX.TabIndex = 14;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnXoaRong);
-            this.groupBox4.Controls.Add(this.btnTim);
+            this.groupBox4.Controls.Add(this.btnThem);
+            this.groupBox4.Controls.Add(this.btnLuu);
             this.groupBox4.Controls.Add(this.btnXoa);
             this.groupBox4.Controls.Add(this.btnSua);
             this.groupBox4.Location = new System.Drawing.Point(19, 261);
@@ -197,29 +209,40 @@ namespace QuanLyBangDiaCD
             // btnXoaRong
             // 
             this.btnXoaRong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaRong.Location = new System.Drawing.Point(450, 23);
+            this.btnXoaRong.Location = new System.Drawing.Point(404, 25);
             this.btnXoaRong.Name = "btnXoaRong";
-            this.btnXoaRong.Size = new System.Drawing.Size(158, 34);
+            this.btnXoaRong.Size = new System.Drawing.Size(91, 34);
             this.btnXoaRong.TabIndex = 4;
             this.btnXoaRong.Text = "Xóa rỗng";
             this.btnXoaRong.UseVisualStyleBackColor = true;
             // 
-            // btnTim
+            // btnThem
             // 
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(58, 25);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(158, 34);
-            this.btnTim.TabIndex = 2;
-            this.btnTim.Text = "Thêm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(138, 25);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(91, 34);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(537, 25);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(91, 34);
+            this.btnLuu.TabIndex = 3;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(646, 23);
+            this.btnXoa.Location = new System.Drawing.Point(670, 25);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(158, 34);
+            this.btnXoa.Size = new System.Drawing.Size(91, 34);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -227,42 +250,42 @@ namespace QuanLyBangDiaCD
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(254, 25);
+            this.btnSua.Location = new System.Drawing.Point(271, 25);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(158, 34);
+            this.btnSua.Size = new System.Drawing.Size(91, 34);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radCu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(344, 179);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(101, 29);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Trễ hạn";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radCu.AutoSize = true;
+            this.radCu.Location = new System.Drawing.Point(556, 183);
+            this.radCu.Name = "radCu";
+            this.radCu.Size = new System.Drawing.Size(47, 24);
+            this.radCu.TabIndex = 4;
+            this.radCu.TabStop = true;
+            this.radCu.Text = "Cũ";
+            this.radCu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radMoi
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(178, 179);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(118, 29);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Đúng hạn";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radMoi.AutoSize = true;
+            this.radMoi.Location = new System.Drawing.Point(433, 183);
+            this.radMoi.Name = "radMoi";
+            this.radMoi.Size = new System.Drawing.Size(52, 24);
+            this.radMoi.TabIndex = 4;
+            this.radMoi.TabStop = true;
+            this.radMoi.Text = "Mới";
+            this.radMoi.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtMaBangDia
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 34);
-            this.textBox1.TabIndex = 0;
+            this.txtMaBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaBangDia.Location = new System.Drawing.Point(143, 38);
+            this.txtMaBangDia.Name = "txtMaBangDia";
+            this.txtMaBangDia.Size = new System.Drawing.Size(282, 29);
+            this.txtMaBangDia.TabIndex = 0;
             // 
             // label14
             // 
@@ -270,7 +293,7 @@ namespace QuanLyBangDiaCD
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(17, 38);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 25);
+            this.label14.Size = new System.Drawing.Size(96, 20);
             this.label14.TabIndex = 2;
             this.label14.Text = "Mã băng đĩa";
             // 
@@ -278,39 +301,39 @@ namespace QuanLyBangDiaCD
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(461, 179);
+            this.label15.Location = new System.Drawing.Point(17, 140);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 25);
+            this.label15.Size = new System.Drawing.Size(34, 20);
             this.label15.TabIndex = 2;
             this.label15.Text = "Giá";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(461, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ngày sản xuất";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(461, 134);
+            this.label16.Location = new System.Drawing.Point(461, 95);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 25);
+            this.label16.Size = new System.Drawing.Size(64, 20);
             this.label16.TabIndex = 2;
             this.label16.Text = "Ghi chú";
             // 
-            // label17
+            // txtTenBangDia
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(461, 86);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(129, 25);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Loại băng đĩa";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(594, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 34);
-            this.textBox2.TabIndex = 1;
+            this.txtTenBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBangDia.Location = new System.Drawing.Point(595, 38);
+            this.txtTenBangDia.Name = "txtTenBangDia";
+            this.txtTenBangDia.Size = new System.Drawing.Size(271, 29);
+            this.txtTenBangDia.TabIndex = 1;
             // 
             // label18
             // 
@@ -318,7 +341,7 @@ namespace QuanLyBangDiaCD
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(17, 86);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 25);
+            this.label18.Size = new System.Drawing.Size(64, 20);
             this.label18.TabIndex = 2;
             this.label18.Text = "Thể loại";
             // 
@@ -328,57 +351,43 @@ namespace QuanLyBangDiaCD
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(461, 38);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 25);
+            this.label19.Size = new System.Drawing.Size(101, 20);
             this.label19.TabIndex = 2;
             this.label19.Text = "Tên băng đĩa";
             // 
-            // textBox3
+            // txtGia
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(594, 179);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(270, 34);
-            this.textBox3.TabIndex = 2;
+            this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Location = new System.Drawing.Point(143, 131);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(282, 29);
+            this.txtGia.TabIndex = 2;
             // 
-            // textBox4
+            // txtTheLoai
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(143, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 34);
-            this.textBox4.TabIndex = 2;
+            this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTheLoai.Location = new System.Drawing.Point(143, 86);
+            this.txtTheLoai.Name = "txtTheLoai";
+            this.txtTheLoai.Size = new System.Drawing.Size(282, 29);
+            this.txtTheLoai.TabIndex = 2;
             // 
-            // textBox8
+            // txtCongTy
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(344, 226);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(290, 34);
-            this.textBox8.TabIndex = 3;
+            this.txtCongTy.Enabled = false;
+            this.txtCongTy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCongTy.Location = new System.Drawing.Point(344, 226);
+            this.txtCongTy.Name = "txtCongTy";
+            this.txtCongTy.ReadOnly = true;
+            this.txtCongTy.Size = new System.Drawing.Size(290, 29);
+            this.txtCongTy.TabIndex = 3;
             // 
-            // textBox5
+            // txtGhiChu
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(143, 134);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(282, 34);
-            this.textBox5.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(595, 86);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(271, 34);
-            this.textBox6.TabIndex = 3;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(595, 134);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(270, 34);
-            this.textBox7.TabIndex = 3;
+            this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGhiChu.Location = new System.Drawing.Point(596, 86);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(270, 29);
+            this.txtGhiChu.TabIndex = 3;
             // 
             // label2
             // 
@@ -386,43 +395,54 @@ namespace QuanLyBangDiaCD
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(226, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 25);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Công ty";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(17, 134);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(129, 25);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Loại băng đĩa";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(17, 181);
+            this.label21.Location = new System.Drawing.Point(301, 183);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(100, 25);
+            this.label21.Size = new System.Drawing.Size(80, 20);
             this.label21.TabIndex = 2;
             this.label21.Text = "Tình trạng";
             // 
+            // imgLon
+            // 
+            this.imgLon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLon.ImageStream")));
+            this.imgLon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLon.Images.SetKeyName(0, "folderCD.ico");
+            // 
+            // imgNho
+            // 
+            this.imgNho.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgNho.ImageStream")));
+            this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgNho.Images.SetKeyName(0, "cd.ico");
+            // 
+            // imgTree
+            // 
+            this.imgTree.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTree.ImageStream")));
+            this.imgTree.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgTree.Images.SetKeyName(0, "icons8-company-open.ico");
+            this.imgTree.Images.SetKeyName(1, "icons8-company-close.ico");
+            // 
             // frmBangDia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 705);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmBangDia";
             this.Text = "Quản lý băng đĩa";
+            this.Load += new System.EventHandler(this.frmBangDia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -442,34 +462,36 @@ namespace QuanLyBangDiaCD
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView trePhong;
-        private System.Windows.Forms.Button btnThemPhong;
+        private System.Windows.Forms.TreeView treCongTy;
+        private System.Windows.Forms.Button btnThemCongTy;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ListView lvwDSMay;
+        private System.Windows.Forms.ListView lvwDSBangDia;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radCu;
+        private System.Windows.Forms.RadioButton radMoi;
+        private System.Windows.Forms.TextBox txtMaBangDia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTenBangDia;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.TextBox txtTheLoai;
+        private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnXoaRong;
-        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.TextBox txtCongTy;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ImageList imgLon;
+        private System.Windows.Forms.ImageList imgNho;
+        private System.Windows.Forms.ImageList imgTree;
+        private System.Windows.Forms.DateTimePicker dtpNgaySX;
+        private System.Windows.Forms.Label label3;
     }
 }

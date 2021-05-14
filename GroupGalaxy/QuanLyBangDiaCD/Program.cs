@@ -16,7 +16,7 @@ namespace QuanLyBangDiaCD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPhieuThue());
+            Application.Run(new frmBangDia());
         }
     }
 }
