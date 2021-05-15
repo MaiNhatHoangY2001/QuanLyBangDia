@@ -45,8 +45,8 @@ namespace QuanLyBangDiaCD
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.radCu = new System.Windows.Forms.RadioButton();
-            this.radMoi = new System.Windows.Forms.RadioButton();
+            this.radTreHan = new System.Windows.Forms.RadioButton();
+            this.radDungHan = new System.Windows.Forms.RadioButton();
             this.txtMaBangDia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -161,8 +161,8 @@ namespace QuanLyBangDiaCD
             // 
             this.groupBox6.Controls.Add(this.dtpNgaySX);
             this.groupBox6.Controls.Add(this.groupBox4);
-            this.groupBox6.Controls.Add(this.radCu);
-            this.groupBox6.Controls.Add(this.radMoi);
+            this.groupBox6.Controls.Add(this.radTreHan);
+            this.groupBox6.Controls.Add(this.radDungHan);
             this.groupBox6.Controls.Add(this.txtMaBangDia);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label15);
@@ -189,7 +189,7 @@ namespace QuanLyBangDiaCD
             // 
             this.dtpNgaySX.Location = new System.Drawing.Point(595, 140);
             this.dtpNgaySX.Name = "dtpNgaySX";
-            this.dtpNgaySX.Size = new System.Drawing.Size(213, 26);
+            this.dtpNgaySX.Size = new System.Drawing.Size(213, 30);
             this.dtpNgaySX.TabIndex = 14;
             // 
             // groupBox4
@@ -257,34 +257,34 @@ namespace QuanLyBangDiaCD
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // radCu
+            // radTreHan
             // 
-            this.radCu.AutoSize = true;
-            this.radCu.Location = new System.Drawing.Point(556, 183);
-            this.radCu.Name = "radCu";
-            this.radCu.Size = new System.Drawing.Size(47, 24);
-            this.radCu.TabIndex = 4;
-            this.radCu.TabStop = true;
-            this.radCu.Text = "Cũ";
-            this.radCu.UseVisualStyleBackColor = true;
+            this.radTreHan.AutoSize = true;
+            this.radTreHan.Location = new System.Drawing.Point(556, 183);
+            this.radTreHan.Name = "radTreHan";
+            this.radTreHan.Size = new System.Drawing.Size(101, 29);
+            this.radTreHan.TabIndex = 4;
+            this.radTreHan.TabStop = true;
+            this.radTreHan.Text = "Trễ hạn";
+            this.radTreHan.UseVisualStyleBackColor = true;
             // 
-            // radMoi
+            // radDungHan
             // 
-            this.radMoi.AutoSize = true;
-            this.radMoi.Location = new System.Drawing.Point(433, 183);
-            this.radMoi.Name = "radMoi";
-            this.radMoi.Size = new System.Drawing.Size(52, 24);
-            this.radMoi.TabIndex = 4;
-            this.radMoi.TabStop = true;
-            this.radMoi.Text = "Mới";
-            this.radMoi.UseVisualStyleBackColor = true;
+            this.radDungHan.AutoSize = true;
+            this.radDungHan.Location = new System.Drawing.Point(433, 183);
+            this.radDungHan.Name = "radDungHan";
+            this.radDungHan.Size = new System.Drawing.Size(118, 29);
+            this.radDungHan.TabIndex = 4;
+            this.radDungHan.TabStop = true;
+            this.radDungHan.Text = "Đúng hạn";
+            this.radDungHan.UseVisualStyleBackColor = true;
             // 
             // txtMaBangDia
             // 
             this.txtMaBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaBangDia.Location = new System.Drawing.Point(143, 38);
             this.txtMaBangDia.Name = "txtMaBangDia";
-            this.txtMaBangDia.Size = new System.Drawing.Size(282, 29);
+            this.txtMaBangDia.Size = new System.Drawing.Size(282, 34);
             this.txtMaBangDia.TabIndex = 0;
             // 
             // label14
@@ -293,7 +293,7 @@ namespace QuanLyBangDiaCD
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(17, 38);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 20);
+            this.label14.Size = new System.Drawing.Size(120, 25);
             this.label14.TabIndex = 2;
             this.label14.Text = "Mã băng đĩa";
             // 
@@ -303,7 +303,7 @@ namespace QuanLyBangDiaCD
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(17, 140);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(34, 20);
+            this.label15.Size = new System.Drawing.Size(42, 25);
             this.label15.TabIndex = 2;
             this.label15.Text = "Giá";
             // 
@@ -313,7 +313,7 @@ namespace QuanLyBangDiaCD
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(461, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày sản xuất";
             // 
@@ -323,7 +323,7 @@ namespace QuanLyBangDiaCD
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(461, 95);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 20);
+            this.label16.Size = new System.Drawing.Size(79, 25);
             this.label16.TabIndex = 2;
             this.label16.Text = "Ghi chú";
             // 
@@ -332,7 +332,7 @@ namespace QuanLyBangDiaCD
             this.txtTenBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenBangDia.Location = new System.Drawing.Point(595, 38);
             this.txtTenBangDia.Name = "txtTenBangDia";
-            this.txtTenBangDia.Size = new System.Drawing.Size(271, 29);
+            this.txtTenBangDia.Size = new System.Drawing.Size(271, 34);
             this.txtTenBangDia.TabIndex = 1;
             // 
             // label18
@@ -341,7 +341,7 @@ namespace QuanLyBangDiaCD
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(17, 86);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 20);
+            this.label18.Size = new System.Drawing.Size(82, 25);
             this.label18.TabIndex = 2;
             this.label18.Text = "Thể loại";
             // 
@@ -351,7 +351,7 @@ namespace QuanLyBangDiaCD
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(461, 38);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 20);
+            this.label19.Size = new System.Drawing.Size(127, 25);
             this.label19.TabIndex = 2;
             this.label19.Text = "Tên băng đĩa";
             // 
@@ -360,7 +360,7 @@ namespace QuanLyBangDiaCD
             this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(143, 131);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(282, 29);
+            this.txtGia.Size = new System.Drawing.Size(282, 34);
             this.txtGia.TabIndex = 2;
             // 
             // txtTheLoai
@@ -368,7 +368,7 @@ namespace QuanLyBangDiaCD
             this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTheLoai.Location = new System.Drawing.Point(143, 86);
             this.txtTheLoai.Name = "txtTheLoai";
-            this.txtTheLoai.Size = new System.Drawing.Size(282, 29);
+            this.txtTheLoai.Size = new System.Drawing.Size(282, 34);
             this.txtTheLoai.TabIndex = 2;
             // 
             // txtCongTy
@@ -378,7 +378,7 @@ namespace QuanLyBangDiaCD
             this.txtCongTy.Location = new System.Drawing.Point(344, 226);
             this.txtCongTy.Name = "txtCongTy";
             this.txtCongTy.ReadOnly = true;
-            this.txtCongTy.Size = new System.Drawing.Size(290, 29);
+            this.txtCongTy.Size = new System.Drawing.Size(290, 34);
             this.txtCongTy.TabIndex = 3;
             // 
             // txtGhiChu
@@ -386,7 +386,7 @@ namespace QuanLyBangDiaCD
             this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(596, 86);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(270, 29);
+            this.txtGhiChu.Size = new System.Drawing.Size(270, 34);
             this.txtGhiChu.TabIndex = 3;
             // 
             // label2
@@ -395,7 +395,7 @@ namespace QuanLyBangDiaCD
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(226, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Công ty";
             // 
@@ -405,7 +405,7 @@ namespace QuanLyBangDiaCD
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(301, 183);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(80, 20);
+            this.label21.Size = new System.Drawing.Size(100, 25);
             this.label21.TabIndex = 2;
             this.label21.Text = "Tình trạng";
             // 
@@ -430,7 +430,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmBangDia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 705);
             this.Controls.Add(this.splitContainer1);
@@ -467,8 +467,8 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ListView lvwDSBangDia;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton radCu;
-        private System.Windows.Forms.RadioButton radMoi;
+        private System.Windows.Forms.RadioButton radTreHan;
+        private System.Windows.Forms.RadioButton radDungHan;
         private System.Windows.Forms.TextBox txtMaBangDia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

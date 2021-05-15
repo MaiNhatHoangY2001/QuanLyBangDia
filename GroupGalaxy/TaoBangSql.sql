@@ -32,7 +32,7 @@ create table PhieuThue
 
 create table ChiTietPhieuThue
 (
-	maCTHD char(5) primary key,
+	maCTPT char(5) primary key,
 	maPhieu char(5) foreign key references PhieuThue(maPhieu)
 					on update cascade on delete cascade,
 	soLuong int
@@ -56,7 +56,7 @@ create table ThongTinBangDia
 			on update cascade on delete cascade,
 	maCongTy char(5) foreign key references CongTy(maCongTy)
 			on update cascade on delete cascade,
-	maCTHD char(5) foreign key references ChiTietPhieuThue(maCTHD)
+	maCTPT char(5) foreign key references ChiTietPhieuThue(maCTPT)
 			on update cascade on delete cascade,
 	tenBangDia nvarchar(60),
 	theLoai nvarchar(60),
@@ -103,9 +103,9 @@ insert into ChiTietPhieuThue values
 ('CT004', 'MP004', 8),
 ('CT005', 'MP005', 2)
 insert into ThongTinBangDia values
-('BD001', 'ML001', 'CT001', 'CT001', N'Tây Du ký', N'Hành động', N'Mới', '2020-05-06',N'Không', 10000),
-('BD002', 'ML002', 'CT002', 'CT002', N'The House', N'Kinh dị', N'Cũ', '2018-07-20',N'bị xước', 15000),
-('BD003', 'ML003', 'CT003', 'CT003', N'Kong 2012', N'Viễn tưởng', N'Mới', '2020-05-15',N'Không', 20000),
-('BD004', 'ML004', 'CT004', 'CT004', N'Diệp Vấn', N'Hành động', N'Mới', '2021-01-01',N'Không', 30000),
-('BD005', 'ML005', 'CT005', 'CT005', N'Vì sao anh đến', N'Tình cảm', N'Mới', '2019-02-04',N'Không', 18000)
+('BD001', 'ML001', 'CT001', 'CT001', N'Tây Du ký', N'Hành động', N'Trễ hạn', '2020-05-06',N'Không', 10000),
+('BD002', 'ML002', 'CT002', 'CT002', N'The House', N'Kinh dị', N'Đúng hạn', '2018-07-20',N'bị xước', 15000),
+('BD003', 'ML003', 'CT003', 'CT003', N'Kong 2012', N'Viễn tưởng', N'Trễ hạn', '2020-05-15',N'Không', 20000),
+('BD004', 'ML004', 'CT004', 'CT004', N'Diệp Vấn', N'Hành động', N'Đúng hạn', '2021-01-01',N'Không', 30000),
+('BD005', 'ML005', 'CT005', 'CT005', N'Vì sao anh đến', N'Tình cảm', N'Đúng hạn', '2019-02-04',N'Không', 18000)
 go

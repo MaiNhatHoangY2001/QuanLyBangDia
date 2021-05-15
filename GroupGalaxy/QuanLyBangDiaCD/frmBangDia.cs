@@ -132,15 +132,15 @@ namespace QuanLyBangDiaCD
                 txtMaBangDia.Text = dia.maBangDia;
                 txtTenBangDia.Text = dia.tenBangDia;
                 txtTheLoai.Text = dia.theLoai;
-                if (dia.tinhTrang.Trim().Equals("Mới"))
+                if (dia.tinhTrang.Trim().Equals("Đúng hạn"))
                 {
-                    radMoi.Checked = true;
-                    radCu.Checked = false;
+                    radDungHan.Checked = true;
+                    radTreHan.Checked = false;
                 }
                 else
                 {
-                    radMoi.Checked = false;
-                    radCu.Checked = true;
+                    radDungHan.Checked = false;
+                    radTreHan.Checked = true;
                 }
                 dtpNgaySX.Text = dia.ngaySX.ToString();
                 txtGhiChu.Text = dia.ghiChu;
