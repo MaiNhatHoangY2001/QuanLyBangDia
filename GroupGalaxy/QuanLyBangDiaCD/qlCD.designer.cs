@@ -54,7 +54,7 @@ namespace QuanLyBangDiaCD
     #endregion
 		
 		public qlCDDataContext() : 
-				base(global::QuanLyBangDiaCD.Properties.Settings.Default.QuanLyBangDiaConnectionString, mappingSource)
+				base(global::QuanLyBangDiaCD.Properties.Settings.Default.QuanLyBangDiaConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -146,7 +146,7 @@ namespace QuanLyBangDiaCD
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _maCTHD;
+		private string _maCTPT;
 		
 		private string _maPhieu;
 		
@@ -160,8 +160,8 @@ namespace QuanLyBangDiaCD
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnmaCTHDChanging(string value);
-    partial void OnmaCTHDChanged();
+    partial void OnmaCTPTChanging(string value);
+    partial void OnmaCTPTChanged();
     partial void OnmaPhieuChanging(string value);
     partial void OnmaPhieuChanged();
     partial void OnsoLuongChanging(System.Nullable<int> value);
@@ -175,22 +175,22 @@ namespace QuanLyBangDiaCD
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHD", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string maCTHD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTPT", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string maCTPT
 		{
 			get
 			{
-				return this._maCTHD;
+				return this._maCTPT;
 			}
 			set
 			{
-				if ((this._maCTHD != value))
+				if ((this._maCTPT != value))
 				{
-					this.OnmaCTHDChanging(value);
+					this.OnmaCTPTChanging(value);
 					this.SendPropertyChanging();
-					this._maCTHD = value;
-					this.SendPropertyChanged("maCTHD");
-					this.OnmaCTHDChanged();
+					this._maCTPT = value;
+					this.SendPropertyChanged("maCTPT");
+					this.OnmaCTPTChanged();
 				}
 			}
 		}
@@ -239,7 +239,7 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ThongTinBangDias", ThisKey="maCTHD", OtherKey="maCTHD")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ThongTinBangDias", ThisKey="maCTPT", OtherKey="maCTPT")]
 		public EntitySet<ThongTinBangDia> ThongTinBangDias
 		{
 			get
@@ -1295,7 +1295,7 @@ namespace QuanLyBangDiaCD
 		
 		private string _maCongTy;
 		
-		private string _maCTHD;
+		private string _maCTPT;
 		
 		private string _tenBangDia;
 		
@@ -1325,8 +1325,8 @@ namespace QuanLyBangDiaCD
     partial void OnmaLoaiChanged();
     partial void OnmaCongTyChanging(string value);
     partial void OnmaCongTyChanged();
-    partial void OnmaCTHDChanging(string value);
-    partial void OnmaCTHDChanged();
+    partial void OnmaCTPTChanging(string value);
+    partial void OnmaCTPTChanged();
     partial void OntenBangDiaChanging(string value);
     partial void OntenBangDiaChanged();
     partial void OntheLoaiChanging(string value);
@@ -1417,26 +1417,26 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTHD", DbType="Char(5)")]
-		public string maCTHD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTPT", DbType="Char(5)")]
+		public string maCTPT
 		{
 			get
 			{
-				return this._maCTHD;
+				return this._maCTPT;
 			}
 			set
 			{
-				if ((this._maCTHD != value))
+				if ((this._maCTPT != value))
 				{
 					if (this._ChiTietPhieuThue.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnmaCTHDChanging(value);
+					this.OnmaCTPTChanging(value);
 					this.SendPropertyChanging();
-					this._maCTHD = value;
-					this.SendPropertyChanged("maCTHD");
-					this.OnmaCTHDChanged();
+					this._maCTPT = value;
+					this.SendPropertyChanged("maCTPT");
+					this.OnmaCTPTChanged();
 				}
 			}
 		}
@@ -1595,7 +1595,7 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ChiTietPhieuThue", ThisKey="maCTHD", OtherKey="maCTHD", IsForeignKey=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ChiTietPhieuThue", ThisKey="maCTPT", OtherKey="maCTPT", IsForeignKey=true, DeleteRule="CASCADE")]
 		public ChiTietPhieuThue ChiTietPhieuThue
 		{
 			get
@@ -1618,11 +1618,11 @@ namespace QuanLyBangDiaCD
 					if ((value != null))
 					{
 						value.ThongTinBangDias.Add(this);
-						this._maCTHD = value.maCTHD;
+						this._maCTPT = value.maCTPT;
 					}
 					else
 					{
-						this._maCTHD = default(string);
+						this._maCTPT = default(string);
 					}
 					this.SendPropertyChanged("ChiTietPhieuThue");
 				}

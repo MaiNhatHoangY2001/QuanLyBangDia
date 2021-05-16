@@ -11,3 +11,5 @@ D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDi
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmPhieuThue.resources
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmBangDia.resources
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmCongTy.resources
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmLogin.resources
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmMain.resources

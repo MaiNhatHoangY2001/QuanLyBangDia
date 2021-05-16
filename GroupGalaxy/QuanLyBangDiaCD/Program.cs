@@ -16,7 +16,12 @@ namespace QuanLyBangDiaCD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBangDia());
+            frmLogin frm = new frmLogin();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Login user = new Login(frm.txtTenDangNhap.Text, frm.txtMatKhau.Text);
+                Application.Run(new frmMain(user));
+            }
         }
     }
 }
