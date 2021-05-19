@@ -187,9 +187,9 @@ namespace QuanLyBangDiaCD
             // 
             // dtpNgaySX
             // 
-            this.dtpNgaySX.Location = new System.Drawing.Point(595, 140);
+            this.dtpNgaySX.Location = new System.Drawing.Point(604, 135);
             this.dtpNgaySX.Name = "dtpNgaySX";
-            this.dtpNgaySX.Size = new System.Drawing.Size(213, 30);
+            this.dtpNgaySX.Size = new System.Drawing.Size(243, 30);
             this.dtpNgaySX.TabIndex = 14;
             // 
             // groupBox4

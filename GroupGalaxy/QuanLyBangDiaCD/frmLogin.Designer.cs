@@ -39,10 +39,10 @@ namespace QuanLyBangDiaCD
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(210, 38);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(230, 38);
             this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 26);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 30);
             this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.Text = "ABC";
             // 
@@ -51,7 +51,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(72, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -60,16 +60,16 @@ namespace QuanLyBangDiaCD
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(72, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu:";
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(210, 110);
+            this.txtMatKhau.Location = new System.Drawing.Point(230, 110);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(274, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(274, 30);
             this.txtMatKhau.TabIndex = 0;
             this.txtMatKhau.Text = "123";
             // 
@@ -95,7 +95,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 275);
             this.ControlBox = false;
