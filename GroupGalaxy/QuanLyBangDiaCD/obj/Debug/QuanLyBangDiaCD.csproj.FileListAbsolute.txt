@@ -30,3 +30,4 @@ D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangD
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources

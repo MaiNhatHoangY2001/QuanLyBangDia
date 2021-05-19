@@ -401,6 +401,7 @@ namespace QuanLyBangDiaCD
             this.btnTim.TabIndex = 2;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // groupBox4
             // 
