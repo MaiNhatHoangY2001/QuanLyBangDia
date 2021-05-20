@@ -84,12 +84,6 @@
     <Compile Include="frmPhieuThue.Designer.cs">
       <DependentUpon>frmPhieuThue.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSapXep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSapXep.Designer.cs">
-      <DependentUpon>frmSapXep.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTimKiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSapXep.resx">
-      <DependentUpon>frmSapXep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemKhachHang.resx">
       <DependentUpon>frmTimKiemKhachHang.cs</DependentUpon>
