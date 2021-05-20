@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace QuanLyBangDiaCD
 {
-    class clsCongTy : clsKetNoi
+    class clsLoaiBangDia : clsKetNoi
     {
         qlCDDataContext dt;
-        public clsCongTy()
+        public clsLoaiBangDia()
         {
             dt = GetDataContext();
         }
-        public IEnumerable<CongTy> GetAllCongTy()
+        public IEnumerable<LoaiBangDia> GetAllLoaiBangDia()
         {
-            IEnumerable<CongTy> q = from n in dt.CongTies
-                                    select n;
+            IEnumerable<LoaiBangDia> q = from n in dt.LoaiBangDias
+                                         select n;
             return q;
         }
         public bool LuuTru()

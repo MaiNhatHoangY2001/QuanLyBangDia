@@ -150,11 +150,13 @@ namespace QuanLyBangDiaCD
 		
 		private string _maPhieu;
 		
+		private string _maBangDia;
+		
 		private System.Nullable<int> _soLuong;
 		
-		private EntitySet<ThongTinBangDia> _ThongTinBangDias;
-		
 		private EntityRef<PhieuThue> _PhieuThue;
+		
+		private EntityRef<ThongTinBangDia> _ThongTinBangDia;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -164,14 +166,16 @@ namespace QuanLyBangDiaCD
     partial void OnmaCTPTChanged();
     partial void OnmaPhieuChanging(string value);
     partial void OnmaPhieuChanged();
+    partial void OnmaBangDiaChanging(string value);
+    partial void OnmaBangDiaChanged();
     partial void OnsoLuongChanging(System.Nullable<int> value);
     partial void OnsoLuongChanged();
     #endregion
 		
 		public ChiTietPhieuThue()
 		{
-			this._ThongTinBangDias = new EntitySet<ThongTinBangDia>(new Action<ThongTinBangDia>(this.attach_ThongTinBangDias), new Action<ThongTinBangDia>(this.detach_ThongTinBangDias));
 			this._PhieuThue = default(EntityRef<PhieuThue>);
+			this._ThongTinBangDia = default(EntityRef<ThongTinBangDia>);
 			OnCreated();
 		}
 		
@@ -219,6 +223,30 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maBangDia", DbType="Char(5)")]
+		public string maBangDia
+		{
+			get
+			{
+				return this._maBangDia;
+			}
+			set
+			{
+				if ((this._maBangDia != value))
+				{
+					if (this._ThongTinBangDia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaBangDiaChanging(value);
+					this.SendPropertyChanging();
+					this._maBangDia = value;
+					this.SendPropertyChanged("maBangDia");
+					this.OnmaBangDiaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soLuong", DbType="Int")]
 		public System.Nullable<int> soLuong
 		{
@@ -236,19 +264,6 @@ namespace QuanLyBangDiaCD
 					this.SendPropertyChanged("soLuong");
 					this.OnsoLuongChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ThongTinBangDias", ThisKey="maCTPT", OtherKey="maCTPT")]
-		public EntitySet<ThongTinBangDia> ThongTinBangDias
-		{
-			get
-			{
-				return this._ThongTinBangDias;
-			}
-			set
-			{
-				this._ThongTinBangDias.Assign(value);
 			}
 		}
 		
@@ -286,6 +301,40 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThongTinBangDia_ChiTietPhieuThue", Storage="_ThongTinBangDia", ThisKey="maBangDia", OtherKey="maBangDia", IsForeignKey=true, DeleteRule="CASCADE")]
+		public ThongTinBangDia ThongTinBangDia
+		{
+			get
+			{
+				return this._ThongTinBangDia.Entity;
+			}
+			set
+			{
+				ThongTinBangDia previousValue = this._ThongTinBangDia.Entity;
+				if (((previousValue != value) 
+							|| (this._ThongTinBangDia.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ThongTinBangDia.Entity = null;
+						previousValue.ChiTietPhieuThues.Remove(this);
+					}
+					this._ThongTinBangDia.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietPhieuThues.Add(this);
+						this._maBangDia = value.maBangDia;
+					}
+					else
+					{
+						this._maBangDia = default(string);
+					}
+					this.SendPropertyChanged("ThongTinBangDia");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -304,18 +353,6 @@ namespace QuanLyBangDiaCD
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_ThongTinBangDias(ThongTinBangDia entity)
-		{
-			this.SendPropertyChanging();
-			entity.ChiTietPhieuThue = this;
-		}
-		
-		private void detach_ThongTinBangDias(ThongTinBangDia entity)
-		{
-			this.SendPropertyChanging();
-			entity.ChiTietPhieuThue = null;
 		}
 	}
 	
@@ -1295,8 +1332,6 @@ namespace QuanLyBangDiaCD
 		
 		private string _maCongTy;
 		
-		private string _maCTPT;
-		
 		private string _tenBangDia;
 		
 		private string _theLoai;
@@ -1309,9 +1344,9 @@ namespace QuanLyBangDiaCD
 		
 		private System.Nullable<decimal> _gia;
 		
-		private EntityRef<CongTy> _CongTy;
+		private EntitySet<ChiTietPhieuThue> _ChiTietPhieuThues;
 		
-		private EntityRef<ChiTietPhieuThue> _ChiTietPhieuThue;
+		private EntityRef<CongTy> _CongTy;
 		
 		private EntityRef<LoaiBangDia> _LoaiBangDia;
 		
@@ -1325,8 +1360,6 @@ namespace QuanLyBangDiaCD
     partial void OnmaLoaiChanged();
     partial void OnmaCongTyChanging(string value);
     partial void OnmaCongTyChanged();
-    partial void OnmaCTPTChanging(string value);
-    partial void OnmaCTPTChanged();
     partial void OntenBangDiaChanging(string value);
     partial void OntenBangDiaChanged();
     partial void OntheLoaiChanging(string value);
@@ -1343,8 +1376,8 @@ namespace QuanLyBangDiaCD
 		
 		public ThongTinBangDia()
 		{
+			this._ChiTietPhieuThues = new EntitySet<ChiTietPhieuThue>(new Action<ChiTietPhieuThue>(this.attach_ChiTietPhieuThues), new Action<ChiTietPhieuThue>(this.detach_ChiTietPhieuThues));
 			this._CongTy = default(EntityRef<CongTy>);
-			this._ChiTietPhieuThue = default(EntityRef<ChiTietPhieuThue>);
 			this._LoaiBangDia = default(EntityRef<LoaiBangDia>);
 			OnCreated();
 		}
@@ -1413,30 +1446,6 @@ namespace QuanLyBangDiaCD
 					this._maCongTy = value;
 					this.SendPropertyChanged("maCongTy");
 					this.OnmaCongTyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCTPT", DbType="Char(5)")]
-		public string maCTPT
-		{
-			get
-			{
-				return this._maCTPT;
-			}
-			set
-			{
-				if ((this._maCTPT != value))
-				{
-					if (this._ChiTietPhieuThue.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaCTPTChanging(value);
-					this.SendPropertyChanging();
-					this._maCTPT = value;
-					this.SendPropertyChanged("maCTPT");
-					this.OnmaCTPTChanged();
 				}
 			}
 		}
@@ -1561,6 +1570,19 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThongTinBangDia_ChiTietPhieuThue", Storage="_ChiTietPhieuThues", ThisKey="maBangDia", OtherKey="maBangDia")]
+		public EntitySet<ChiTietPhieuThue> ChiTietPhieuThues
+		{
+			get
+			{
+				return this._ChiTietPhieuThues;
+			}
+			set
+			{
+				this._ChiTietPhieuThues.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CongTy_ThongTinBangDia", Storage="_CongTy", ThisKey="maCongTy", OtherKey="maCongTy", IsForeignKey=true, DeleteRule="CASCADE")]
 		public CongTy CongTy
 		{
@@ -1591,40 +1613,6 @@ namespace QuanLyBangDiaCD
 						this._maCongTy = default(string);
 					}
 					this.SendPropertyChanged("CongTy");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuThue_ThongTinBangDia", Storage="_ChiTietPhieuThue", ThisKey="maCTPT", OtherKey="maCTPT", IsForeignKey=true, DeleteRule="CASCADE")]
-		public ChiTietPhieuThue ChiTietPhieuThue
-		{
-			get
-			{
-				return this._ChiTietPhieuThue.Entity;
-			}
-			set
-			{
-				ChiTietPhieuThue previousValue = this._ChiTietPhieuThue.Entity;
-				if (((previousValue != value) 
-							|| (this._ChiTietPhieuThue.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ChiTietPhieuThue.Entity = null;
-						previousValue.ThongTinBangDias.Remove(this);
-					}
-					this._ChiTietPhieuThue.Entity = value;
-					if ((value != null))
-					{
-						value.ThongTinBangDias.Add(this);
-						this._maCTPT = value.maCTPT;
-					}
-					else
-					{
-						this._maCTPT = default(string);
-					}
-					this.SendPropertyChanged("ChiTietPhieuThue");
 				}
 			}
 		}
@@ -1681,6 +1669,18 @@ namespace QuanLyBangDiaCD
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ChiTietPhieuThues(ChiTietPhieuThue entity)
+		{
+			this.SendPropertyChanging();
+			entity.ThongTinBangDia = this;
+		}
+		
+		private void detach_ChiTietPhieuThues(ChiTietPhieuThue entity)
+		{
+			this.SendPropertyChanging();
+			entity.ThongTinBangDia = null;
 		}
 	}
 }

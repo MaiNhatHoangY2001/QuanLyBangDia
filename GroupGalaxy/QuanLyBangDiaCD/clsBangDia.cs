@@ -28,7 +28,7 @@ namespace QuanLyBangDiaCD
                     where n.maCongTy.Equals(maCongTy)
                     select n;
             }
-                
+
             return q;
         }
         public ThongTinBangDia layThongTinDia(String maBangDia)
@@ -54,6 +54,7 @@ namespace QuanLyBangDiaCD
                 }
                 else
                 {
+                    dt.ThongTinBangDias.InsertOnSubmit(dia);
                     dt.SubmitChanges();
                     dt.Transaction.Commit();
                     return true;
@@ -75,6 +76,13 @@ namespace QuanLyBangDiaCD
                 IEnumerable<ThongTinBangDia> q = (from n in dt.ThongTinBangDias
                                                   where n.maBangDia.Equals(diaSua.maBangDia)
                                                   select n);
+                q.First().tenBangDia = diaSua.tenBangDia;
+                q.First().theLoai = diaSua.theLoai;
+                q.First().tinhTrang = diaSua.tinhTrang;
+                q.First().ngaySX = diaSua.ngaySX;
+                q.First().LoaiBangDia = dt.LoaiBangDias.Single(p => p.maLoai == diaSua.maLoai);
+                q.First().gia = diaSua.gia;
+                q.First().ghiChu = diaSua.ghiChu;
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
                 return true;
@@ -83,7 +91,6 @@ namespace QuanLyBangDiaCD
             {
                 dt.Transaction.Rollback();
                 throw new Exception("Lỗi sửa cd " + ex.Message);
-                return false;
             }
         }
         public bool xoaDia(ThongTinBangDia diaXoa)

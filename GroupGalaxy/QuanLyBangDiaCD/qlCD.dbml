@@ -4,9 +4,10 @@
     <Type Name="ChiTietPhieuThue">
       <Column Name="maCTPT" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maPhieu" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="maBangDia" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="ChiTietPhieuThue_ThongTinBangDia" Member="ThongTinBangDias" ThisKey="maCTPT" OtherKey="maCTPT" Type="ThongTinBangDia" />
       <Association Name="PhieuThue_ChiTietPhieuThue" Member="PhieuThue" ThisKey="maPhieu" OtherKey="maPhieu" Type="PhieuThue" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ThongTinBangDia_ChiTietPhieuThue" Member="ThongTinBangDia" ThisKey="maBangDia" OtherKey="maBangDia" Type="ThongTinBangDia" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.CongTy" Member="CongTies">
@@ -64,15 +65,14 @@
       <Column Name="maBangDia" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maLoai" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="maCongTy" Type="System.String" DbType="Char(5)" CanBeNull="true" />
-      <Column Name="maCTPT" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="tenBangDia" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
       <Column Name="theLoai" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
       <Column Name="tinhTrang" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="ngaySX" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="ThongTinBangDia_ChiTietPhieuThue" Member="ChiTietPhieuThues" ThisKey="maBangDia" OtherKey="maBangDia" Type="ChiTietPhieuThue" />
       <Association Name="CongTy_ThongTinBangDia" Member="CongTy" ThisKey="maCongTy" OtherKey="maCongTy" Type="CongTy" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="ChiTietPhieuThue_ThongTinBangDia" Member="ChiTietPhieuThue" ThisKey="maCTPT" OtherKey="maCTPT" Type="ChiTietPhieuThue" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="LoaiBangDia_ThongTinBangDia" Member="LoaiBangDia" ThisKey="maLoai" OtherKey="maLoai" Type="LoaiBangDia" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>

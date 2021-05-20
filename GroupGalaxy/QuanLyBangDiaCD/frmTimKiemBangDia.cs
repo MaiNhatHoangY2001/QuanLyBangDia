@@ -85,7 +85,6 @@ namespace QuanLyBangDiaCD
             lvwItem = new ListViewItem(bd.maBangDia);
             lvwItem.SubItems.Add(bd.maLoai);
             lvwItem.SubItems.Add(bd.maCongTy);
-            lvwItem.SubItems.Add(bd.maCTPT);
             lvwItem.SubItems.Add(bd.tenBangDia);
             lvwItem.SubItems.Add(bd.theLoai);
             lvwItem.SubItems.Add(bd.tinhTrang);

@@ -38,10 +38,10 @@ namespace QuanLyBangDiaCD
             dtCongTy = new clsCongTy();
             treCongTy.ImageList = imgTree;
             IEnumerable<CongTy> dsCongTy = dtCongTy.GetAllCongTy();
-            LoadPhongToTree(treCongTy, dsCongTy);
+            LoadCongTyToTree(treCongTy, dsCongTy);
         }
 
-        private void LoadPhongToTree(TreeView treCongTy, IEnumerable<CongTy> dsCongTy)
+        private void LoadCongTyToTree(TreeView treCongTy, IEnumerable<CongTy> dsCongTy)
         {
             treCongTy.Nodes.Clear();
             tree.Nodes.Clear();
@@ -67,6 +67,7 @@ namespace QuanLyBangDiaCD
             lvwDSBangDia.Columns.Add("Mã băng đĩa", 100);
             lvwDSBangDia.Columns.Add("Tên băng đĩa", 200);
             lvwDSBangDia.Columns.Add("Thể loại", 150);
+            lvwDSBangDia.Columns.Add("Loại băng", 100);
             lvwDSBangDia.Columns.Add("Tình trạng", 100);
             lvwDSBangDia.Columns.Add("Ngày sản xuất", 150);
             lvwDSBangDia.Columns.Add("Ghi chú", 100);
@@ -107,11 +108,22 @@ namespace QuanLyBangDiaCD
         {
             lvwDSBangDia.Items.Clear();
             ListViewItem lvw;
+            String ten = "";
             foreach (ThongTinBangDia dia in dsBangDia)
             {
                 lvw = new ListViewItem(dia.maBangDia);
                 lvw.SubItems.Add(dia.tenBangDia);
                 lvw.SubItems.Add(dia.theLoai);
+
+                if (dia.maLoai.Equals("ML001"))
+                    ten = "CD";
+                else if (dia.maLoai.Equals("ML002"))
+                    ten = "VCD";
+                else if (dia.maLoai.Equals("ML003"))
+                    ten = "DVD";
+                else if (dia.maLoai.Equals("ML004"))
+                    ten = "CD-ROM";
+                lvw.SubItems.Add(ten);
                 lvw.SubItems.Add(dia.tinhTrang);
                 DateTime dateTime = DateTime.Parse(dia.ngaySX.ToString());
                 lvw.SubItems.Add(dateTime.ToString("dd/MM/yyyy"));
@@ -132,6 +144,7 @@ namespace QuanLyBangDiaCD
                 txtMaBangDia.Text = dia.maBangDia;
                 txtTenBangDia.Text = dia.tenBangDia;
                 txtTheLoai.Text = dia.theLoai;
+                cboLoai.SelectedItem = dia.LoaiBangDia.tenLoai;
                 if (dia.tinhTrang.Trim().Equals("Đúng hạn"))
                 {
                     radDungHan.Checked = true;
@@ -144,8 +157,16 @@ namespace QuanLyBangDiaCD
                 }
                 dtpNgaySX.Text = dia.ngaySX.ToString();
                 txtGhiChu.Text = dia.ghiChu;
-                txtGia.Text = string.Format("{0:#,000}", Convert.ToDecimal(dia.gia.ToString()));
+                txtGia.Text = dia.gia.ToString();
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
             }
+            else
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -161,6 +182,119 @@ namespace QuanLyBangDiaCD
                 btnThem.Text = "Thêm";
 
             }
+        }
+
+        private void btnThemCongTy_Click(object sender, EventArgs e)
+        {
+            frmCongTy frm = new QuanLyBangDiaCD.frmCongTy();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                IEnumerable<CongTy> dsCT = dtCongTy.GetAllCongTy();
+                LoadCongTyToTree(treCongTy, dsCT);
+            }
+        }
+
+        ThongTinBangDia TaoThongTinBangDia()
+        {
+
+            ThongTinBangDia dia = new ThongTinBangDia();
+            dia.maBangDia = txtMaBangDia.Text;
+            dia.tenBangDia = txtTenBangDia.Text;
+            dia.theLoai = txtTheLoai.Text;
+            String tinhTrang = "";
+            if (radDungHan.Checked == true)
+            {
+                tinhTrang = "Đúng hạn";
+            }
+            else
+            {
+                tinhTrang = "Trễ hạn";
+            }
+            dia.tinhTrang = tinhTrang;
+            dia.ngaySX = DateTime.Parse(dtpNgaySX.Text.ToString());
+            dia.ghiChu = txtGhiChu.Text;
+            dia.gia = decimal.Parse(txtGia.Text);
+
+            string ma = "";
+            if (cboLoai.SelectedItem.ToString().Equals("CD"))
+                ma = "ML001";
+            else if (cboLoai.SelectedItem.ToString().Equals("VCD"))
+                ma = "ML002";
+            else if (cboLoai.SelectedItem.ToString().Equals("DVD"))
+                ma = "ML003";
+            else if (cboLoai.SelectedItem.ToString().Equals("CD-ROM"))
+                ma = "ML004";
+            dia.maLoai = ma;
+            dia.maCongTy = treCongTy.SelectedNode.Tag.ToString();
+            return dia;
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (treCongTy.SelectedNode.Level == 1)
+            {
+                ThongTinBangDia dia = TaoThongTinBangDia();
+                dtDia.themDia(dia);
+                IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
+                LoadBangDiaToLvw(lvwDSBangDia, dsDia);
+                btnThem.Text = "Thêm";
+                btnLuu.Enabled = false;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lvwDSBangDia.SelectedItems.Count > 0)
+            {
+                DialogResult ketQua;
+                ThongTinBangDia dia;
+                ketQua = MessageBox.Show("Bạn có chắc xóa dòng này không?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (ketQua == DialogResult.Yes)
+                {
+                    int viTri = 0;
+                    for (int i = 0; i < lvwDSBangDia.SelectedItems.Count; i++)
+                    {
+                        viTri = lvwDSBangDia.SelectedIndices[i];
+                        dia = (ThongTinBangDia)lvwDSBangDia.Items[viTri].Tag;
+                        dtDia.xoaDia(dia);
+                    }
+                    IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
+                    LoadBangDiaToLvw(lvwDSBangDia, dsDia);
+                    btnXoa.Enabled = false;
+                }
+
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (lvwDSBangDia.SelectedItems.Count > 0)
+            {
+                ThongTinBangDia dia = TaoThongTinBangDia();
+                dtDia.suaThongTinDia(dia);
+                IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
+                LoadBangDiaToLvw(lvwDSBangDia, dsDia);
+                btnSua.Enabled = false;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaBangDia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaRong_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

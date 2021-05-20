@@ -87,7 +87,6 @@ namespace QuanLyBangDiaCD
             {
                 dt.Transaction.Rollback();
                 throw new Exception("Lỗi sửa thông tin nhân viên " + ex.Message);
-                return false;
             }
         }
 
