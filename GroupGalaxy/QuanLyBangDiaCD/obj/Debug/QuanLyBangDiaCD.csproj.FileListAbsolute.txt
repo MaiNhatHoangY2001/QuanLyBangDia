@@ -30,6 +30,7 @@ D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangD
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
 D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+<<<<<<< HEAD
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csprojAssemblyReference.cache
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmBangDia.resources
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmCongTy.resources
@@ -45,3 +46,10 @@ D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debu
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
 D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+=======
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources
+>>>>>>> e8594720a9ab56ce5986dffa594dba22822621a4
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe.config
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.pdb
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources

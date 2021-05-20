@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyBangDiaCD
 {
-    partial class frmTimKiemNhanVien
+    partial class frmTimKiemBangDia
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,19 @@ namespace QuanLyBangDiaCD
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemNhanVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimKiemBangDia));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lvwBangDia = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnThucHien = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.radTua = new System.Windows.Forms.RadioButton();
+            this.radMaBD = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstCongTy = new System.Windows.Forms.ListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lvwNhanVien = new System.Windows.Forms.ListView();
-            this.radMaNV = new System.Windows.Forms.RadioButton();
-            this.radTenNhanVien = new System.Windows.Forms.RadioButton();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnThucHien = new System.Windows.Forms.Button();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -78,22 +78,32 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lvwNhanVien);
+            this.groupBox2.Controls.Add(this.lvwBangDia);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(786, 374);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách nhân viên";
+            this.groupBox2.Text = "Danh sách băng đĩa";
+            // 
+            // lvwBangDia
+            // 
+            this.lvwBangDia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwBangDia.HideSelection = false;
+            this.lvwBangDia.Location = new System.Drawing.Point(3, 26);
+            this.lvwBangDia.Name = "lvwBangDia";
+            this.lvwBangDia.Size = new System.Drawing.Size(780, 345);
+            this.lvwBangDia.TabIndex = 0;
+            this.lvwBangDia.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnThucHien);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtTimKiem);
-            this.groupBox3.Controls.Add(this.radTenNhanVien);
-            this.groupBox3.Controls.Add(this.radMaNV);
+            this.groupBox3.Controls.Add(this.radTua);
+            this.groupBox3.Controls.Add(this.radMaBD);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
@@ -101,6 +111,56 @@ namespace QuanLyBangDiaCD
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
+            // 
+            // btnThucHien
+            // 
+            this.btnThucHien.Location = new System.Drawing.Point(622, 86);
+            this.btnThucHien.Name = "btnThucHien";
+            this.btnThucHien.Size = new System.Drawing.Size(117, 40);
+            this.btnThucHien.TabIndex = 3;
+            this.btnThucHien.Text = "Thực hiện";
+            this.btnThucHien.UseVisualStyleBackColor = true;
+            this.btnThucHien.Click += new System.EventHandler(this.btnThucHien_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(68, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tìm kiếm :";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(185, 91);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(416, 30);
+            this.txtTimKiem.TabIndex = 1;
+            // 
+            // radTua
+            // 
+            this.radTua.AutoSize = true;
+            this.radTua.Location = new System.Drawing.Point(358, 45);
+            this.radTua.Name = "radTua";
+            this.radTua.Size = new System.Drawing.Size(221, 29);
+            this.radTua.TabIndex = 0;
+            this.radTua.TabStop = true;
+            this.radTua.Text = "Tìm theo tựa băng đĩa";
+            this.radTua.UseVisualStyleBackColor = true;
+            this.radTua.CheckedChanged += new System.EventHandler(this.radTenNhanVien_CheckedChanged);
+            // 
+            // radMaBD
+            // 
+            this.radMaBD.AutoSize = true;
+            this.radMaBD.Location = new System.Drawing.Point(108, 45);
+            this.radMaBD.Name = "radMaBD";
+            this.radMaBD.Size = new System.Drawing.Size(221, 29);
+            this.radMaBD.TabIndex = 0;
+            this.radMaBD.TabStop = true;
+            this.radMaBD.Text = "Tìm theo mã băng đĩa";
+            this.radMaBD.UseVisualStyleBackColor = true;
+            this.radMaBD.CheckedChanged += new System.EventHandler(this.radMaNV_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -141,76 +201,19 @@ namespace QuanLyBangDiaCD
             this.splitContainer1.SplitterDistance = 322;
             this.splitContainer1.TabIndex = 0;
             // 
-            // lvwNhanVien
-            // 
-            this.lvwNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwNhanVien.HideSelection = false;
-            this.lvwNhanVien.Location = new System.Drawing.Point(3, 26);
-            this.lvwNhanVien.Name = "lvwNhanVien";
-            this.lvwNhanVien.Size = new System.Drawing.Size(780, 345);
-            this.lvwNhanVien.TabIndex = 0;
-            this.lvwNhanVien.UseCompatibleStateImageBehavior = false;
-            // 
-            // radMaNV
-            // 
-            this.radMaNV.AutoSize = true;
-            this.radMaNV.Location = new System.Drawing.Point(108, 45);
-            this.radMaNV.Name = "radMaNV";
-            this.radMaNV.Size = new System.Drawing.Size(231, 29);
-            this.radMaNV.TabIndex = 0;
-            this.radMaNV.TabStop = true;
-            this.radMaNV.Text = "Tìm theo mã nhân viên";
-            this.radMaNV.UseVisualStyleBackColor = true;
-            // 
-            // radTenNhanVien
-            // 
-            this.radTenNhanVien.AutoSize = true;
-            this.radTenNhanVien.Location = new System.Drawing.Point(358, 45);
-            this.radTenNhanVien.Name = "radTenNhanVien";
-            this.radTenNhanVien.Size = new System.Drawing.Size(231, 29);
-            this.radTenNhanVien.TabIndex = 0;
-            this.radTenNhanVien.TabStop = true;
-            this.radTenNhanVien.Text = "Tìm theo tên nhân viên";
-            this.radTenNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(185, 91);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(416, 30);
-            this.txtTimKiem.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tìm kiếm :";
-            // 
-            // btnThucHien
-            // 
-            this.btnThucHien.Location = new System.Drawing.Point(622, 86);
-            this.btnThucHien.Name = "btnThucHien";
-            this.btnThucHien.Size = new System.Drawing.Size(117, 40);
-            this.btnThucHien.TabIndex = 3;
-            this.btnThucHien.Text = "Thực hiện";
-            this.btnThucHien.UseVisualStyleBackColor = true;
-            // 
             // imgLon
             // 
             this.imgLon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLon.ImageStream")));
             this.imgLon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgLon.Images.SetKeyName(0, "employee (1).png");
+            this.imgLon.Images.SetKeyName(0, "icon.ico");
             // 
             // imgNho
             // 
             this.imgNho.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgNho.ImageStream")));
             this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgNho.Images.SetKeyName(0, "employee.png");
+            this.imgNho.Images.SetKeyName(0, "icon.png");
             // 
-            // frmTimKiemNhanVien
+            // frmTimKiemBangDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,8 +221,8 @@ namespace QuanLyBangDiaCD
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmTimKiemNhanVien";
-            this.Text = "frmTimKiemNhanVien";
+            this.Name = "frmTimKiemBangDia";
+            this.Text = "Tìm kiếm băng đĩa";
             this.Load += new System.EventHandler(this.frmTimKiemNhanVien_Load);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -245,12 +248,12 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox lstCongTy;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListView lvwNhanVien;
+        private System.Windows.Forms.ListView lvwBangDia;
         private System.Windows.Forms.Button btnThucHien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.RadioButton radTenNhanVien;
-        private System.Windows.Forms.RadioButton radMaNV;
+        private System.Windows.Forms.RadioButton radTua;
+        private System.Windows.Forms.RadioButton radMaBD;
         private System.Windows.Forms.ImageList imgLon;
         private System.Windows.Forms.ImageList imgNho;
     }

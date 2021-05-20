@@ -43,7 +43,7 @@ namespace QuanLyBangDiaCD
             this.btnThucHien = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radMaPT = new System.Windows.Forms.RadioButton();
+            this.radTenKH = new System.Windows.Forms.RadioButton();
             this.radMaKH = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -152,7 +152,7 @@ namespace QuanLyBangDiaCD
             this.groupBox3.Controls.Add(this.btnThucHien);
             this.groupBox3.Controls.Add(this.txtTimKiem);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.radMaPT);
+            this.groupBox3.Controls.Add(this.radTenKH);
             this.groupBox3.Controls.Add(this.radMaKH);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -188,17 +188,17 @@ namespace QuanLyBangDiaCD
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm:";
             // 
-            // radMaPT
+            // radTenKH
             // 
-            this.radMaPT.AutoSize = true;
-            this.radMaPT.Location = new System.Drawing.Point(104, 96);
-            this.radMaPT.Name = "radMaPT";
-            this.radMaPT.Size = new System.Drawing.Size(194, 29);
-            this.radMaPT.TabIndex = 0;
-            this.radMaPT.TabStop = true;
-            this.radMaPT.Text = "Tìm mã phiếu thuê";
-            this.radMaPT.UseVisualStyleBackColor = true;
-            this.radMaPT.CheckedChanged += new System.EventHandler(this.radMaPT_CheckedChanged);
+            this.radTenKH.AutoSize = true;
+            this.radTenKH.Location = new System.Drawing.Point(104, 96);
+            this.radTenKH.Name = "radTenKH";
+            this.radTenKH.Size = new System.Drawing.Size(294, 29);
+            this.radTenKH.TabIndex = 0;
+            this.radTenKH.TabStop = true;
+            this.radTenKH.Text = "Tìm kiếm theo tên khách hàng";
+            this.radTenKH.UseVisualStyleBackColor = true;
+            this.radTenKH.CheckedChanged += new System.EventHandler(this.radTenKH_CheckedChanged);
             // 
             // radMaKH
             // 
@@ -253,7 +253,7 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.Button btnThucHien;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radMaPT;
+        private System.Windows.Forms.RadioButton radTenKH;
         private System.Windows.Forms.RadioButton radMaKH;
     }
 }

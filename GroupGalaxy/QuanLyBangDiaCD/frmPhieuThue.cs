@@ -21,5 +21,14 @@ namespace QuanLyBangDiaCD
         {
 
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            frmTimKiemKhachHang frm = new frmTimKiemKhachHang();
+            frmMain frmmain = new frmMain();
+            frm.MdiParent = frmmain;
+            frm.Name = "frmTimKiembangDia";
+            frm.Show();
+        }
     }
 }

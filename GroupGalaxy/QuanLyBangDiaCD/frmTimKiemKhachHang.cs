@@ -89,48 +89,14 @@ namespace QuanLyBangDiaCD
         private void lvwDSKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maKH;
-            if (lvwDSKhachHang.SelectedItems.Count > 0)//co chon
-            {
-
-                if (lvwDSKhachHang.SelectedItems.Count > 0)
-                {
-                    KhachHang k = (KhachHang)lvwDSKhachHang.SelectedItems[lvwDSKhachHang.SelectedItems.Count - 1].Tag;
-                    maKH = k.maKH;
-                    IEnumerable<PhieuThue> dsPT;
-
-                    dsPT = pt.GetPhieuThueThuocKhachHang(maKH);
-                    loadPhieuVaoListView(lvwDSPhieuThue, dsPT);
-                    XuLyHoTroAutocomlet();
-
-                }
-            }
-        }
-
-        private void XuLyHoTroAutocomlet()
-        {
-            string maKH;
-            IEnumerable<PhieuThue> dsPhieuThue;
-
             if (lvwDSKhachHang.SelectedItems.Count > 0)
             {
                 KhachHang k = (KhachHang)lvwDSKhachHang.SelectedItems[lvwDSKhachHang.SelectedItems.Count - 1].Tag;
                 maKH = k.maKH;
-                dsPhieuThue = pt.GetPhieuThueThuocKhachHang(maKH);
-                txtTimKiem.AutoCompleteCustomSource.Clear();
-                if (radMaKH.Checked)
-                {
-                    foreach (PhieuThue p in dsPhieuThue)
-                    {
-                        txtTimKiem.AutoCompleteCustomSource.Add(p.maKH);
-                    }
-                }
-                else if(radMaPT.Checked)
-                {
-                    foreach (PhieuThue p in dsPhieuThue)
-                    {
-                        txtTimKiem.AutoCompleteCustomSource.Add(p.maPhieu);
-                    }
-                }
+                IEnumerable<PhieuThue> dsPT;
+
+                dsPT = pt.GetPhieuThueThuocKhachHang(maKH);
+                loadPhieuVaoListView(lvwDSPhieuThue, dsPT);
             }
         }
 
@@ -153,24 +119,85 @@ namespace QuanLyBangDiaCD
             lvwItem.SubItems.Add(p.maNV);
             lvwItem.SubItems.Add(p.ngayMuon.ToString());
             lvwItem.SubItems.Add(p.ngayTra.ToString());
-            lvwItem.Tag = kh;
+            lvwItem.Tag = p;
             lvwItem.ImageIndex = 0;
             return lvwItem;
         }
 
         private void radMaKH_CheckedChanged(object sender, EventArgs e)
         {
-            XuLyHoTroAutocomlet();
+            clsKhachHang kh = new clsKhachHang();
+            IEnumerable<KhachHang> d = kh.GetAllKhachHang();
+            XuLyHoTroAutocomlet(d);
         }
 
-        private void radMaPT_CheckedChanged(object sender, EventArgs e)
+        private void radTenKH_CheckedChanged(object sender, EventArgs e)
         {
-            XuLyHoTroAutocomlet();
+            clsKhachHang kh = new clsKhachHang();
+            IEnumerable<KhachHang> dsKH = kh.GetAllKhachHang();
+            XuLyHoTroAutocomlet(dsKH);
+        }
+
+        private void XuLyHoTroAutocomlet(IEnumerable<KhachHang> ds)
+        {
+            if (ds != null)
+            {
+                txtTimKiem.AutoCompleteCustomSource.Clear();
+                if (radMaKH.Checked)
+                {
+                    foreach (KhachHang p in ds)
+                    {
+                        txtTimKiem.AutoCompleteCustomSource.Add(p.maKH);
+                    }
+                }
+                else if (radTenKH.Checked)
+                {
+                    foreach (KhachHang p in ds)
+                    {
+                        txtTimKiem.AutoCompleteCustomSource.Add(p.hoTenKH);
+                    }
+                }
+            }
         }
 
         private void btnThucHien_Click(object sender, EventArgs e)
         {
-            
+            string strThongTinTim = txtTimKiem.Text;
+            int viTriTim = TimKiem(strThongTinTim);
+            int viTriChonTruoc;
+            //if(viTriTim!=-1)//tim thay
+            if (viTriTim >= 0)
+            {
+                if (lvwDSKhachHang.SelectedItems.Count > 0)
+                {
+                    viTriChonTruoc = lvwDSKhachHang.SelectedIndices[0];
+                    lvwDSKhachHang.Items[viTriChonTruoc].Selected = false;
+                }
+                lvwDSKhachHang.Items[viTriTim].Selected = true;
+                lvwDSKhachHang.Focus();
+            }
         }
+
+        private int TimKiem(string strGiaTriTim)
+        {
+            KhachHang k;
+            for (int i = 0; i < lvwDSKhachHang.Items.Count; i++)
+            {
+                k = (KhachHang)lvwDSKhachHang.Items[i].Tag;
+                if (radMaKH.Checked)
+                {
+                    if (k.maKH.Equals(strGiaTriTim))
+                        return i;
+                }
+                else
+                {
+                    if (k.hoTenKH.Equals(strGiaTriTim))
+                        return i;
+                }
+            }
+            return -1;
+        }
+
+        
     }
 }
