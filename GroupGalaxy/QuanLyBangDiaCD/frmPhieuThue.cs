@@ -38,7 +38,7 @@ namespace QuanLyBangDiaCD
             lvwDSPhieuThue.LargeImageList = imgLon;
             lvwDSPhieuThue.SmallImageList = imgNho;
             TieuDeLvw(lvwDSPhieuThue);
-            tree = new TreeNode("Danh sách công ty");
+            tree = new TreeNode("Danh sách phiếu thuê");
 
             dtPhieuThue = new clsPhieuThue();
             dtKhachHang = new clsKhachHang();
