@@ -139,8 +139,8 @@ namespace QuanLyBangDiaCD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AUTO_IDCTPT", IsComposable=true)]
-		public string AUTO_IDCTPT()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PhatSinhMa", IsComposable=true)]
+		public string PhatSinhMa()
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}

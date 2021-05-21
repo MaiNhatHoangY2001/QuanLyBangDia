@@ -15,28 +15,43 @@ namespace QuanLyBangDiaCD
             dt = GetDataContext();
         }
 
-        public IEnumerable<PhieuThue> GetAllPhieuThue()
+        public IEnumerable<dynamic> GetAllPhieuThue()
         {
-            IEnumerable<PhieuThue> q = from n in dt.PhieuThues
-                                    select n;
+            var q = from pt in dt.PhieuThues
+                    join ctpt in dt.ChiTietPhieuThues on pt.maPhieu equals ctpt.maPhieu
+                    join kh in dt.KhachHangs on pt.maKH equals kh.maKH
+                    join nv in dt.NhanViens on pt.maNV equals nv.maNV
+                    join bd in dt.ThongTinBangDias on ctpt.maBangDia equals bd.maBangDia
+                    select new { pt.maPhieu, bd.tenBangDia, bd.LoaiBangDia, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.maNV };
             return q;
         }
 
-        public IEnumerable<PhieuThue> GetPhieuThueThuocKhachHang(string maKhachHang)
+        public IEnumerable<dynamic> GetPhieuThueThuocKhachHang(string maKhachHang)
         {
-            IEnumerable<PhieuThue> pt;
             if (maKhachHang.Trim().Equals(""))
             {
-                pt = from n in dt.PhieuThues
-                     select n;
+                var q = from pt in dt.PhieuThues
+                        join ctpt in dt.ChiTietPhieuThues on pt.maPhieu equals ctpt.maPhieu
+                        join kh in dt.KhachHangs on pt.maKH equals kh.maKH
+                        join nv in dt.NhanViens on pt.maNV equals nv.maNV
+                        join bd in dt.ThongTinBangDias on ctpt.maBangDia equals bd.maBangDia
+                        join lbd in dt.LoaiBangDias on bd.maLoai equals lbd.maLoai
+                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV };
+                return q;
             }
             else
             {
-                pt = from n in dt.PhieuThues
-                     where n.maKH.Equals(maKhachHang)
-                     select n;
+                var q = from pt in dt.PhieuThues
+                        join ctpt in dt.ChiTietPhieuThues on pt.maPhieu equals ctpt.maPhieu
+                        join kh in dt.KhachHangs on pt.maKH equals kh.maKH
+                        join nv in dt.NhanViens on pt.maNV equals nv.maNV
+                        join bd in dt.ThongTinBangDias on ctpt.maBangDia equals bd.maBangDia
+                        join lbd in dt.LoaiBangDias on bd.maLoai equals lbd.maLoai
+                        where pt.maKH.Equals(maKhachHang)
+                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV };
+                return q;
             }
-            return pt;
+
         }
 
         public PhieuThue GetPhieuThue(string maPhieu)
@@ -50,6 +65,7 @@ namespace QuanLyBangDiaCD
             }
             return null;
         }
+
         public bool themPhieu(PhieuThue pt)
         {
             System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();
@@ -103,8 +119,9 @@ namespace QuanLyBangDiaCD
             {
                 dt.Transaction = item;
                 IEnumerable<PhieuThue> q = (from n in dt.PhieuThues
-                                                  where n.maPhieu.Equals(pt.maPhieu)
-                                                  select n);
+                                            where n.maPhieu.Equals(pt.maPhieu)
+                                            select n);
+                q.First().maNV = pt.maNV;
                 q.First().ngayMuon = pt.ngayMuon;
                 q.First().ngayTra = pt.ngayTra;
                 dt.SubmitChanges();

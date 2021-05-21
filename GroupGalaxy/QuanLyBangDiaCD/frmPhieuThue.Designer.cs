@@ -38,6 +38,8 @@ namespace QuanLyBangDiaCD
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lvwDSPhieuThue = new System.Windows.Forms.ListView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cboTenNV = new System.Windows.Forms.ComboBox();
+            this.cboTenBangDia = new System.Windows.Forms.ComboBox();
             this.dtpNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -47,7 +49,6 @@ namespace QuanLyBangDiaCD
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtMaPhieuThue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,11 +56,11 @@ namespace QuanLyBangDiaCD
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtKhachHang = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
             this.imgTree = new System.Windows.Forms.ImageList(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -157,11 +158,12 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.cboTenNV);
+            this.groupBox6.Controls.Add(this.cboTenBangDia);
             this.groupBox6.Controls.Add(this.dtpNgayMuon);
             this.groupBox6.Controls.Add(this.dtpNgayTra);
             this.groupBox6.Controls.Add(this.groupBox4);
             this.groupBox6.Controls.Add(this.txtSoLuong);
-            this.groupBox6.Controls.Add(this.textBox1);
             this.groupBox6.Controls.Add(this.txtMaPhieuThue);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label5);
@@ -169,6 +171,7 @@ namespace QuanLyBangDiaCD
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.txtKhachHang);
+            this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(3, -2);
@@ -178,6 +181,22 @@ namespace QuanLyBangDiaCD
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin phiếu thuê";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // cboTenNV
+            // 
+            this.cboTenNV.FormattingEnabled = true;
+            this.cboTenNV.Location = new System.Drawing.Point(611, 53);
+            this.cboTenNV.Name = "cboTenNV";
+            this.cboTenNV.Size = new System.Drawing.Size(253, 28);
+            this.cboTenNV.TabIndex = 16;
+            // 
+            // cboTenBangDia
+            // 
+            this.cboTenBangDia.FormattingEnabled = true;
+            this.cboTenBangDia.Location = new System.Drawing.Point(611, 175);
+            this.cboTenBangDia.Name = "cboTenBangDia";
+            this.cboTenBangDia.Size = new System.Drawing.Size(253, 28);
+            this.cboTenBangDia.TabIndex = 16;
             // 
             // dtpNgayMuon
             // 
@@ -271,15 +290,6 @@ namespace QuanLyBangDiaCD
             this.txtSoLuong.TabIndex = 0;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtMaBangDia_TextChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(611, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.txtMaBangDia_TextChanged);
-            // 
             // txtMaPhieuThue
             // 
             this.txtMaPhieuThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,9 +315,9 @@ namespace QuanLyBangDiaCD
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(449, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.Size = new System.Drawing.Size(108, 20);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Mã nhân viên";
+            this.label5.Text = "Tên nhân viên";
             // 
             // label14
             // 
@@ -343,17 +353,27 @@ namespace QuanLyBangDiaCD
             // 
             this.txtKhachHang.Enabled = false;
             this.txtKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhachHang.Location = new System.Drawing.Point(611, 178);
+            this.txtKhachHang.Location = new System.Drawing.Point(353, 226);
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.ReadOnly = true;
             this.txtKhachHang.Size = new System.Drawing.Size(253, 29);
             this.txtKhachHang.TabIndex = 3;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(449, 178);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Tên băng đĩa";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(449, 178);
+            this.label2.Location = new System.Drawing.Point(229, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
@@ -432,12 +452,13 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ImageList imgTree;
         private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private System.Windows.Forms.Label label3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DateTimePicker dtpNgayMuon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboTenBangDia;
+        private System.Windows.Forms.ComboBox cboTenNV;
     }
 }

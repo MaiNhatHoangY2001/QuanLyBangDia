@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCongTy.cs" />
+    <Compile Include="clsCTPT.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsBangDia.cs" />
     <Compile Include="clsKhachHang.cs" />

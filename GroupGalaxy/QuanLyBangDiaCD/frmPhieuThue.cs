@@ -19,6 +19,9 @@ namespace QuanLyBangDiaCD
         }
         clsPhieuThue dtPhieuThue;
         clsKhachHang dtKhachHang;
+        clsBangDia dtBangDia;
+        clsNhanVien dtNhanVien;
+        clsCTPT dtCTPT;
         TreeNode tree;
 
         private void frmBangDia_Load(object sender, EventArgs e)
@@ -36,11 +39,38 @@ namespace QuanLyBangDiaCD
             lvwDSPhieuThue.SmallImageList = imgNho;
             TieuDeLvw(lvwDSPhieuThue);
             tree = new TreeNode("Danh sách công ty");
+
             dtPhieuThue = new clsPhieuThue();
             dtKhachHang = new clsKhachHang();
+            dtBangDia = new clsBangDia();
+            dtNhanVien = new clsNhanVien();
+            dtCTPT = new clsCTPT();
+
             treKhachHang.ImageList = imgTree;
+
+            IEnumerable<ThongTinBangDia> dsBangDia = dtBangDia.GetAllBangDia();
+            truyenVaoCboTenBangDia(cboTenBangDia,dsBangDia);
+            IEnumerable<NhanVien> dsNhanVien = dtNhanVien.GetAllNhanVien();
+            truyenVaoCboTenNhanVien(cboTenNV, dsNhanVien);
+
             IEnumerable<KhachHang> dsKhachHang = dtKhachHang.GetAllKhachHang();
             LoadKhachHangToTree(treKhachHang, dsKhachHang);
+        }
+
+        private void truyenVaoCboTenNhanVien(ComboBox cboTenNV, IEnumerable<NhanVien> dsNhanVien)
+        {
+            foreach (NhanVien dia in dsNhanVien)
+            {
+                cboTenNV.Items.Add(dia.hoTenNV);
+            }
+        }
+
+        private void truyenVaoCboTenBangDia(ComboBox cboTenBangDia, IEnumerable<ThongTinBangDia> dsBangDia)
+        {
+            foreach (ThongTinBangDia dia in dsBangDia)
+            {
+                cboTenBangDia.Items.Add(dia.tenBangDia);
+            }
         }
 
         private void LoadKhachHangToTree(TreeView treCongTy, IEnumerable<KhachHang> dsKhachHang)
@@ -67,12 +97,12 @@ namespace QuanLyBangDiaCD
             lvwDSPhieuThue.GridLines = true;
             lvwDSPhieuThue.FullRowSelect = true;
             lvwDSPhieuThue.Columns.Add("Mã phiếu thuê", 150);
-            //    lvwDSPhieuThue.Columns.Add("Tên băng đĩa", 200);
-            //    lvwDSPhieuThue.Columns.Add("Loại băng đĩa", 150);
+            lvwDSPhieuThue.Columns.Add("Tên băng đĩa", 200);
+            lvwDSPhieuThue.Columns.Add("Loại băng đĩa", 150);
             lvwDSPhieuThue.Columns.Add("Số lượng", 100);
             lvwDSPhieuThue.Columns.Add("Ngày mượn", 100);
             lvwDSPhieuThue.Columns.Add("Ngày trả", 100);
-            lvwDSPhieuThue.Columns.Add("Mã nhân viên", 150);
+            lvwDSPhieuThue.Columns.Add("Nhân viên lập phiếu", 150);
 
 
 
@@ -80,7 +110,7 @@ namespace QuanLyBangDiaCD
 
         private void treKhachHang_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            IEnumerable<PhieuThue> dsPhieuThue;
+            IEnumerable<dynamic> dsPhieuThue;
             string strMaKH = "";
             string strtenKH = "";
             if (treKhachHang.SelectedNode != null)
@@ -105,37 +135,38 @@ namespace QuanLyBangDiaCD
             }
         }
 
-        private void LoadPhieuThueToLvw(ListView lvwDSPhieuThue, IEnumerable<PhieuThue> dsPhieuThue)
+        private void LoadPhieuThueToLvw(ListView lvwDSPhieuThue, IEnumerable<dynamic> dsPhieuThue)
         {
             lvwDSPhieuThue.Items.Clear();
             ListViewItem lvw;
-            foreach (PhieuThue pt in dsPhieuThue)
+            foreach (dynamic pt in dsPhieuThue)
             {
                 lvw = new ListViewItem(pt.maPhieu);
+                lvw.SubItems.Add(pt.tenBangDia.ToString());
+                lvw.SubItems.Add(pt.tenLoai.ToString());
+                lvw.SubItems.Add(pt.soLuong.ToString());
                 DateTime dateTime1 = DateTime.Parse(pt.ngayMuon.ToString());
                 lvw.SubItems.Add(dateTime1.ToString("dd/MM/yyyy"));
                 DateTime dateTime2 = DateTime.Parse(pt.ngayTra.ToString());
                 lvw.SubItems.Add(dateTime2.ToString("dd/MM/yyyy"));
+                lvw.SubItems.Add(pt.hoTenNV.ToString());
                 lvw.Tag = pt;
                 lvw.ImageIndex = 0;
                 lvwDSPhieuThue.Items.Add(lvw);
             }
         }
-
         private void lvwDSPhieuThue_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PhieuThue pt = null;
+            dynamic pt = null;
             if (lvwDSPhieuThue.SelectedItems.Count > 0)
             {
-                pt = (PhieuThue)lvwDSPhieuThue.SelectedItems[0].Tag;
+                pt = (dynamic)lvwDSPhieuThue.SelectedItems[0].Tag;
                 txtMaPhieuThue.Text = pt.maPhieu;
-
-
-
-
-                dtpNgayTra.Text = pt.ngayMuon.ToString();
+                cboTenNV.SelectedItem = pt.hoTenNV;
+                cboTenBangDia.SelectedItem = pt.tenBangDia;
+                txtSoLuong.Text = pt.soLuong.ToString();
+                dtpNgayMuon.Text = pt.ngayMuon.ToString();
                 dtpNgayTra.Text = pt.ngayTra.ToString();
-
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
             }
@@ -161,40 +192,35 @@ namespace QuanLyBangDiaCD
 
             }
         }
-        /*
-                private void btnThemCongTy_Click(object sender, EventArgs e)
-                {
-                    frmCongTy frm = new QuanLyBangDiaCD.frmCongTy();
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        IEnumerable<CongTy> dsCT = dtCongTy.GetAllCongTy();
-                        LoadCongTyToTree(treKhachHang, dsCT);
-                    }
-                }
-        */
         PhieuThue TaoThongTinPhieuThue()
         {
 
             PhieuThue pt = new PhieuThue();
             pt.maPhieu = txtMaPhieuThue.Text;
-  
-         
-        
             pt.ngayMuon = DateTime.Parse(dtpNgayMuon.Text.ToString());
             pt.ngayTra = DateTime.Parse(dtpNgayTra.Text.ToString());
-
-
-           
+            pt.maNV = dtNhanVien.layMaNVTuTenNV(cboTenNV.Text).maNV;
             pt.maKH = treKhachHang.SelectedNode.Tag.ToString();
             return pt;
+        }
+        ChiTietPhieuThue TaoThongTinChiTietPhieuThue()
+        {
+            ChiTietPhieuThue ctpt = new ChiTietPhieuThue();
+            ctpt.maCTPT = dtCTPT.getPhatSinhMa();
+            ctpt.maPhieu = txtMaPhieuThue.Text;
+            ctpt.soLuong = Int32.Parse(txtSoLuong.Text);
+            ctpt.maBangDia = dtBangDia.layMaDiaTuTenDia(cboTenBangDia.Text).maBangDia;
+            return ctpt;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (treKhachHang.SelectedNode.Level == 1)
             {
-                PhieuThue pt = new PhieuThue();
+                PhieuThue pt = TaoThongTinPhieuThue();
+                ChiTietPhieuThue ctpt = TaoThongTinChiTietPhieuThue();
                 dtPhieuThue.themPhieu(pt);
-                IEnumerable<PhieuThue> dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
+                dtCTPT.themCTPhieu(ctpt);
+                IEnumerable<dynamic> dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
                 LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
                 btnThem.Text = "Thêm";
                 btnLuu.Enabled = false;
@@ -206,7 +232,8 @@ namespace QuanLyBangDiaCD
             if (lvwDSPhieuThue.SelectedItems.Count > 0)
             {
                 DialogResult ketQua;
-                PhieuThue pt;
+                dynamic pt;
+                PhieuThue ptXoa;
                 ketQua = MessageBox.Show("Bạn có chắc xóa dòng này không?", "Hỏi xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (ketQua == DialogResult.Yes)
                 {
@@ -214,10 +241,11 @@ namespace QuanLyBangDiaCD
                     for (int i = 0; i < lvwDSPhieuThue.SelectedItems.Count; i++)
                     {
                         viTri = lvwDSPhieuThue.SelectedIndices[i];
-                        pt = (PhieuThue)lvwDSPhieuThue.Items[viTri].Tag;
-                        dtPhieuThue.xoaPhieu(pt);
+                        pt = (dynamic)lvwDSPhieuThue.Items[viTri].Tag;
+                        ptXoa = dtPhieuThue.GetPhieuThue(pt.maPhieu);
+                        dtPhieuThue.xoaPhieu(ptXoa);
                     }
-                    IEnumerable<PhieuThue> dsDia = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
+                    IEnumerable<dynamic> dsDia = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
                     LoadPhieuThueToLvw(lvwDSPhieuThue, dsDia);
                     btnXoa.Enabled = false;
                 }
@@ -231,7 +259,9 @@ namespace QuanLyBangDiaCD
             {
                 PhieuThue pt = TaoThongTinPhieuThue();
                 dtPhieuThue.suaThongTinPT(pt);
-                IEnumerable<PhieuThue> dsDia = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
+                ChiTietPhieuThue ctpt = TaoThongTinChiTietPhieuThue();
+                dtCTPT.suaThongTinCTPT(ctpt);
+                IEnumerable<dynamic> dsDia = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
                 LoadPhieuThueToLvw(lvwDSPhieuThue, dsDia);
                 btnSua.Enabled = false;
             }
@@ -254,7 +284,8 @@ namespace QuanLyBangDiaCD
 
         private void btnXoaRong_Click(object sender, EventArgs e)
         {
-
+            txtMaPhieuThue.Clear();
+            txtSoLuong.Clear();
         }
 
         private void btnThemKhachHang_Click(object sender, EventArgs e)

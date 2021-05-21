@@ -44,42 +44,42 @@
         <elementListCompartment Id="22bd576f-ca20-450b-9be6-838a2bc83257" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 11.1354484049479); (7.25 : 11.1354484049479); (7.25 : 2.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 11.1354484049479); (7.25 : 11.1354484049479); (7.25 : 2.95359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/PhieuThue/PhieuThue_ChiTietPhieuThue" />
       <nodes>
         <classShapeMoniker Id="61a56d5d-3838-4ffa-abc3-4de9f1663bd5" />
         <classShapeMoniker Id="07cf0ff1-d2ab-4f56-90a0-416d98434bf6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.4999995); (4.5 : 9.4999995); (4.5 : 10.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 9.4999995); (4.5 : 9.4999995); (4.5 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/KhachHang/KhachHang_PhieuThue" />
       <nodes>
         <classShapeMoniker Id="44dad521-f143-4be7-8685-288103b722f6" />
         <classShapeMoniker Id="61a56d5d-3838-4ffa-abc3-4de9f1663bd5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.6354484049479); (3.5 : 11.6354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 11.6354484049479); (3.5 : 11.6354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/NhanVien/NhanVien_PhieuThue" />
       <nodes>
         <classShapeMoniker Id="67048e4b-a0cc-4d15-bb77-9faa3813f55d" />
         <classShapeMoniker Id="61a56d5d-3838-4ffa-abc3-4de9f1663bd5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.16429768880208); (6.25 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.16429768880208); (6.25 : 2.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/ThongTinBangDia/ThongTinBangDia_ChiTietPhieuThue" />
       <nodes>
         <classShapeMoniker Id="af67ddaa-6904-4a63-b4be-0528a2eb747f" />
         <classShapeMoniker Id="07cf0ff1-d2ab-4f56-90a0-416d98434bf6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (4.5 : 6.16429768880208); (4.5 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (4.5 : 6.16429768880208); (4.5 : 3.5401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/CongTy/CongTy_ThongTinBangDia" />
       <nodes>
         <classShapeMoniker Id="2457424b-80f3-4666-8fb5-c57f817d7961" />
         <classShapeMoniker Id="af67ddaa-6904-4a63-b4be-0528a2eb747f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.22199625651042); (3.5 : 2.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.22199625651042); (3.5 : 2.22199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/qlCDDataContext/LoaiBangDia/LoaiBangDia_ThongTinBangDia" />
       <nodes>
         <classShapeMoniker Id="7ad62d8e-6b47-4da9-b646-d6a0619c5fa4" />

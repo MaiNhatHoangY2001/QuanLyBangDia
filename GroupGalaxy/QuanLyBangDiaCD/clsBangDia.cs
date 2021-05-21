@@ -13,6 +13,13 @@ namespace QuanLyBangDiaCD
         {
             dt = GetDataContext();
         }
+        public IEnumerable<ThongTinBangDia> GetAllBangDia()
+        {
+            IEnumerable<ThongTinBangDia> q = from n in dt.ThongTinBangDias
+                                             select n;
+            return q;
+        }
+
         public IEnumerable<ThongTinBangDia> GetBangDiaThuocCongTy(String maCongTy)
         {
 
@@ -35,6 +42,17 @@ namespace QuanLyBangDiaCD
         {
             ThongTinBangDia dia = (from n in dt.ThongTinBangDias
                                    where n.maBangDia.Equals(maBangDia)
+                                   select n).FirstOrDefault();
+            if (dia != null)
+            {
+                return dia;
+            }
+            return null;
+        }
+        public ThongTinBangDia layMaDiaTuTenDia(String tenBangDia)
+        {
+            ThongTinBangDia dia = (from n in dt.ThongTinBangDias
+                                   where n.tenBangDia.Equals(tenBangDia)
                                    select n).FirstOrDefault();
             if (dia != null)
             {

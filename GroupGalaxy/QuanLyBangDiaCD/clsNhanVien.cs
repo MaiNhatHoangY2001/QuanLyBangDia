@@ -15,6 +15,12 @@ namespace QuanLyBangDiaCD
         {
             dt = GetDataContext();
         }
+        public IEnumerable<NhanVien> GetAllNhanVien()
+        {
+            IEnumerable<NhanVien> q = from n in dt.NhanViens
+                                             select n;
+            return q;
+        }
 
         public IEnumerable<NhanVien> GetNhanVienTheoPhieuThue(string maPhieuThue)
         {
@@ -36,8 +42,20 @@ namespace QuanLyBangDiaCD
         public NhanVien GetNhaVien(string maNhanVien)
         {
             NhanVien nv = (from n in dt.NhanViens
-                            where n.maNV.Equals(maNhanVien)
-                            select n).FirstOrDefault();
+                           where n.maNV.Equals(maNhanVien)
+                           select n).FirstOrDefault();
+            if (nv != null)
+            {
+                return nv;
+            }
+            return null;
+        }
+
+        public NhanVien layMaNVTuTenNV(String tenNV)
+        {
+            NhanVien nv = (from n in dt.NhanViens
+                          where n.hoTenNV.Equals(tenNV)
+                          select n).FirstOrDefault();
             if (nv != null)
             {
                 return nv;
@@ -77,8 +95,8 @@ namespace QuanLyBangDiaCD
             {
                 dt.Transaction = item;
                 IEnumerable<NhanVien> q = (from n in dt.NhanViens
-                                            where n.maNV.Equals(nv.maNV)
-                                            select n);
+                                           where n.maNV.Equals(nv.maNV)
+                                           select n);
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
                 return true;

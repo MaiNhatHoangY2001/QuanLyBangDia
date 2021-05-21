@@ -2,21 +2,16 @@ create database QuanLyBangDia
 use QuanLyBangDia
 go
 
-CREATE FUNCTION AUTO_IDCTPT()
-RETURNS VARCHAR(5)
-AS
-BEGIN
-	DECLARE @ID VARCHAR(5)
-	IF (SELECT COUNT(maCTPT) FROM ChiTietPhieuThue) = 0
-		SET @ID = '0'
-	ELSE
-		SELECT @ID = MAX(RIGHT(MAKH, 3)) FROM KHACHHANG
-		SELECT @ID = CASE
-			WHEN @ID >= 0 and @ID < 9 THEN 'PT00' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
-			WHEN @ID >= 9 THEN 'PT0' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
-		END
-	RETURN @ID
-END
+go
+create function PhatSinhMa()
+returns char(5)
+as
+	begin
+		declare @maCTPT char(5)
+		SELECT @maCTPT = CONCAT('PT', RIGHT(CONCAT('000',ISNULL(right(max(maCTPT),3),0) + 1),3)) from dbo.ChiTietPhieuThue where maCTPT like 'PT%'
+		return @maCTPT
+	end
+go
 go
 
 create table KhachHang
