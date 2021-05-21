@@ -56,6 +56,17 @@ namespace QuanLyBangDiaCD
                 frm.Show();
             }
         }
+
+        private void mnuChucNangQuanLyPhieuThue_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTonTaiForm("frmPhieuThue") == false)
+            {
+                frmPhieuThue frm = new frmPhieuThue();
+                frm.MdiParent = this;
+                frm.Name = "frmPhieuThue";
+                frm.Show();
+            }
+        }
     }
 }
 

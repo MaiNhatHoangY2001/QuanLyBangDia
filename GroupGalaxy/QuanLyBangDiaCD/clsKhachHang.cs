@@ -118,5 +118,22 @@ namespace QuanLyBangDiaCD
                 throw new Exception("Lỗi không xóa được " + e.Message);
             }
         }
+        public bool LuuTru()
+        {
+            System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();
+
+            try
+            {
+                dt.Transaction = item;
+                dt.SubmitChanges();
+                dt.Transaction.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                dt.Transaction.Rollback();
+                throw new Exception("Lỗi cập nhật " + ex.Message);
+            }
+        }
     }
 }

@@ -1,5 +1,24 @@
 create database QuanLyBangDia
 use QuanLyBangDia
+go
+
+CREATE FUNCTION AUTO_IDCTPT()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ID VARCHAR(5)
+	IF (SELECT COUNT(maCTPT) FROM ChiTietPhieuThue) = 0
+		SET @ID = '0'
+	ELSE
+		SELECT @ID = MAX(RIGHT(MAKH, 3)) FROM KHACHHANG
+		SELECT @ID = CASE
+			WHEN @ID >= 0 and @ID < 9 THEN 'PT00' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
+			WHEN @ID >= 9 THEN 'PT0' + CONVERT(CHAR, CONVERT(INT, @ID) + 1)
+		END
+	RETURN @ID
+END
+go
+
 create table KhachHang
 (
 	maKH char(5) primary key,
@@ -30,13 +49,8 @@ create table PhieuThue
 	ngayTra Date 
 )
 
-create table ChiTietPhieuThue
-(
-	maCTPT char(5) primary key,
-	maPhieu char(5) foreign key references PhieuThue(maPhieu)
-					on update cascade on delete cascade,
-	soLuong int
-)
+
+
 create table CongTy 
 (
 	maCongTy char(5) primary key,
@@ -56,8 +70,6 @@ create table ThongTinBangDia
 			on update cascade on delete cascade,
 	maCongTy char(5) foreign key references CongTy(maCongTy)
 			on update cascade on delete cascade,
-	maCTPT char(5) foreign key references ChiTietPhieuThue(maCTPT)
-			on update cascade on delete cascade,
 	tenBangDia nvarchar(60),
 	theLoai nvarchar(60),
 	tinhTrang nvarchar(10),
@@ -65,13 +77,22 @@ create table ThongTinBangDia
 	ghiChu nvarchar(100),
 	gia money		 
 )	
+create table ChiTietPhieuThue
+(
+	maCTPT char(5) primary key CONSTRAINT IDCTPT DEFAULT DBO.AUTO_IDCTPT(),
+	maPhieu char(5) foreign key references PhieuThue(maPhieu)
+					on update cascade on delete cascade,
+	maBangDia char(5) foreign key references ThongTinBangDia(maBangDia)
+					on update cascade on delete cascade,
+	soLuong int
+)
 go
+
 insert into LoaiBangDia values 
 ('ML001', 'CD'),
 ('ML002', 'VCD'),
 ('ML003', 'DVD'),
-('ML004', 'CD-ROM'),
-('ML005', 'CD')
+('ML004', 'CD-ROM')
 insert into CongTy values
 ('CT001', N'Kim Đồng', N'Nguyễn Tri Phương, quận 10, TPHCM', '0987654321'),
 ('CT002', N'Á Châu', N'Lê Văn Sỹ, Quận 3, TPHCM', '0987213221'),
@@ -96,16 +117,16 @@ insert into PhieuThue values
 ('MP003', 'KH003', 'NV001', '2021-05-20','2021-05-30'),
 ('MP004', 'KH004', 'NV005', '2021-05-23','2021-05-28'),
 ('MP005', 'KH005', 'NV004', '2021-05-12','2021-05-20')
-insert into ChiTietPhieuThue values
-('CT001', 'MP001', 2),
-('CT002', 'MP002', 5),
-('CT003', 'MP003', 3),
-('CT004', 'MP004', 8),
-('CT005', 'MP005', 2)
 insert into ThongTinBangDia values
-('BD001', 'ML001', 'CT001', 'CT001', N'Tây Du ký', N'Hành động', N'Trễ hạn', '2020-05-06',N'Không', 10000),
-('BD002', 'ML002', 'CT002', 'CT002', N'The House', N'Kinh dị', N'Đúng hạn', '2018-07-20',N'bị xước', 15000),
-('BD003', 'ML003', 'CT003', 'CT003', N'Kong 2012', N'Viễn tưởng', N'Trễ hạn', '2020-05-15',N'Không', 20000),
-('BD004', 'ML004', 'CT004', 'CT004', N'Diệp Vấn', N'Hành động', N'Đúng hạn', '2021-01-01',N'Không', 30000),
-('BD005', 'ML005', 'CT005', 'CT005', N'Vì sao anh đến', N'Tình cảm', N'Đúng hạn', '2019-02-04',N'Không', 18000)
+('BD001', 'ML001', 'CT001', N'Tây Du ký', N'Hành động', N'Trễ hạn', '2020-05-06',N'Không', 10000),
+('BD002', 'ML002', 'CT002', N'The House', N'Kinh dị', N'Đúng hạn', '2018-07-20',N'bị xước', 15000),
+('BD003', 'ML003', 'CT003', N'Kong 2012', N'Viễn tưởng', N'Trễ hạn', '2020-05-15',N'Không', 20000),
+('BD004', 'ML004', 'CT004', N'Diệp Vấn', N'Hành động', N'Đúng hạn', '2021-01-01',N'Không', 30000),
+('BD005', 'ML003', 'CT005', N'Vì sao anh đến', N'Tình cảm', N'Đúng hạn', '2019-02-04',N'Không', 18000)
+insert into ChiTietPhieuThue values
+('PT001','MP001','BD001', 2),
+('PT002','MP002','BD002', 5),
+('PT003','MP003','BD003', 3),
+('PT004','MP004','BD004', 8),
+('PT005','MP005','BD005', 2)
 go

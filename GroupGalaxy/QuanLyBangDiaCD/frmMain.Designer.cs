@@ -33,6 +33,7 @@ namespace QuanLyBangDiaCD
             this.mnuChucNang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangQLBD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangQLNV = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChucNangQuanLyPhieuThue = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@ namespace QuanLyBangDiaCD
             // 
             this.mnuChucNang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuChucNangQLBD,
-            this.mnuChucNangQLNV});
+            this.mnuChucNangQLNV,
+            this.mnuChucNangQuanLyPhieuThue});
             this.mnuChucNang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnuChucNang.Name = "mnuChucNang";
             this.mnuChucNang.Size = new System.Drawing.Size(96, 25);
@@ -61,16 +63,23 @@ namespace QuanLyBangDiaCD
             // mnuChucNangQLBD
             // 
             this.mnuChucNangQLBD.Name = "mnuChucNangQLBD";
-            this.mnuChucNangQLBD.Size = new System.Drawing.Size(206, 26);
+            this.mnuChucNangQLBD.Size = new System.Drawing.Size(212, 26);
             this.mnuChucNangQLBD.Text = "Quản lý băng đĩa";
             this.mnuChucNangQLBD.Click += new System.EventHandler(this.mnuChucNangQLBD_Click);
             // 
             // mnuChucNangQLNV
             // 
             this.mnuChucNangQLNV.Name = "mnuChucNangQLNV";
-            this.mnuChucNangQLNV.Size = new System.Drawing.Size(206, 26);
+            this.mnuChucNangQLNV.Size = new System.Drawing.Size(212, 26);
             this.mnuChucNangQLNV.Text = "Quản lý nhân viên";
             this.mnuChucNangQLNV.Click += new System.EventHandler(this.mnuChucNangQLNV_Click);
+            // 
+            // mnuChucNangQuanLyPhieuThue
+            // 
+            this.mnuChucNangQuanLyPhieuThue.Name = "mnuChucNangQuanLyPhieuThue";
+            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(212, 26);
+            this.mnuChucNangQuanLyPhieuThue.Text = "Quản lý phiếu thuê";
+            this.mnuChucNangQuanLyPhieuThue.Click += new System.EventHandler(this.mnuChucNangQuanLyPhieuThue_Click);
             // 
             // frmMain
             // 
@@ -98,5 +107,6 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQLBD;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQLNV;
+        private System.Windows.Forms.ToolStripMenuItem mnuChucNangQuanLyPhieuThue;
     }
 }

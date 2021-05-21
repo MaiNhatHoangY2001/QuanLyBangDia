@@ -76,4 +76,7 @@
       <Association Name="LoaiBangDia_ThongTinBangDia" Member="LoaiBangDia" ThisKey="maLoai" OtherKey="maLoai" Type="LoaiBangDia" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Function Name="dbo.AUTO_IDCTPT" Method="AUTO_IDCTPT" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
 </Database>

@@ -50,5 +50,72 @@ namespace QuanLyBangDiaCD
             }
             return null;
         }
+        public bool themPhieu(PhieuThue pt)
+        {
+            System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();
+            try
+            {
+                dt.Transaction = item;
+                if (GetPhieuThue(pt.maPhieu) != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    dt.PhieuThues.InsertOnSubmit(pt);
+                    dt.SubmitChanges();
+                    dt.Transaction.Commit();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                dt.Transaction.Rollback();
+                throw new Exception("Lỗi thêm " + ex.Message);
+            }
+        }
+        public bool xoaPhieu(PhieuThue pt)
+        {
+            System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();
+            try
+            {
+                dt.Transaction = item;
+                if (GetPhieuThue(pt.maPhieu) != null)
+                {
+                    dt.PhieuThues.DeleteOnSubmit(pt);
+                    dt.SubmitChanges();
+                    dt.Transaction.Commit();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                dt.Transaction.Rollback();
+                throw new Exception("Lỗi Không xóa được " + ex.Message);
+            }
+        }
+        public bool suaThongTinPT(PhieuThue pt)
+        {
+            System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();
+            try
+            {
+                dt.Transaction = item;
+                IEnumerable<PhieuThue> q = (from n in dt.PhieuThues
+                                                  where n.maPhieu.Equals(pt.maPhieu)
+                                                  select n);
+                q.First().ngayMuon = pt.ngayMuon;
+                q.First().ngayTra = pt.ngayTra;
+                dt.SubmitChanges();
+                dt.Transaction.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                dt.Transaction.Rollback();
+                throw new Exception("Lỗi sửa cd " + ex.Message);
+            }
+        }
     }
 }

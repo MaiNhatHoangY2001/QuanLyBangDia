@@ -138,6 +138,12 @@ namespace QuanLyBangDiaCD
 				return this.GetTable<ThongTinBangDia>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AUTO_IDCTPT", IsComposable=true)]
+		public string AUTO_IDCTPT()
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietPhieuThue")]

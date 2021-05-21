@@ -55,6 +55,18 @@
     <Compile Include="clsLoaiBangDia.cs" />
     <Compile Include="clsNhanVien.cs" />
     <Compile Include="clsPhieuThue.cs" />
+    <Compile Include="frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuThue.Designer.cs">
+      <DependentUpon>frmPhieuThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBangDia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +90,6 @@
     </Compile>
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPhieuThue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhieuThue.Designer.cs">
-      <DependentUpon>frmPhieuThue.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTimKiemKhachHang.cs">
       <SubType>Form</SubType>
@@ -111,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qlCD.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuThue.resx">
+      <DependentUpon>frmPhieuThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBangDia.resx">
       <DependentUpon>frmBangDia.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuThue.resx">
-      <DependentUpon>frmPhieuThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
