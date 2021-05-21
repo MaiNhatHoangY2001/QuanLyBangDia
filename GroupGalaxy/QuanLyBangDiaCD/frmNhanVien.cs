@@ -105,7 +105,7 @@ namespace QuanLyBangDiaCD
                     {
                         viTri = lvwNhanVien.SelectedIndices[i];
                         nv = (NhanVien)lvwNhanVien.Items[viTri].Tag;
-                        dtnv.xoaNhanVien(nv);
+                        
                     }
                     IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
                     loadPhieuVaoListView(lvwNhanVien, dsNV);
@@ -114,17 +114,6 @@ namespace QuanLyBangDiaCD
             }
         }
 
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-            if (lvwNhanVien.SelectedItems.Count > 0)
-            {
-                NhanVien nv = ;
-                dtnv.suaThongTinNhanVien(nv);
-                IEnumerable<NhanVien> dsNV = nv.GetAllNhanVien();
-                loadPhieuVaoListView(lvwNhanVien, dsNV);
-                btnsua.Enabled = false;
-            }
-        }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
