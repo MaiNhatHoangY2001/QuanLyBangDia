@@ -44,5 +44,16 @@ namespace QuanLyBangDiaCD.Properties {
                 return ((string)(this["QuanLyBangDiaConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5MHUIA8\\SQLEXPRESS2019;Initial Catalog=QuanLyBangDia;Integrat" +
+            "ed Security=True")]
+        public string QuanLyBangDiaConnectionString2 {
+            get {
+                return ((string)(this["QuanLyBangDiaConnectionString2"]));
+            }
+        }
     }
 }

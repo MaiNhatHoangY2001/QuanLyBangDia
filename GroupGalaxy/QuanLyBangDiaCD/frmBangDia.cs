@@ -68,7 +68,6 @@ namespace QuanLyBangDiaCD
             lvwDSBangDia.Columns.Add("Tên băng đĩa", 200);
             lvwDSBangDia.Columns.Add("Thể loại", 150);
             lvwDSBangDia.Columns.Add("Loại băng", 100);
-            lvwDSBangDia.Columns.Add("Tình trạng", 100);
             lvwDSBangDia.Columns.Add("Ngày sản xuất", 150);
             lvwDSBangDia.Columns.Add("Ghi chú", 100);
             lvwDSBangDia.Columns.Add("Giá", 100);
@@ -124,7 +123,6 @@ namespace QuanLyBangDiaCD
                 else if (dia.maLoai.Equals("ML004"))
                     ten = "CD-ROM";
                 lvw.SubItems.Add(ten);
-                lvw.SubItems.Add(dia.tinhTrang);
                 DateTime dateTime = DateTime.Parse(dia.ngaySX.ToString());
                 lvw.SubItems.Add(dateTime.ToString("dd/MM/yyyy"));
                 lvw.SubItems.Add(dia.ghiChu);
@@ -145,16 +143,6 @@ namespace QuanLyBangDiaCD
                 txtTenBangDia.Text = dia.tenBangDia;
                 txtTheLoai.Text = dia.theLoai;
                 cboLoai.SelectedItem = dia.LoaiBangDia.tenLoai;
-                if (dia.tinhTrang.Trim().Equals("Đúng hạn"))
-                {
-                    radDungHan.Checked = true;
-                    radTreHan.Checked = false;
-                }
-                else
-                {
-                    radDungHan.Checked = false;
-                    radTreHan.Checked = true;
-                }
                 dtpNgaySX.Text = dia.ngaySX.ToString();
                 txtGhiChu.Text = dia.ghiChu;
                 txtGia.Text = dia.gia.ToString();
@@ -201,16 +189,6 @@ namespace QuanLyBangDiaCD
             dia.maBangDia = txtMaBangDia.Text;
             dia.tenBangDia = txtTenBangDia.Text;
             dia.theLoai = txtTheLoai.Text;
-            String tinhTrang = "";
-            if (radDungHan.Checked == true)
-            {
-                tinhTrang = "Đúng hạn";
-            }
-            else
-            {
-                tinhTrang = "Trễ hạn";
-            }
-            dia.tinhTrang = tinhTrang;
             dia.ngaySX = DateTime.Parse(dtpNgaySX.Text.ToString());
             dia.ghiChu = txtGhiChu.Text;
             dia.gia = decimal.Parse(txtGia.Text);
@@ -233,11 +211,18 @@ namespace QuanLyBangDiaCD
             if (treCongTy.SelectedNode.Level == 1)
             {
                 ThongTinBangDia dia = TaoThongTinBangDia();
-                dtDia.themDia(dia);
-                IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
-                LoadBangDiaToLvw(lvwDSBangDia, dsDia);
-                btnThem.Text = "Thêm";
-                btnLuu.Enabled = false;
+                if (dtDia.themDia(dia))
+                {
+                    IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
+                    LoadBangDiaToLvw(lvwDSBangDia, dsDia);
+                    btnThem.Text = "Thêm";
+                    btnLuu.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Trùng mã băng đĩa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 
@@ -297,6 +282,6 @@ namespace QuanLyBangDiaCD
 
         }
 
-        
+
     }
 }

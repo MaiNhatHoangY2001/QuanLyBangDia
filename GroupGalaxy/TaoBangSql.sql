@@ -1,8 +1,6 @@
 create database QuanLyBangDia
 use QuanLyBangDia
 go
-
-go
 create function PhatSinhMa()
 returns char(5)
 as
@@ -12,8 +10,6 @@ as
 		return @maCTPT
 	end
 go
-go
-
 create table KhachHang
 (
 	maKH char(5) primary key,
@@ -67,14 +63,13 @@ create table ThongTinBangDia
 			on update cascade on delete cascade,
 	tenBangDia nvarchar(60),
 	theLoai nvarchar(60),
-	tinhTrang nvarchar(10),
 	ngaySX Date,
 	ghiChu nvarchar(100),
 	gia money		 
 )	
 create table ChiTietPhieuThue
 (
-	maCTPT char(5) primary key CONSTRAINT IDCTPT DEFAULT DBO.AUTO_IDCTPT(),
+	maCTPT char(5) primary key,
 	maPhieu char(5) foreign key references PhieuThue(maPhieu)
 					on update cascade on delete cascade,
 	maBangDia char(5) foreign key references ThongTinBangDia(maBangDia)
@@ -113,11 +108,11 @@ insert into PhieuThue values
 ('MP004', 'KH004', 'NV005', '2021-05-23','2021-05-28'),
 ('MP005', 'KH005', 'NV004', '2021-05-12','2021-05-20')
 insert into ThongTinBangDia values
-('BD001', 'ML001', 'CT001', N'Tây Du ký', N'Hành động', N'Trễ hạn', '2020-05-06',N'Không', 10000),
-('BD002', 'ML002', 'CT002', N'The House', N'Kinh dị', N'Đúng hạn', '2018-07-20',N'bị xước', 15000),
-('BD003', 'ML003', 'CT003', N'Kong 2012', N'Viễn tưởng', N'Trễ hạn', '2020-05-15',N'Không', 20000),
-('BD004', 'ML004', 'CT004', N'Diệp Vấn', N'Hành động', N'Đúng hạn', '2021-01-01',N'Không', 30000),
-('BD005', 'ML003', 'CT005', N'Vì sao anh đến', N'Tình cảm', N'Đúng hạn', '2019-02-04',N'Không', 18000)
+('BD001', 'ML001', 'CT001', N'Tây Du ký', N'Hành động', '2020-05-06',N'Không', 10000),
+('BD002', 'ML002', 'CT002', N'The House', N'Kinh dị', '2018-07-20',N'bị xước', 15000),
+('BD003', 'ML003', 'CT003', N'Kong 2012', N'Viễn tưởng', '2020-05-15',N'Không', 20000),
+('BD004', 'ML004', 'CT004', N'Diệp Vấn', N'Hành động', '2021-01-01',N'Không', 30000),
+('BD005', 'ML003', 'CT005', N'Vì sao anh đến', N'Tình cảm', '2019-02-04',N'Không', 18000)
 insert into ChiTietPhieuThue values
 ('PT001','MP001','BD001', 2),
 ('PT002','MP002','BD002', 5),

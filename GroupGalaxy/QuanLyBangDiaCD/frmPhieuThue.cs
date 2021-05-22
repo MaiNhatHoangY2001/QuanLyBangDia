@@ -38,7 +38,7 @@ namespace QuanLyBangDiaCD
             lvwDSPhieuThue.LargeImageList = imgLon;
             lvwDSPhieuThue.SmallImageList = imgNho;
             TieuDeLvw(lvwDSPhieuThue);
-            tree = new TreeNode("Danh sách phiếu thuê");
+            tree = new TreeNode("Danh sách Khách hàng");
 
             dtPhieuThue = new clsPhieuThue();
             dtKhachHang = new clsKhachHang();
@@ -49,7 +49,7 @@ namespace QuanLyBangDiaCD
             treKhachHang.ImageList = imgTree;
 
             IEnumerable<ThongTinBangDia> dsBangDia = dtBangDia.GetAllBangDia();
-            truyenVaoCboTenBangDia(cboTenBangDia,dsBangDia);
+            truyenVaoCboTenBangDia(cboTenBangDia, dsBangDia);
             IEnumerable<NhanVien> dsNhanVien = dtNhanVien.GetAllNhanVien();
             truyenVaoCboTenNhanVien(cboTenNV, dsNhanVien);
 
@@ -99,6 +99,7 @@ namespace QuanLyBangDiaCD
             lvwDSPhieuThue.Columns.Add("Mã phiếu thuê", 150);
             lvwDSPhieuThue.Columns.Add("Tên băng đĩa", 200);
             lvwDSPhieuThue.Columns.Add("Loại băng đĩa", 150);
+            lvwDSPhieuThue.Columns.Add("Giá", 100);
             lvwDSPhieuThue.Columns.Add("Số lượng", 100);
             lvwDSPhieuThue.Columns.Add("Ngày mượn", 100);
             lvwDSPhieuThue.Columns.Add("Ngày trả", 100);
@@ -125,13 +126,18 @@ namespace QuanLyBangDiaCD
                 }
                 dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(strMaKH);
                 strtenKH = treKhachHang.SelectedNode.Text;
+                LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
                 if (strtenKH.Equals("Danh sách Khách hàng"))
                 {
                     txtKhachHang.Text = "Tất cả khách hàng";
                 }
                 else
+                {
                     txtKhachHang.Text = strtenKH;
-                LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
+
+                }
+
+
             }
         }
 
@@ -139,11 +145,13 @@ namespace QuanLyBangDiaCD
         {
             lvwDSPhieuThue.Items.Clear();
             ListViewItem lvw;
+            decimal tongTien = 0;
             foreach (dynamic pt in dsPhieuThue)
             {
                 lvw = new ListViewItem(pt.maPhieu);
                 lvw.SubItems.Add(pt.tenBangDia.ToString());
                 lvw.SubItems.Add(pt.tenLoai.ToString());
+                lvw.SubItems.Add(string.Format("{0:#,000} VNĐ", Convert.ToDecimal(pt.gia.ToString())));
                 lvw.SubItems.Add(pt.soLuong.ToString());
                 DateTime dateTime1 = DateTime.Parse(pt.ngayMuon.ToString());
                 lvw.SubItems.Add(dateTime1.ToString("dd/MM/yyyy"));
@@ -153,7 +161,9 @@ namespace QuanLyBangDiaCD
                 lvw.Tag = pt;
                 lvw.ImageIndex = 0;
                 lvwDSPhieuThue.Items.Add(lvw);
+                tongTien += pt.gia * pt.soLuong;
             }
+            txtThanhTien.Text = string.Format("{0:#,000} VNĐ", Convert.ToDecimal(tongTien.ToString()));
         }
         private void lvwDSPhieuThue_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -218,12 +228,20 @@ namespace QuanLyBangDiaCD
             {
                 PhieuThue pt = TaoThongTinPhieuThue();
                 ChiTietPhieuThue ctpt = TaoThongTinChiTietPhieuThue();
-                dtPhieuThue.themPhieu(pt);
                 dtCTPT.themCTPhieu(ctpt);
-                IEnumerable<dynamic> dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
-                LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
-                btnThem.Text = "Thêm";
-                btnLuu.Enabled = false;
+                if (dtPhieuThue.themPhieu(pt))
+                {
+                    IEnumerable<dynamic> dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
+                    LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
+                    btnThem.Text = "Thêm";
+                    btnLuu.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Trùng mã phiếu thuê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
             }
         }
 
@@ -296,6 +314,11 @@ namespace QuanLyBangDiaCD
                 IEnumerable<KhachHang> dsKH = dtKhachHang.GetAllKhachHang();
                 LoadKhachHangToTree(treKhachHang, dsKH);
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

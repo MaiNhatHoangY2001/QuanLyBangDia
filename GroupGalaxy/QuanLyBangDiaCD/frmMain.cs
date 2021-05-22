@@ -78,6 +78,17 @@ namespace QuanLyBangDiaCD
                 frm.Show();
             }
         }
+
+        private void mnuChucNangTimKiemKhachHang_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTonTaiForm("frmTimKiemKhachHang") == false)
+            {
+                frmTimKiemKhachHang frm = new frmTimKiemKhachHang();
+                frm.MdiParent = this;
+                frm.Name = "frmTimKiemKhachHang";
+                frm.Show();
+            }
+        }
     }
 }
 

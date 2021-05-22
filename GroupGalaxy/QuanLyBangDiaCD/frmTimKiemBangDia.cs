@@ -87,7 +87,6 @@ namespace QuanLyBangDiaCD
             lvwItem.SubItems.Add(bd.maCongTy);
             lvwItem.SubItems.Add(bd.tenBangDia);
             lvwItem.SubItems.Add(bd.theLoai);
-            lvwItem.SubItems.Add(bd.tinhTrang);
             lvwItem.SubItems.Add(bd.ngaySX.ToString());
             lvwItem.SubItems.Add(bd.ghiChu);
             lvwItem.SubItems.Add(bd.gia.ToString());

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyBangDia" Class="qlCDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5MHUIA8\SQLEXPRESS2019;Initial Catalog=QuanLyBangDia;User ID=sa" SettingsObjectName="QuanLyBangDiaCD.Properties.Settings" SettingsPropertyName="QuanLyBangDiaConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5MHUIA8\SQLEXPRESS2019;Initial Catalog=QuanLyBangDia;Integrated Security=True" SettingsObjectName="QuanLyBangDiaCD.Properties.Settings" SettingsPropertyName="QuanLyBangDiaConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietPhieuThue" Member="ChiTietPhieuThues">
     <Type Name="ChiTietPhieuThue">
       <Column Name="maCTPT" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -67,7 +67,6 @@
       <Column Name="maCongTy" Type="System.String" DbType="Char(5)" CanBeNull="true" />
       <Column Name="tenBangDia" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
       <Column Name="theLoai" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
-      <Column Name="tinhTrang" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="ngaySX" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />

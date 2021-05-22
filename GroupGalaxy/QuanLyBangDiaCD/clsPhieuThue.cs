@@ -36,7 +36,7 @@ namespace QuanLyBangDiaCD
                         join nv in dt.NhanViens on pt.maNV equals nv.maNV
                         join bd in dt.ThongTinBangDias on ctpt.maBangDia equals bd.maBangDia
                         join lbd in dt.LoaiBangDias on bd.maLoai equals lbd.maLoai
-                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV };
+                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV, bd.gia};
                 return q;
             }
             else
@@ -48,7 +48,7 @@ namespace QuanLyBangDiaCD
                         join bd in dt.ThongTinBangDias on ctpt.maBangDia equals bd.maBangDia
                         join lbd in dt.LoaiBangDias on bd.maLoai equals lbd.maLoai
                         where pt.maKH.Equals(maKhachHang)
-                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV };
+                        select new { pt.maPhieu, bd.tenBangDia, lbd.tenLoai, ctpt.soLuong, pt.ngayMuon, pt.ngayTra, nv.hoTenNV, bd.gia };
                 return q;
             }
 
@@ -134,5 +134,6 @@ namespace QuanLyBangDiaCD
                 throw new Exception("Lỗi sửa cd " + ex.Message);
             }
         }
+   
     }
 }

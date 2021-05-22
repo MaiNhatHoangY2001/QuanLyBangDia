@@ -39,7 +39,7 @@ namespace QuanLyBangDiaCD
             return nv;
         }
 
-        public NhanVien GetNhaVien(string maNhanVien)
+        public NhanVien GetNhanVien(string maNhanVien)
         {
             NhanVien nv = (from n in dt.NhanViens
                            where n.maNV.Equals(maNhanVien)
@@ -69,12 +69,13 @@ namespace QuanLyBangDiaCD
             dt.Transaction = item;
             try
             {
-                if (GetNhaVien(nv.maNV) != null)
+                if (GetNhanVien(nv.maNV) != null)
                 {
                     return false;
                 }
                 else
                 {
+                    dt.NhanViens.InsertOnSubmit(nv);
                     dt.SubmitChanges();
                     dt.Transaction.Commit();
                     return true;
@@ -97,6 +98,12 @@ namespace QuanLyBangDiaCD
                 IEnumerable<NhanVien> q = (from n in dt.NhanViens
                                            where n.maNV.Equals(nv.maNV)
                                            select n);
+                q.First().caLamViec = nv.caLamViec;
+                q.First().diaChi = nv.diaChi;
+                q.First().gioiTinh = nv.gioiTinh;
+                q.First().hoTenNV = nv.hoTenNV;
+                q.First().luong = nv.luong;
+                q.First().SDT = nv.SDT;
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
                 return true;
@@ -114,7 +121,7 @@ namespace QuanLyBangDiaCD
             try
             {
                 dt.Transaction = item;
-                if (GetNhaVien(nv.maNV) != null)
+                if (GetNhanVien(nv.maNV) != null)
                 {
                     dt.NhanViens.DeleteOnSubmit(nv);
                     dt.SubmitChanges();

@@ -55,7 +55,9 @@ namespace QuanLyBangDiaCD
             this.label14 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.txtKhachHang = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
@@ -170,7 +172,9 @@ namespace QuanLyBangDiaCD
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label3);
+            this.groupBox6.Controls.Add(this.txtThanhTien);
             this.groupBox6.Controls.Add(this.txtKhachHang);
+            this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,15 +353,35 @@ namespace QuanLyBangDiaCD
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày mượn";
             // 
+            // txtThanhTien
+            // 
+            this.txtThanhTien.Enabled = false;
+            this.txtThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhTien.Location = new System.Drawing.Point(611, 226);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
+            this.txtThanhTien.Size = new System.Drawing.Size(253, 29);
+            this.txtThanhTien.TabIndex = 3;
+            // 
             // txtKhachHang
             // 
             this.txtKhachHang.Enabled = false;
             this.txtKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhachHang.Location = new System.Drawing.Point(353, 226);
+            this.txtKhachHang.Location = new System.Drawing.Point(186, 226);
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.ReadOnly = true;
-            this.txtKhachHang.Size = new System.Drawing.Size(253, 29);
+            this.txtKhachHang.Size = new System.Drawing.Size(235, 29);
             this.txtKhachHang.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(449, 232);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Thành tiền";
             // 
             // label6
             // 
@@ -373,7 +397,7 @@ namespace QuanLyBangDiaCD
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(229, 232);
+            this.label2.Location = new System.Drawing.Point(28, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
@@ -383,20 +407,20 @@ namespace QuanLyBangDiaCD
             // 
             this.imgLon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLon.ImageStream")));
             this.imgLon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgLon.Images.SetKeyName(0, "folderCD.ico");
+            this.imgLon.Images.SetKeyName(0, "bill.ico");
             // 
             // imgNho
             // 
             this.imgNho.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgNho.ImageStream")));
             this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgNho.Images.SetKeyName(0, "cd.ico");
+            this.imgNho.Images.SetKeyName(0, "bill.ico");
             // 
             // imgTree
             // 
             this.imgTree.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgTree.ImageStream")));
             this.imgTree.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgTree.Images.SetKeyName(0, "icons8-company-open.ico");
-            this.imgTree.Images.SetKeyName(1, "icons8-company-close.ico");
+            this.imgTree.Images.SetKeyName(0, "customer-off.ico");
+            this.imgTree.Images.SetKeyName(1, "customer-on.ico");
             // 
             // frmPhieuThue
             // 
@@ -460,5 +484,7 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboTenBangDia;
         private System.Windows.Forms.ComboBox cboTenNV;
+        private System.Windows.Forms.TextBox txtThanhTien;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -29,6 +29,7 @@ namespace QuanLyBangDiaCD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@ namespace QuanLyBangDiaCD
             this.txtTenDangNhap.Location = new System.Drawing.Point(230, 38);
             this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 30);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 26);
             this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.Text = "ABC";
             // 
@@ -51,7 +52,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(72, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -60,7 +61,7 @@ namespace QuanLyBangDiaCD
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(72, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -69,7 +70,7 @@ namespace QuanLyBangDiaCD
             this.txtMatKhau.Location = new System.Drawing.Point(230, 110);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(274, 30);
+            this.txtMatKhau.Size = new System.Drawing.Size(274, 26);
             this.txtMatKhau.TabIndex = 0;
             this.txtMatKhau.Text = "123";
             // 
@@ -95,7 +96,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 275);
             this.ControlBox = false;
@@ -107,6 +108,7 @@ namespace QuanLyBangDiaCD
             this.Controls.Add(this.txtTenDangNhap);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

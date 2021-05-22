@@ -96,7 +96,6 @@ namespace QuanLyBangDiaCD
                                                   select n);
                 q.First().tenBangDia = diaSua.tenBangDia;
                 q.First().theLoai = diaSua.theLoai;
-                q.First().tinhTrang = diaSua.tinhTrang;
                 q.First().ngaySX = diaSua.ngaySX;
                 q.First().LoaiBangDia = dt.LoaiBangDias.Single(p => p.maLoai == diaSua.maLoai);
                 q.First().gia = diaSua.gia;

@@ -54,7 +54,7 @@ namespace QuanLyBangDiaCD
     #endregion
 		
 		public qlCDDataContext() : 
-				base(global::QuanLyBangDiaCD.Properties.Settings.Default.QuanLyBangDiaConnectionString1, mappingSource)
+				base(global::QuanLyBangDiaCD.Properties.Settings.Default.QuanLyBangDiaConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1342,8 +1342,6 @@ namespace QuanLyBangDiaCD
 		
 		private string _theLoai;
 		
-		private string _tinhTrang;
-		
 		private System.Nullable<System.DateTime> _ngaySX;
 		
 		private string _ghiChu;
@@ -1370,8 +1368,6 @@ namespace QuanLyBangDiaCD
     partial void OntenBangDiaChanged();
     partial void OntheLoaiChanging(string value);
     partial void OntheLoaiChanged();
-    partial void OntinhTrangChanging(string value);
-    partial void OntinhTrangChanged();
     partial void OnngaySXChanging(System.Nullable<System.DateTime> value);
     partial void OnngaySXChanged();
     partial void OnghiChuChanging(string value);
@@ -1492,26 +1488,6 @@ namespace QuanLyBangDiaCD
 					this._theLoai = value;
 					this.SendPropertyChanged("theLoai");
 					this.OntheLoaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="NVarChar(10)")]
-		public string tinhTrang
-		{
-			get
-			{
-				return this._tinhTrang;
-			}
-			set
-			{
-				if ((this._tinhTrang != value))
-				{
-					this.OntinhTrangChanging(value);
-					this.SendPropertyChanging();
-					this._tinhTrang = value;
-					this.SendPropertyChanged("tinhTrang");
-					this.OntinhTrangChanged();
 				}
 			}
 		}

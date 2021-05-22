@@ -31,7 +31,7 @@ namespace QuanLyBangDiaCD
             lvw.FullRowSelect = true;
         }
 
-        private void loadPhieuVaoListView(ListView lvwNhanVien, IEnumerable<NhanVien> dsNV)
+        private void loadNhanVienListView(ListView lvwNhanVien, IEnumerable<NhanVien> dsNV)
         {
             lvwNhanVien.Items.Clear();
             ListViewItem lvw;
@@ -52,13 +52,15 @@ namespace QuanLyBangDiaCD
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-
             dtnv = new clsNhanVien();
             TaoTieuDeCotNV(lvwNhanVien);
             IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
-            loadPhieuVaoListView(lvwNhanVien, dsNV);
+            loadNhanVienListView(lvwNhanVien, dsNV);
             txtTim.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtTim.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void cboLoaiTim_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace QuanLyBangDiaCD
 
             dsNV = dtnv.GetAllNhanVien();
             txtTim.AutoCompleteCustomSource.Clear();
-            if(cboLoaiTim.Text=="Tìm theo mã nhân viên")
+            if (cboLoaiTim.Text == "Tìm theo mã nhân viên")
             {
                 foreach (NhanVien nv in dsNV)
                 {
@@ -89,10 +91,6 @@ namespace QuanLyBangDiaCD
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lvwNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,7 +101,25 @@ namespace QuanLyBangDiaCD
                 nv = (NhanVien)lvwNhanVien.SelectedItems[0].Tag;
                 txtMaNV.Text = nv.maNV;
                 txtHoTenNV.Text = nv.hoTenNV;
-                radCa1.Checked = true;
+                int ca = (int)nv.caLamViec;
+                if (ca == 1)
+                {
+                    radCa1.Checked = true;
+                    radCa2.Checked = false;
+                    radCa3.Checked = false;
+                }
+                else if (ca == 2)
+                {
+                    radCa1.Checked = false;
+                    radCa2.Checked = true;
+                    radCa3.Checked = false;
+                }
+                else
+                {
+                    radCa1.Checked = false;
+                    radCa2.Checked = false;
+                    radCa3.Checked = true;
+                }
                 if (nv.gioiTinh.Trim().Equals("Nam"))
                 {
                     radNamNV.Checked = true;
@@ -114,10 +130,19 @@ namespace QuanLyBangDiaCD
                     radNamNV.Checked = false;
                     radNuNV.Checked = true;
                 }
+
                 txtDiaChiNV.Text = nv.diaChi;
                 txtLuongNV.Text = nv.luong.ToString();
-
+                txtSDT.Text = nv.SDT;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
             }
+            else
+            {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -134,31 +159,50 @@ namespace QuanLyBangDiaCD
                     {
                         viTri = lvwNhanVien.SelectedIndices[i];
                         nv = (NhanVien)lvwNhanVien.Items[viTri].Tag;
-                        
+                        dtnv.RemoveNhanVien(nv);
                     }
                     IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
-                    loadPhieuVaoListView(lvwNhanVien, dsNV);
+                    loadNhanVienListView(lvwNhanVien, dsNV);
                 }
-
+                btnXoa.Enabled = false;
             }
         }
 
 
-        private void btnthem_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-
-            frmNhanVien frm = new QuanLyBangDiaCD.frmNhanVien();
-            if (frm.ShowDialog() == DialogResult.OK)
+            NhanVien nv = TaoThongTinNhanVien();
+            if (dtnv.AddNhanVien(nv))
             {
                 IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
-                loadPhieuVaoListView(lvwNhanVien, dsNV);
-
+                loadNhanVienListView(lvwNhanVien, dsNV);
             }
+            else
+            {
+                MessageBox.Show("Trùng mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private NhanVien TaoThongTinNhanVien()
         {
-
+            NhanVien nv = new NhanVien();
+            nv.maNV = txtMaNV.Text;
+            nv.luong = decimal.Parse(txtLuongNV.Text);
+            nv.hoTenNV = txtHoTenNV.Text;
+            if (radNamNV.Checked)
+                nv.gioiTinh = "Nam";
+            else
+                nv.gioiTinh = "Nữ";
+            nv.SDT = txtSDT.Text;
+            nv.diaChi = txtDiaChiNV.Text;
+            if (radCa1.Checked)
+                nv.caLamViec = 1;
+            else if (radCa2.Checked)
+                nv.caLamViec = 2;
+            else
+                nv.caLamViec = 3;
+            return nv;
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -184,7 +228,7 @@ namespace QuanLyBangDiaCD
             for (int i = 0; i < lvwNhanVien.Items.Count; i++)
             {
                 nv = (NhanVien)lvwNhanVien.Items[i].Tag;
-                if (cboLoaiTim.Text=="Tìm theo mã nhân viên")
+                if (cboLoaiTim.Text == "Tìm theo mã nhân viên")
                 {
                     if (nv.maNV.Equals(strThongTinTim))
                         return i;
@@ -196,6 +240,26 @@ namespace QuanLyBangDiaCD
                 }
             }
             return -1;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            NhanVien nv = TaoThongTinNhanVien();
+            dtnv.UpdateNhanVien(nv);
+            IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
+            loadNhanVienListView(lvwNhanVien, dsNV);
+            btnSua.Enabled = false;
+        }
+
+        private void btnXoaRong_Click(object sender, EventArgs e)
+        {
+            txtDiaChiNV.Clear();
+            txtHoTenNV.Clear();
+            txtLuongNV.Clear();
+            txtMaNV.Clear();
+            txtSDT.Clear();
+            txtTim.Clear();
+            txtMaNV.Focus();
         }
     }
 }
