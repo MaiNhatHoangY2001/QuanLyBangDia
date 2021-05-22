@@ -43,7 +43,7 @@ namespace QuanLyBangDiaCD
                 lvw.SubItems.Add(nv.diaChi);
                 lvw.SubItems.Add(nv.SDT);
                 lvw.SubItems.Add(nv.caLamViec.ToString());
-                lvw.SubItems.Add(nv.luong.ToString());
+                lvw.SubItems.Add(string.Format("{0:#,000} VNĐ", Convert.ToDecimal(nv.luong.ToString()))); 
                 lvw.Tag = nv;
                 lvw.ImageIndex = 0;
                 lvwNhanVien.Items.Add(lvw);
