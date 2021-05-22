@@ -67,6 +67,17 @@ namespace QuanLyBangDiaCD
                 frm.Show();
             }
         }
+
+        private void mnuTimKiemBD_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTonTaiForm("frmTimKiemBangDia") == false)
+            {
+                frmTimKiemBangDia frm = new frmTimKiemBangDia();
+                frm.MdiParent = this;
+                frm.Name = "frmTimKiemBangDia";
+                frm.Show();
+            }
+        }
     }
 }
 

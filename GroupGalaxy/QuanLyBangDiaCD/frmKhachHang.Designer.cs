@@ -46,6 +46,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.dgrKhachHang = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorKhachHang)).BeginInit();
             this.bindingNavigatorKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhachHang)).BeginInit();
@@ -69,6 +70,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorKhachHang.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigatorKhachHang.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigatorKhachHang.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigatorKhachHang.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.bindingNavigatorKhachHang.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -82,14 +84,14 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.btnLuu});
-            this.bindingNavigatorKhachHang.Location = new System.Drawing.Point(0, 500);
+            this.bindingNavigatorKhachHang.Location = new System.Drawing.Point(0, 527);
             this.bindingNavigatorKhachHang.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorKhachHang.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigatorKhachHang.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigatorKhachHang.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorKhachHang.Name = "bindingNavigatorKhachHang";
             this.bindingNavigatorKhachHang.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorKhachHang.Size = new System.Drawing.Size(838, 25);
+            this.bindingNavigatorKhachHang.Size = new System.Drawing.Size(838, 31);
             this.bindingNavigatorKhachHang.TabIndex = 2;
             this.bindingNavigatorKhachHang.Text = "bindingNavigator1";
             // 
@@ -99,13 +101,13 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -115,7 +117,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -124,7 +126,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -133,19 +135,18 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -154,7 +155,7 @@ namespace QuanLyBangDiaCD
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -162,7 +163,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -171,13 +172,13 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // btnLuu
             // 
@@ -185,7 +186,7 @@ namespace QuanLyBangDiaCD
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(23, 22);
+            this.btnLuu.Size = new System.Drawing.Size(28, 28);
             this.btnLuu.Text = "Lưu khách hàng";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -197,11 +198,22 @@ namespace QuanLyBangDiaCD
             this.dgrKhachHang.Size = new System.Drawing.Size(837, 398);
             this.dgrKhachHang.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(352, 527);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Tìm KH";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 525);
+            this.ClientSize = new System.Drawing.Size(838, 558);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgrKhachHang);
             this.Controls.Add(this.bindingNavigatorKhachHang);
             this.Controls.Add(this.label1);
@@ -240,5 +252,6 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView dgrKhachHang;
         private System.Windows.Forms.ToolStripButton btnLuu;
+        private System.Windows.Forms.Button button1;
     }
 }

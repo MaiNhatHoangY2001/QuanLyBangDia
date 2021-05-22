@@ -148,7 +148,7 @@ namespace QuanLyBangDiaCD
             this.radTua.TabStop = true;
             this.radTua.Text = "Tìm theo tựa băng đĩa";
             this.radTua.UseVisualStyleBackColor = true;
-            this.radTua.CheckedChanged += new System.EventHandler(this.radTenNhanVien_CheckedChanged);
+//this.radTua.CheckedChanged += new System.EventHandler(this.radTenNhanVien_CheckedChanged);
             // 
             // radMaBD
             // 

@@ -21,12 +21,11 @@ namespace QuanLyBangDiaCD
         {
             lvw.Columns.Add("Mã nhân viên", 100);
             lvw.Columns.Add("Họ tên", 100);
+            lvw.Columns.Add("giới tính", 50);
+            lvw.Columns.Add("Địa chỉ", 300);
             lvw.Columns.Add("Số điện thoại", 200);
-            lvw.Columns.Add("giới tính", 200);
-            lvw.Columns.Add("Địa chỉ", 100);
-            lvw.Columns.Add("Lương", 100);
-            lvw.Columns.Add("Ca làm việc", 100);
-
+            lvw.Columns.Add("Ca làm việc", 50);
+            lvw.Columns.Add("Lương", 150);
             lvw.View = View.Details;
             lvw.GridLines = true;
             lvw.FullRowSelect = true;
@@ -58,6 +57,36 @@ namespace QuanLyBangDiaCD
             TaoTieuDeCotNV(lvwNhanVien);
             IEnumerable<NhanVien> dsNV = dtnv.GetAllNhanVien();
             loadPhieuVaoListView(lvwNhanVien, dsNV);
+            txtTim.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTim.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        private void cboLoaiTim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XuLyHoTroAutocomlet();
+        }
+
+        private void XuLyHoTroAutocomlet()
+        {
+            string maNV;
+            IEnumerable<NhanVien> dsNV;
+
+            dsNV = dtnv.GetAllNhanVien();
+            txtTim.AutoCompleteCustomSource.Clear();
+            if(cboLoaiTim.Text=="Tìm theo mã nhân viên")
+            {
+                foreach (NhanVien nv in dsNV)
+                {
+                    txtTim.AutoCompleteCustomSource.Add(nv.maNV);
+                }
+            }
+            else
+            {
+                foreach (NhanVien nv in dsNV)
+                {
+                    txtTim.AutoCompleteCustomSource.Add(nv.hoTenNV);
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -125,6 +154,48 @@ namespace QuanLyBangDiaCD
                 loadPhieuVaoListView(lvwNhanVien, dsNV);
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string strThongTinTim = txtTim.Text;
+            int viTriTim = TimKiem(strThongTinTim);
+            int viTriChonTruoc;
+            if (viTriTim >= 0)
+            {
+                if (lvwNhanVien.SelectedItems.Count > 0)
+                {
+                    viTriChonTruoc = lvwNhanVien.SelectedIndices[0];
+                    lvwNhanVien.Items[viTriChonTruoc].Selected = false;
+                }
+                lvwNhanVien.Items[viTriTim].Selected = true;
+                lvwNhanVien.Focus();
+            }
+        }
+
+        private int TimKiem(string strThongTinTim)
+        {
+            NhanVien nv;
+            for (int i = 0; i < lvwNhanVien.Items.Count; i++)
+            {
+                nv = (NhanVien)lvwNhanVien.Items[i].Tag;
+                if (cboLoaiTim.Text=="Tìm theo mã nhân viên")
+                {
+                    if (nv.maNV.Equals(strThongTinTim))
+                        return i;
+                }
+                else
+                {
+                    if (nv.hoTenNV.Equals(strThongTinTim))
+                        return i;
+                }
+            }
+            return -1;
         }
     }
 }

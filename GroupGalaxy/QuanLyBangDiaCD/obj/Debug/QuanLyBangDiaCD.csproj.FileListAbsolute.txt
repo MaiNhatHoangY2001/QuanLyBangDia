@@ -34,3 +34,20 @@ D:\HOC_TAP\Nam 2-HK2\C#\New folder\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanL
 D:\HOC_TAP\Nam 2-HK2\C#\New folder\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
 D:\HOC_TAP\Nam 2-HK2\C#\New folder\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
 D:\HOC_TAP\Nam 2-HK2\C#\New folder\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe.config
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csprojResolveAssemblyReference.cache
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmKhachHang.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmPhieuThue.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmBangDia.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmCongTy.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmLogin.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmNhanVien.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmMain.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemKhachHang.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.Properties.Resources.resources
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.GenerateResource.Cache
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe
+C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.pdb

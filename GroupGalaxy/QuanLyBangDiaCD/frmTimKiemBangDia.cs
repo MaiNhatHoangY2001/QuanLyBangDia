@@ -41,7 +41,7 @@ namespace QuanLyBangDiaCD
             lvw.Columns.Add("Mã Băng đĩa", 100);
             lvw.Columns.Add("Mã Loại", 100);
             lvw.Columns.Add("Mã Công ty", 100);
-            lvw.Columns.Add("mã CTPT", 200);
+           // lvw.Columns.Add("mã CTPT", 200);
             lvw.Columns.Add("Tựa", 200);
             lvw.Columns.Add("Thể loại", 100);
             lvw.Columns.Add("Tình trạng", 100);
@@ -101,20 +101,20 @@ namespace QuanLyBangDiaCD
             XuLyHoTroAutocomlet();
         }
 
-        private void radTenNhanVien_CheckedChanged(object sender, EventArgs e)
-        {
-            XuLyHoTroAutocomlet();
-        }
+        //private void radTenNhanVien_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    XuLyHoTroAutocomlet();
+        //}
 
         private void XuLyHoTroAutocomlet()
         {
-            string maPhong;
+            string maBD;
 
             IEnumerable<ThongTinBangDia> dsBD;
             if (lstCongTy.SelectedIndex >= 0)
             {
-                maPhong = lstCongTy.SelectedValue.ToString();
-                dsBD = bd.GetBangDiaThuocCongTy(maPhong);
+                maBD = lstCongTy.SelectedValue.ToString();
+                dsBD = bd.GetBangDiaThuocCongTy(maBD);
                 txtTimKiem.AutoCompleteCustomSource.Clear();
                 if (radMaBD.Checked)
                 {
@@ -123,7 +123,7 @@ namespace QuanLyBangDiaCD
                         txtTimKiem.AutoCompleteCustomSource.Add(bd.maBangDia);
                     }
                 }
-                else//theo CPU
+                else
                 {
                     foreach (ThongTinBangDia bd in dsBD)
                     {

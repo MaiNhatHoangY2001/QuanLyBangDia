@@ -13,11 +13,43 @@ namespace QuanLyBangDiaCD
 
         public Login(string tenDN, string matKhau)
         {
-            this.TenDN = tenDN;
-            this.MatKhau = matKhau;
+            this.tenDN = tenDN;
+            this.matKhau = matKhau;
         }
 
-        public string TenDN { get => tenDN; set => tenDN = value; }
-        public string MatKhau { get => matKhau; set => matKhau = value; }
+        public string TenDN
+        {
+            get
+            {
+                return tenDN;
+            }
+
+            set
+            {
+                tenDN = value;
+            }
+        }
+
+        public string MatKhau
+        {
+            get
+            {
+                return matKhau;
+            }
+
+            set
+            {
+                matKhau = value;
+            }
+        }
+
+        //public Login(string tenDN, string matKhau)
+        //{
+        //    this.TenDN = tenDN;
+        //    this.MatKhau = matKhau;
+        //}
+
+        //public string TenDN { get => tenDN; set => tenDN = value; }
+        //public string MatKhau { get => matKhau; set => matKhau = value; }
     }
 }

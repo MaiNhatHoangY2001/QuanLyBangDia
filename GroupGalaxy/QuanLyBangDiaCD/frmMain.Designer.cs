@@ -34,6 +34,7 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQLBD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangQLNV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangQuanLyPhieuThue = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTimKiemBD = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@ namespace QuanLyBangDiaCD
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1501, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1501, 44);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -54,36 +55,44 @@ namespace QuanLyBangDiaCD
             this.mnuChucNang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuChucNangQLBD,
             this.mnuChucNangQLNV,
-            this.mnuChucNangQuanLyPhieuThue});
+            this.mnuChucNangQuanLyPhieuThue,
+            this.mnuTimKiemBD});
             this.mnuChucNang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnuChucNang.Name = "mnuChucNang";
-            this.mnuChucNang.Size = new System.Drawing.Size(96, 25);
+            this.mnuChucNang.Size = new System.Drawing.Size(142, 36);
             this.mnuChucNang.Text = "Chức năng";
             // 
             // mnuChucNangQLBD
             // 
             this.mnuChucNangQLBD.Name = "mnuChucNangQLBD";
-            this.mnuChucNangQLBD.Size = new System.Drawing.Size(212, 26);
+            this.mnuChucNangQLBD.Size = new System.Drawing.Size(309, 36);
             this.mnuChucNangQLBD.Text = "Quản lý băng đĩa";
             this.mnuChucNangQLBD.Click += new System.EventHandler(this.mnuChucNangQLBD_Click);
             // 
             // mnuChucNangQLNV
             // 
             this.mnuChucNangQLNV.Name = "mnuChucNangQLNV";
-            this.mnuChucNangQLNV.Size = new System.Drawing.Size(212, 26);
+            this.mnuChucNangQLNV.Size = new System.Drawing.Size(309, 36);
             this.mnuChucNangQLNV.Text = "Quản lý nhân viên";
             this.mnuChucNangQLNV.Click += new System.EventHandler(this.mnuChucNangQLNV_Click);
             // 
             // mnuChucNangQuanLyPhieuThue
             // 
             this.mnuChucNangQuanLyPhieuThue.Name = "mnuChucNangQuanLyPhieuThue";
-            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(212, 26);
+            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(309, 36);
             this.mnuChucNangQuanLyPhieuThue.Text = "Quản lý phiếu thuê";
             this.mnuChucNangQuanLyPhieuThue.Click += new System.EventHandler(this.mnuChucNangQuanLyPhieuThue_Click);
             // 
+            // mnuTimKiemBD
+            // 
+            this.mnuTimKiemBD.Name = "mnuTimKiemBD";
+            this.mnuTimKiemBD.Size = new System.Drawing.Size(309, 36);
+            this.mnuTimKiemBD.Text = "Tìm kiếm băng đĩa";
+            this.mnuTimKiemBD.Click += new System.EventHandler(this.mnuTimKiemBD_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1501, 789);
             this.Controls.Add(this.menuStrip1);
@@ -108,5 +117,6 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQLBD;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQLNV;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQuanLyPhieuThue;
+        private System.Windows.Forms.ToolStripMenuItem mnuTimKiemBD;
     }
 }
