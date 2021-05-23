@@ -19,6 +19,17 @@ namespace QuanLyBangDiaCD
                                     select n;
             return q;
         }
+        public bool checkCongTy(string maCT)
+        {
+            CongTy pt = (from n in dt.CongTies
+                                   where n.maCongTy.Equals(maCT)
+                                   select n).FirstOrDefault();
+            if (pt != null)
+            {
+                return true;
+            }
+            return false;
+        }
         public bool LuuTru()
         {
             System.Data.Common.DbTransaction item = dt.Connection.BeginTransaction();

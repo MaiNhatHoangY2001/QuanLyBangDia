@@ -45,6 +45,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
+            this.btnReset = new System.Windows.Forms.ToolStripButton();
             this.dgrKhachHang = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorKhachHang)).BeginInit();
@@ -84,7 +85,8 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.btnLuu});
+            this.btnLuu,
+            this.btnReset});
             this.bindingNavigatorKhachHang.Location = new System.Drawing.Point(0, 527);
             this.bindingNavigatorKhachHang.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorKhachHang.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -108,7 +110,7 @@ namespace QuanLyBangDiaCD
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -192,18 +194,31 @@ namespace QuanLyBangDiaCD
             this.btnLuu.Text = "Lưu khách hàng";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(28, 28);
+            this.btnReset.Text = "Bỏ edit";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
+            // 
             // dgrKhachHang
             // 
+            this.dgrKhachHang.AllowUserToAddRows = false;
+            this.dgrKhachHang.AllowUserToOrderColumns = true;
             this.dgrKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrKhachHang.Location = new System.Drawing.Point(0, 102);
             this.dgrKhachHang.Name = "dgrKhachHang";
             this.dgrKhachHang.RowHeadersWidth = 51;
             this.dgrKhachHang.Size = new System.Drawing.Size(837, 398);
             this.dgrKhachHang.TabIndex = 3;
+            this.dgrKhachHang.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.ValidateByRow);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(352, 527);
+            this.button1.Location = new System.Drawing.Point(377, 527);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 31);
             this.button1.TabIndex = 4;
@@ -213,7 +228,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 558);
             this.Controls.Add(this.button1);
@@ -257,5 +272,6 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.DataGridView dgrKhachHang;
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripButton btnReset;
     }
 }
