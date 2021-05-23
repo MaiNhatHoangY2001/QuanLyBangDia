@@ -56,35 +56,5 @@ namespace QuanLyBangDiaCD
             p.LuuTru();
             this.DialogResult = DialogResult.OK;
         }
-
-        private void dgrCongTy_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgrCongTy_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dgrCongTy_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            dgrCongTy.EditingControl.KeyPress -= EditingControl_KeyPress;
-            dgrCongTy.EditingControl.KeyPress += EditingControl_KeyPress;
-        }
-
-        private string patter = "^(CT[0-9]{3})$";
-
-        private void EditingControl_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar))
-            {
-                Control control = (Control)sender;
-                if (!Regex.IsMatch(control.Text + e.KeyChar, patter)) 
-                {
-                    e.Handled = true;
-                }
-            }
-        }
     }
 }
