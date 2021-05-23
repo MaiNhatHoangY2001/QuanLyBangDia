@@ -61,6 +61,9 @@ namespace QuanLyBangDiaCD
 
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+
+            radNamNV.Checked = true;
+            radCa1.Checked = true;
         }
 
         private void cboLoaiTim_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,7 +262,76 @@ namespace QuanLyBangDiaCD
             txtMaNV.Clear();
             txtSDT.Clear();
             txtTim.Clear();
-            txtMaNV.Focus();
+            
+        }
+
+        private void txtMaNV_Leave(object sender, EventArgs e)
+        {
+            string ma = txtMaNV.Text;
+            if (!clsRegex.RegexMaNV(ma))
+            {
+                txtMaNV.SelectAll();
+                txtMaNV.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng mã NVXXX (ví dụ: NV000)",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtHoTenNV_Leave(object sender, EventArgs e)
+        {
+            string ten = txtHoTenNV.Text;
+            if (!clsRegex.FulNameCheck(ten))
+            {
+                txtHoTenNV.SelectAll();
+                txtHoTenNV.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng tên \n tên phải viết Hoa chử cái đầu (ví dụ: Nguyễn Công phượng)",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtLuongNV_Leave(object sender, EventArgs e)
+        {
+            string gia = txtLuongNV.Text;
+            if (!clsRegex.kiemTraSoDouble(gia))
+            {
+
+                txtLuongNV.SelectAll();
+                txtLuongNV.Focus();
+                MessageBox.Show("Không được nhập chữ", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                double so = Convert.ToDouble(gia);
+                if (so < 0)
+                {
+
+                    txtLuongNV.SelectAll();
+                    txtLuongNV.Focus();
+                    MessageBox.Show("Không được nhập số bé hơn 0", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtDiaChiNV_Leave(object sender, EventArgs e)
+        {
+            string diaChi = txtDiaChiNV.Text;
+            if (!clsRegex.CheckDiaChi(diaChi))
+            {
+                txtDiaChiNV.SelectAll();
+                txtDiaChiNV.Focus();
+                MessageBox.Show("Địa chỉ không hợp lệ", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            string sdt = txtSDT.Text;
+            if (!clsRegex.PhoneCheck(sdt))
+            {
+                txtSDT.SelectAll();
+                txtSDT.Focus();
+                MessageBox.Show("Phải nhập đúng định dạng số điện thoại 0XX-XXXXXXX", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

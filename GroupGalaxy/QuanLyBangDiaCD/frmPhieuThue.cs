@@ -55,6 +55,9 @@ namespace QuanLyBangDiaCD
 
             IEnumerable<KhachHang> dsKhachHang = dtKhachHang.GetAllKhachHang();
             LoadKhachHangToTree(treKhachHang, dsKhachHang);
+
+            cboTenBangDia.SelectedIndex = 0;
+            cboTenNV.SelectedIndex = 0;
         }
 
         private void truyenVaoCboTenNhanVien(ComboBox cboTenNV, IEnumerable<NhanVien> dsNhanVien)
@@ -108,7 +111,7 @@ namespace QuanLyBangDiaCD
 
 
         }
-
+        int i = 0;
         private void treKhachHang_AfterSelect(object sender, TreeViewEventArgs e)
         {
             IEnumerable<dynamic> dsPhieuThue;
@@ -119,10 +122,12 @@ namespace QuanLyBangDiaCD
                 if (treKhachHang.SelectedNode.Level == 0)
                 {
                     strMaKH = "";
+                    i = 0;
                 }
                 else
                 {
                     strMaKH = treKhachHang.SelectedNode.Tag.ToString();
+                    i = 1;
                 }
                 dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(strMaKH);
                 strtenKH = treKhachHang.SelectedNode.Text;
@@ -165,6 +170,7 @@ namespace QuanLyBangDiaCD
             }
             txtThanhTien.Text = string.Format("{0:#,000} VNĐ", Convert.ToDecimal(tongTien.ToString()));
         }
+
         private void lvwDSPhieuThue_SelectedIndexChanged(object sender, EventArgs e)
         {
             dynamic pt = null;
@@ -187,19 +193,25 @@ namespace QuanLyBangDiaCD
             }
 
         }
-
+        
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (!btnThem.Text.Equals("Hủy Thêm"))
+            if (i == 0)
             {
-                btnLuu.Enabled = true;
-                btnThem.Text = "Hủy Thêm";
-            }
+                MessageBox.Show("Bạn chưa chọn khách hàng để thêm", "Thông báo");
+            } 
             else
             {
-                btnLuu.Enabled = false;
-                btnThem.Text = "Thêm";
-
+                if (!btnThem.Text.Equals("Hủy Thêm"))
+                {
+                    btnLuu.Enabled = true;
+                    btnThem.Text = "Hủy Thêm";
+                }
+                else
+                {
+                    btnLuu.Enabled = false;
+                    btnThem.Text = "Thêm";
+                }
             }
         }
         PhieuThue TaoThongTinPhieuThue()
@@ -319,6 +331,72 @@ namespace QuanLyBangDiaCD
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtMaPhieuThue_Leave(object sender, EventArgs e)
+        {
+            string ma = txtMaPhieuThue.Text;
+            if (!clsRegex.RegexMaPT(ma))
+            {
+                txtMaPhieuThue.SelectAll();
+                txtMaPhieuThue.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng mã MPXXX (ví dụ: MP000)",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (kiemTraTrungMa())
+            {
+                txtMaPhieuThue.SelectAll();
+                txtMaPhieuThue.Focus();
+                MessageBox.Show("Đã trùng mã phiếu thuê\nVui lòng nhập mã khác",
+                    "Thông báo lỗi Trùng mã", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool kiemTraTrungMa()
+        {
+            clsPhieuThue pt = new clsPhieuThue();
+            IEnumerable<PhieuThue> ds = pt.layHetPhieuThue();
+            foreach (PhieuThue p in ds)
+            {
+                if (p.maPhieu.Equals(txtMaPhieuThue.Text))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void txtSoLuong_Leave(object sender, EventArgs e)
+        {
+            string gia = txtSoLuong.Text;
+            if (!clsRegex.kiemTraSoINT(gia))
+            {
+
+                txtSoLuong.SelectAll();
+                txtSoLuong.Focus();
+                MessageBox.Show("Không được nhập chữ", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int so = Convert.ToInt32(gia);
+                if (so < 0)
+                {
+
+                    txtSoLuong.SelectAll();
+                    txtSoLuong.Focus();
+                    MessageBox.Show("Không được nhập số bé hơn 0", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dtpNgayTra_Leave(object sender, EventArgs e)
+        {
+            DateTime ngaymuon = dtpNgayMuon.Value;
+            DateTime ngaytra = dtpNgayTra.Value;
+            if (!(ngaymuon < ngaytra))
+            {
+                MessageBox.Show("Ngày trả phải trước ngày mượn ngày mượn", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -15,6 +15,13 @@ namespace QuanLyBangDiaCD
             dt = GetDataContext();
         }
 
+        public IEnumerable<PhieuThue> layHetPhieuThue()
+        {
+            IEnumerable<PhieuThue> ds = from n in dt.PhieuThues
+                                        select n;
+            return ds;
+        }
+
         public IEnumerable<dynamic> GetAllPhieuThue()
         {
             var q = from pt in dt.PhieuThues

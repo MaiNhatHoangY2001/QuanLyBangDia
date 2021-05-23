@@ -51,3 +51,21 @@ C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\D
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.GenerateResource.Cache
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.pdb
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe.config
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.exe
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\bin\Debug\QuanLyBangDiaCD.pdb
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csprojAssemblyReference.cache
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmKhachHang.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmPhieuThue.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmBangDia.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmCongTy.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmLogin.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmNhanVien.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmMain.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemKhachHang.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.Properties.Resources.resources
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.GenerateResource.cache
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.CoreCompileInputs.cache
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.exe
+D:\QuanLyBangDia\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.pdb

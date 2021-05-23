@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -54,6 +55,36 @@ namespace QuanLyBangDiaCD
             dgrCongTy.EndEdit();
             p.LuuTru();
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void dgrCongTy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgrCongTy_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgrCongTy_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            dgrCongTy.EditingControl.KeyPress -= dgrCongTy_KeyPress;
+            dgrCongTy.EditingControl.KeyPress += dgrCongTy_KeyPress;
+        }
+
+        private string patter = "^CT[0-9]{3}$";
+
+        private void dgrCongTy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar))
+            {
+                Control control = (Control)sender;
+                if (!Regex.IsMatch(control.Text + e.KeyChar, patter)) 
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

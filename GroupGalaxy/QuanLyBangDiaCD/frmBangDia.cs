@@ -39,6 +39,7 @@ namespace QuanLyBangDiaCD
             treCongTy.ImageList = imgTree;
             IEnumerable<CongTy> dsCongTy = dtCongTy.GetAllCongTy();
             LoadCongTyToTree(treCongTy, dsCongTy);
+            cboLoai.SelectedIndex = 0;
         }
 
         private void LoadCongTyToTree(TreeView treCongTy, IEnumerable<CongTy> dsCongTy)
@@ -74,7 +75,7 @@ namespace QuanLyBangDiaCD
 
 
         }
-
+        int i = 0;
         private void treCongTy_AfterSelect(object sender, TreeViewEventArgs e)
         {
             IEnumerable<ThongTinBangDia> dsBangDia;
@@ -101,6 +102,7 @@ namespace QuanLyBangDiaCD
 
                 LoadBangDiaToLvw(lvwDSBangDia, dsBangDia);
             }
+            i = 1;
         }
 
         private void LoadBangDiaToLvw(ListView lvwDSBangDia, IEnumerable<ThongTinBangDia> dsBangDia)
@@ -159,18 +161,54 @@ namespace QuanLyBangDiaCD
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (!btnThem.Text.Equals("Hủy Thêm"))
+            if (i == 1)
             {
-                btnLuu.Enabled = true;
-                btnThem.Text = "Hủy Thêm";
+                if (kiemtra())
+                {
+                    if (!btnThem.Text.Equals("Hủy Thêm"))
+                    {
+                        btnLuu.Enabled = true;
+                        btnThem.Text = "Hủy Thêm";
+                    }
+                    else
+                    {
+                        btnLuu.Enabled = false;
+                        btnThem.Text = "Thêm";
+                    }
+                }
             }
             else
             {
-                btnLuu.Enabled = false;
-                btnThem.Text = "Thêm";
-
+                MessageBox.Show("Bạn chưa chọn công ty để thêm", "Thông báo");
             }
         }
+
+        private bool kiemtra()
+        {
+            if (txtMaBangDia.Equals(""))
+            {
+                return false;
+            }
+            if (txtTenBangDia.Equals(""))
+            {
+                return false;
+            }
+            if (txtTheLoai.Equals(""))
+            {
+                return false;
+            }
+            if (txtGhiChu.Equals(""))
+            {
+                return false;
+            }
+            if (txtGia.Equals(""))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
 
         private void btnThemCongTy_Click(object sender, EventArgs e)
         {
@@ -252,36 +290,116 @@ namespace QuanLyBangDiaCD
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (lvwDSBangDia.SelectedItems.Count > 0)
+            if (treCongTy.SelectedNode.Level == 1)
             {
+                
                 ThongTinBangDia dia = TaoThongTinBangDia();
-                dtDia.suaThongTinDia(dia);
+                dtDia.themDia(dia);
                 IEnumerable<ThongTinBangDia> dsDia = dtDia.GetBangDiaThuocCongTy(treCongTy.SelectedNode.Tag.ToString());
                 LoadBangDiaToLvw(lvwDSBangDia, dsDia);
-                btnSua.Enabled = false;
+                btnThem.Text = "Thêm";
+                btnLuu.Enabled = false;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaBangDia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox6_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnXoaRong_Click(object sender, EventArgs e)
         {
-
+            txtMaBangDia.Text = "";
+            txtTenBangDia.Text = "";
+            txtTheLoai.Text = "";
+            txtGhiChu.Text = "";
+            txtGia.Text = "";
+            txtMaBangDia.Focus();
         }
 
+        private void txtMaBangDia_Leave(object sender, EventArgs e)
+        {
+            string strma = txtMaBangDia.Text;
+            if (!clsRegex.RegexMaBD(strma))
+            {
+                txtMaBangDia.SelectAll();
+                txtMaBangDia.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng mã BDXXX (ví dụ: BD000)", 
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if(kiemTraTrungMa())
+            {
+                txtMaBangDia.SelectAll();
+                txtMaBangDia.Focus();
+                MessageBox.Show("Đã trùng mã băng đĩa\nVui lòng nhập mã khác",
+                    "Thông báo lỗi Trùng mã", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private bool kiemTraTrungMa()
+        {
+            dtDia = new clsBangDia();
+            IEnumerable<ThongTinBangDia> ds = dtDia.GetAllBangDia();
+            foreach (ThongTinBangDia dia in ds)
+            {
+                if (dia.maBangDia.Equals(txtMaBangDia.Text))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void txtTenBangDia_Leave(object sender, EventArgs e)
+        {
+            string name = txtTenBangDia.Text;
+            if (!clsRegex.NameCheckCoSo(name))
+            {
+                txtTenBangDia.SelectAll();
+                txtTenBangDia.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng tên \n tên phải viết Hoa chử cái đầu (ví dụ: Tây Du ký)",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtTheLoai_Leave(object sender, EventArgs e)
+        {
+            string name = txtTheLoai.Text;
+            if (!clsRegex.NameCheck(name))
+            {
+                txtTheLoai.SelectAll();
+                txtTheLoai.Focus();
+                MessageBox.Show("Lỗi! Phải nhập đúng định dạng thể loại \n tên phải viết Hoa chử cái đầu (ví dụ: Phim hành động)",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtGia_Leave(object sender, EventArgs e)
+        {
+            string gia = txtGia.Text;
+            if (!clsRegex.kiemTraSoDouble(gia))
+            {
+                
+                txtGia.SelectAll();
+                txtGia.Focus();
+                MessageBox.Show("Không được nhập chữ", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else 
+            {
+                double so = Convert.ToDouble(gia);
+                if (so < 0)
+                {
+                    
+                    txtGia.SelectAll();
+                    txtGia.Focus();
+                    MessageBox.Show("Không được nhập số bé hơn 0", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dtpNgaySX_Leave(object sender, EventArgs e)
+        {
+            DateTime ngay = dtpNgaySX.Value;
+            DateTime now = DateTime.Now;
+            if (!(ngay < now))
+            {
+                MessageBox.Show("Lỗi! ngày sản xuất phải trước ngày hiện tại",
+                    "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
