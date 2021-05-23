@@ -54,12 +54,13 @@ namespace QuanLyBangDiaCD
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Aquamarine;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(838, 100);
+            this.label1.Size = new System.Drawing.Size(838, 99);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý khách hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
