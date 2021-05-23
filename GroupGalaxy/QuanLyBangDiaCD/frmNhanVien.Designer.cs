@@ -82,6 +82,7 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.radNamNV);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.radNuNV);
@@ -100,7 +101,7 @@ namespace QuanLyBangDiaCD
             this.groupBox1.Location = new System.Drawing.Point(9, 95);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(915, 257);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
@@ -111,7 +112,7 @@ namespace QuanLyBangDiaCD
             this.radNamNV.Location = new System.Drawing.Point(580, 88);
             this.radNamNV.Name = "radNamNV";
             this.radNamNV.Size = new System.Drawing.Size(74, 29);
-            this.radNamNV.TabIndex = 0;
+            this.radNamNV.TabIndex = 3;
             this.radNamNV.TabStop = true;
             this.radNamNV.Text = "Nam";
             this.radNamNV.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@ namespace QuanLyBangDiaCD
             this.groupBox4.Location = new System.Drawing.Point(151, 167);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(704, 69);
-            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ca Làm việc";
             // 
@@ -171,7 +172,7 @@ namespace QuanLyBangDiaCD
             this.radNuNV.Location = new System.Drawing.Point(673, 89);
             this.radNuNV.Name = "radNuNV";
             this.radNuNV.Size = new System.Drawing.Size(58, 29);
-            this.radNuNV.TabIndex = 0;
+            this.radNuNV.TabIndex = 4;
             this.radNuNV.TabStop = true;
             this.radNuNV.Text = "Nữ";
             this.radNuNV.UseVisualStyleBackColor = true;
@@ -241,7 +242,7 @@ namespace QuanLyBangDiaCD
             this.txtLuongNV.Location = new System.Drawing.Point(151, 84);
             this.txtLuongNV.Name = "txtLuongNV";
             this.txtLuongNV.Size = new System.Drawing.Size(311, 34);
-            this.txtLuongNV.TabIndex = 0;
+            this.txtLuongNV.TabIndex = 2;
             this.txtLuongNV.Leave += new System.EventHandler(this.txtLuongNV_Leave);
             // 
             // txtSDT
@@ -250,7 +251,7 @@ namespace QuanLyBangDiaCD
             this.txtSDT.Location = new System.Drawing.Point(566, 132);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(289, 34);
-            this.txtSDT.TabIndex = 0;
+            this.txtSDT.TabIndex = 6;
             this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // txtDiaChiNV
@@ -259,7 +260,7 @@ namespace QuanLyBangDiaCD
             this.txtDiaChiNV.Location = new System.Drawing.Point(151, 132);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.Size = new System.Drawing.Size(311, 34);
-            this.txtDiaChiNV.TabIndex = 0;
+            this.txtDiaChiNV.TabIndex = 5;
             this.txtDiaChiNV.Leave += new System.EventHandler(this.txtDiaChiNV_Leave);
             // 
             // txtHoTenNV
@@ -268,7 +269,7 @@ namespace QuanLyBangDiaCD
             this.txtHoTenNV.Location = new System.Drawing.Point(566, 38);
             this.txtHoTenNV.Name = "txtHoTenNV";
             this.txtHoTenNV.Size = new System.Drawing.Size(289, 34);
-            this.txtHoTenNV.TabIndex = 0;
+            this.txtHoTenNV.TabIndex = 1;
             this.txtHoTenNV.Leave += new System.EventHandler(this.txtHoTenNV_Leave);
             // 
             // label8
@@ -288,7 +289,7 @@ namespace QuanLyBangDiaCD
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(109, 51);
             this.btnTim.TabIndex = 2;
-            this.btnTim.Text = "Tìm kiếm";
+            this.btnTim.Text = "Tìm &kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
@@ -299,7 +300,7 @@ namespace QuanLyBangDiaCD
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(137, 61);
             this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -310,7 +311,7 @@ namespace QuanLyBangDiaCD
             this.btnXoaRong.Name = "btnXoaRong";
             this.btnXoaRong.Size = new System.Drawing.Size(137, 61);
             this.btnXoaRong.TabIndex = 3;
-            this.btnXoaRong.Text = "Xóa rỗng";
+            this.btnXoaRong.Text = "Xóa &rỗng";
             this.btnXoaRong.UseVisualStyleBackColor = true;
             this.btnXoaRong.Click += new System.EventHandler(this.btnXoaRong_Click);
             // 
@@ -321,7 +322,7 @@ namespace QuanLyBangDiaCD
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(137, 61);
             this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
@@ -332,12 +333,13 @@ namespace QuanLyBangDiaCD
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(137, 61);
             this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "&Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Aquamarine;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,7 +347,7 @@ namespace QuanLyBangDiaCD
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(933, 80);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -361,7 +363,7 @@ namespace QuanLyBangDiaCD
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Size = new System.Drawing.Size(523, 255);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
@@ -419,7 +421,7 @@ namespace QuanLyBangDiaCD
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Size = new System.Drawing.Size(363, 255);
-            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tác vụ";
             // 
@@ -429,7 +431,7 @@ namespace QuanLyBangDiaCD
             this.groupBox5.Location = new System.Drawing.Point(6, 616);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(917, 234);
-            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thống kê nhân viên";
             // 
@@ -437,6 +439,7 @@ namespace QuanLyBangDiaCD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(933, 845);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);

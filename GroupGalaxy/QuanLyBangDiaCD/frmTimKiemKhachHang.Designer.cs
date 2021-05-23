@@ -168,7 +168,7 @@ namespace QuanLyBangDiaCD
             this.btnThucHien.Name = "btnThucHien";
             this.btnThucHien.Size = new System.Drawing.Size(120, 36);
             this.btnThucHien.TabIndex = 3;
-            this.btnThucHien.Text = "Thực hiện";
+            this.btnThucHien.Text = "&Thực hiện";
             this.btnThucHien.UseVisualStyleBackColor = true;
             this.btnThucHien.Click += new System.EventHandler(this.btnThucHien_Click);
             // 
@@ -194,7 +194,7 @@ namespace QuanLyBangDiaCD
             this.radTenKH.Location = new System.Drawing.Point(104, 96);
             this.radTenKH.Name = "radTenKH";
             this.radTenKH.Size = new System.Drawing.Size(294, 29);
-            this.radTenKH.TabIndex = 0;
+            this.radTenKH.TabIndex = 1;
             this.radTenKH.TabStop = true;
             this.radTenKH.Text = "Tìm kiếm theo tên khách hàng";
             this.radTenKH.UseVisualStyleBackColor = true;
@@ -221,6 +221,7 @@ namespace QuanLyBangDiaCD
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTimKiemKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm khách hàng";
             this.Load += new System.EventHandler(this.frmTimKiemKhachHang_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

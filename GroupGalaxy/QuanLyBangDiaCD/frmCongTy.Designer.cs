@@ -213,6 +213,7 @@ namespace QuanLyBangDiaCD
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmCongTy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý công ty";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCongTy_FormClosing);
             this.Load += new System.EventHandler(this.frmCongTy_Load);

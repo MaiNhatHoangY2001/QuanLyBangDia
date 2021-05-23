@@ -89,6 +89,28 @@ namespace QuanLyBangDiaCD
                 frm.Show();
             }
         }
+
+        private void mnuChucNangSapXepKhachHang_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTonTaiForm("frmHonloanKhachHang") == false)
+            {
+                frmHonloanKhachHang frm = new frmHonloanKhachHang();
+                frm.MdiParent = this;
+                frm.Name = "frmHonloanKhachHang";
+                frm.Show();
+            }
+        }
+
+        private void mnuChucNangSapXepNhanVien_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTonTaiForm("frmHonLoannhanvien") == false)
+            {
+                frmHonLoannhanvien frm = new frmHonLoannhanvien();
+                frm.MdiParent = this;
+                frm.Name = "frmHonLoannhanvien";
+                frm.Show();
+            }
+        }
     }
 }
 

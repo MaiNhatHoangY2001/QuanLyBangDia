@@ -77,6 +77,7 @@ namespace QuanLyBangDiaCD
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Aquamarine;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,7 +85,7 @@ namespace QuanLyBangDiaCD
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1172, 103);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ PHIẾU THUÊ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -114,7 +115,7 @@ namespace QuanLyBangDiaCD
             this.treKhachHang.Location = new System.Drawing.Point(0, 0);
             this.treKhachHang.Name = "treKhachHang";
             this.treKhachHang.Size = new System.Drawing.Size(282, 564);
-            this.treKhachHang.TabIndex = 1;
+            this.treKhachHang.TabIndex = 0;
             this.treKhachHang.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treKhachHang_AfterSelect);
             // 
             // btnThemKhachHang
@@ -123,7 +124,7 @@ namespace QuanLyBangDiaCD
             this.btnThemKhachHang.Location = new System.Drawing.Point(0, 564);
             this.btnThemKhachHang.Name = "btnThemKhachHang";
             this.btnThemKhachHang.Size = new System.Drawing.Size(282, 34);
-            this.btnThemKhachHang.TabIndex = 0;
+            this.btnThemKhachHang.TabIndex = 1;
             this.btnThemKhachHang.Text = "Thêm Khách hàng";
             this.btnThemKhachHang.UseVisualStyleBackColor = true;
             this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
@@ -154,12 +155,13 @@ namespace QuanLyBangDiaCD
             this.lvwDSPhieuThue.Location = new System.Drawing.Point(0, 0);
             this.lvwDSPhieuThue.Name = "lvwDSPhieuThue";
             this.lvwDSPhieuThue.Size = new System.Drawing.Size(878, 254);
-            this.lvwDSPhieuThue.TabIndex = 2;
+            this.lvwDSPhieuThue.TabIndex = 0;
             this.lvwDSPhieuThue.UseCompatibleStateImageBehavior = false;
             this.lvwDSPhieuThue.SelectedIndexChanged += new System.EventHandler(this.lvwDSPhieuThue_SelectedIndexChanged);
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox6.Controls.Add(this.cboTenNV);
             this.groupBox6.Controls.Add(this.cboTenBangDia);
             this.groupBox6.Controls.Add(this.dtpNgayMuon);
@@ -181,7 +183,7 @@ namespace QuanLyBangDiaCD
             this.groupBox6.Location = new System.Drawing.Point(3, -2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(872, 344);
-            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin phiếu thuê";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
@@ -192,7 +194,7 @@ namespace QuanLyBangDiaCD
             this.cboTenNV.Location = new System.Drawing.Point(611, 53);
             this.cboTenNV.Name = "cboTenNV";
             this.cboTenNV.Size = new System.Drawing.Size(253, 33);
-            this.cboTenNV.TabIndex = 16;
+            this.cboTenNV.TabIndex = 1;
             // 
             // cboTenBangDia
             // 
@@ -200,21 +202,21 @@ namespace QuanLyBangDiaCD
             this.cboTenBangDia.Location = new System.Drawing.Point(611, 175);
             this.cboTenBangDia.Name = "cboTenBangDia";
             this.cboTenBangDia.Size = new System.Drawing.Size(253, 33);
-            this.cboTenBangDia.TabIndex = 16;
+            this.cboTenBangDia.TabIndex = 5;
             // 
             // dtpNgayMuon
             // 
             this.dtpNgayMuon.Location = new System.Drawing.Point(186, 119);
             this.dtpNgayMuon.Name = "dtpNgayMuon";
             this.dtpNgayMuon.Size = new System.Drawing.Size(235, 30);
-            this.dtpNgayMuon.TabIndex = 14;
+            this.dtpNgayMuon.TabIndex = 2;
             // 
             // dtpNgayTra
             // 
             this.dtpNgayTra.Location = new System.Drawing.Point(186, 178);
             this.dtpNgayTra.Name = "dtpNgayTra";
             this.dtpNgayTra.Size = new System.Drawing.Size(235, 30);
-            this.dtpNgayTra.TabIndex = 14;
+            this.dtpNgayTra.TabIndex = 4;
             this.dtpNgayTra.Leave += new System.EventHandler(this.dtpNgayTra_Leave);
             // 
             // groupBox4
@@ -237,8 +239,8 @@ namespace QuanLyBangDiaCD
             this.btnXoaRong.Location = new System.Drawing.Point(404, 25);
             this.btnXoaRong.Name = "btnXoaRong";
             this.btnXoaRong.Size = new System.Drawing.Size(91, 34);
-            this.btnXoaRong.TabIndex = 4;
-            this.btnXoaRong.Text = "Xóa rỗng";
+            this.btnXoaRong.TabIndex = 2;
+            this.btnXoaRong.Text = "Xóa &rỗng";
             this.btnXoaRong.UseVisualStyleBackColor = true;
             this.btnXoaRong.Click += new System.EventHandler(this.btnXoaRong_Click);
             // 
@@ -248,8 +250,8 @@ namespace QuanLyBangDiaCD
             this.btnThem.Location = new System.Drawing.Point(138, 25);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 34);
-            this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "&Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -260,7 +262,7 @@ namespace QuanLyBangDiaCD
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 34);
             this.btnLuu.TabIndex = 3;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -270,8 +272,8 @@ namespace QuanLyBangDiaCD
             this.btnXoa.Location = new System.Drawing.Point(670, 25);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 34);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -281,8 +283,8 @@ namespace QuanLyBangDiaCD
             this.btnSua.Location = new System.Drawing.Point(271, 25);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 34);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -292,7 +294,7 @@ namespace QuanLyBangDiaCD
             this.txtSoLuong.Location = new System.Drawing.Point(611, 118);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(253, 34);
-            this.txtSoLuong.TabIndex = 0;
+            this.txtSoLuong.TabIndex = 3;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtMaBangDia_TextChanged);
             this.txtSoLuong.Leave += new System.EventHandler(this.txtSoLuong_Leave);
             // 
@@ -364,7 +366,7 @@ namespace QuanLyBangDiaCD
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(253, 34);
-            this.txtThanhTien.TabIndex = 3;
+            this.txtThanhTien.TabIndex = 7;
             // 
             // txtKhachHang
             // 
@@ -374,7 +376,7 @@ namespace QuanLyBangDiaCD
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.ReadOnly = true;
             this.txtKhachHang.Size = new System.Drawing.Size(235, 34);
-            this.txtKhachHang.TabIndex = 3;
+            this.txtKhachHang.TabIndex = 6;
             // 
             // label8
             // 
@@ -438,6 +440,7 @@ namespace QuanLyBangDiaCD
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmPhieuThue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý băng đĩa";
             this.Load += new System.EventHandler(this.frmBangDia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

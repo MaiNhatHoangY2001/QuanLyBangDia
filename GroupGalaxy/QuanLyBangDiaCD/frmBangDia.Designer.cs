@@ -78,9 +78,11 @@ namespace QuanLyBangDiaCD
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Aquamarine;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -160,6 +162,7 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox6.Controls.Add(this.cboLoai);
             this.groupBox6.Controls.Add(this.dtpNgaySX);
             this.groupBox6.Controls.Add(this.groupBox4);
@@ -196,14 +199,14 @@ namespace QuanLyBangDiaCD
             this.cboLoai.Location = new System.Drawing.Point(344, 181);
             this.cboLoai.Name = "cboLoai";
             this.cboLoai.Size = new System.Drawing.Size(290, 33);
-            this.cboLoai.TabIndex = 15;
+            this.cboLoai.TabIndex = 6;
             // 
             // dtpNgaySX
             // 
             this.dtpNgaySX.Location = new System.Drawing.Point(595, 140);
             this.dtpNgaySX.Name = "dtpNgaySX";
             this.dtpNgaySX.Size = new System.Drawing.Size(213, 30);
-            this.dtpNgaySX.TabIndex = 14;
+            this.dtpNgaySX.TabIndex = 5;
             this.dtpNgaySX.Leave += new System.EventHandler(this.dtpNgaySX_Leave);
             // 
             // groupBox4
@@ -226,8 +229,8 @@ namespace QuanLyBangDiaCD
             this.btnXoaRong.Location = new System.Drawing.Point(407, 25);
             this.btnXoaRong.Name = "btnXoaRong";
             this.btnXoaRong.Size = new System.Drawing.Size(91, 34);
-            this.btnXoaRong.TabIndex = 4;
-            this.btnXoaRong.Text = "Xóa rỗng";
+            this.btnXoaRong.TabIndex = 2;
+            this.btnXoaRong.Text = "Xóa &rỗng";
             this.btnXoaRong.UseVisualStyleBackColor = true;
             this.btnXoaRong.Click += new System.EventHandler(this.btnXoaRong_Click);
             // 
@@ -237,8 +240,8 @@ namespace QuanLyBangDiaCD
             this.btnThem.Location = new System.Drawing.Point(141, 25);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 34);
-            this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "&Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -249,7 +252,7 @@ namespace QuanLyBangDiaCD
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 34);
             this.btnLuu.TabIndex = 3;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -259,8 +262,8 @@ namespace QuanLyBangDiaCD
             this.btnXoa.Location = new System.Drawing.Point(673, 25);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 34);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -270,8 +273,8 @@ namespace QuanLyBangDiaCD
             this.btnSua.Location = new System.Drawing.Point(274, 25);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 34);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -369,7 +372,7 @@ namespace QuanLyBangDiaCD
             this.txtGia.Location = new System.Drawing.Point(143, 131);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(282, 34);
-            this.txtGia.TabIndex = 2;
+            this.txtGia.TabIndex = 4;
             this.txtGia.Leave += new System.EventHandler(this.txtGia_Leave);
             // 
             // txtTheLoai
@@ -389,7 +392,7 @@ namespace QuanLyBangDiaCD
             this.txtCongTy.Name = "txtCongTy";
             this.txtCongTy.ReadOnly = true;
             this.txtCongTy.Size = new System.Drawing.Size(290, 34);
-            this.txtCongTy.TabIndex = 3;
+            this.txtCongTy.TabIndex = 7;
             // 
             // txtGhiChu
             // 
@@ -441,6 +444,7 @@ namespace QuanLyBangDiaCD
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmBangDia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý băng đĩa";
             this.Load += new System.EventHandler(this.frmBangDia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -459,8 +463,6 @@ namespace QuanLyBangDiaCD
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView treCongTy;
         private System.Windows.Forms.Button btnThemCongTy;
@@ -493,5 +495,6 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ComboBox cboLoai;
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label1;
     }
 }

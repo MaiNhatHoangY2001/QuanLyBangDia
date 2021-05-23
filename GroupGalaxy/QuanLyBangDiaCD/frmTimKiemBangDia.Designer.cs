@@ -118,7 +118,7 @@ namespace QuanLyBangDiaCD
             this.btnThucHien.Name = "btnThucHien";
             this.btnThucHien.Size = new System.Drawing.Size(117, 40);
             this.btnThucHien.TabIndex = 3;
-            this.btnThucHien.Text = "Thực hiện";
+            this.btnThucHien.Text = "&Thực hiện";
             this.btnThucHien.UseVisualStyleBackColor = true;
             this.btnThucHien.Click += new System.EventHandler(this.btnThucHien_Click);
             // 
@@ -136,7 +136,7 @@ namespace QuanLyBangDiaCD
             this.txtTimKiem.Location = new System.Drawing.Point(185, 91);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(416, 30);
-            this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TabIndex = 2;
             // 
             // radTua
             // 
@@ -144,11 +144,10 @@ namespace QuanLyBangDiaCD
             this.radTua.Location = new System.Drawing.Point(358, 45);
             this.radTua.Name = "radTua";
             this.radTua.Size = new System.Drawing.Size(221, 29);
-            this.radTua.TabIndex = 0;
+            this.radTua.TabIndex = 1;
             this.radTua.TabStop = true;
             this.radTua.Text = "Tìm theo tựa băng đĩa";
             this.radTua.UseVisualStyleBackColor = true;
-//this.radTua.CheckedChanged += new System.EventHandler(this.radTenNhanVien_CheckedChanged);
             // 
             // radMaBD
             // 
@@ -222,6 +221,7 @@ namespace QuanLyBangDiaCD
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTimKiemBangDia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm băng đĩa";
             this.Load += new System.EventHandler(this.frmTimKiemNhanVien_Load);
             this.splitContainer2.Panel1.ResumeLayout(false);

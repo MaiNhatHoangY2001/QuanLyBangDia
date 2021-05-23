@@ -37,6 +37,8 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQuanLyPhieuThue = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemBD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangTimKiemKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChucNangSapXepKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChucNangSapXepNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +50,8 @@ namespace QuanLyBangDiaCD
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1501, 33);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Size = new System.Drawing.Size(1501, 40);
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnuChucNang
@@ -59,50 +61,66 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQLNV,
             this.mnuChucNangQuanLyPhieuThue,
             this.mnuTimKiemBD,
-            this.mnuChucNangTimKiemKhachHang});
+            this.mnuChucNangTimKiemKhachHang,
+            this.mnuChucNangSapXepKhachHang,
+            this.mnuChucNangSapXepNhanVien});
             this.mnuChucNang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnuChucNang.Name = "mnuChucNang";
-            this.mnuChucNang.Size = new System.Drawing.Size(96, 25);
+            this.mnuChucNang.Size = new System.Drawing.Size(119, 32);
             this.mnuChucNang.Text = "Chức năng";
             // 
             // mnuChucNangQLBD
             // 
             this.mnuChucNangQLBD.Name = "mnuChucNangQLBD";
-            this.mnuChucNangQLBD.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangQLBD.Size = new System.Drawing.Size(284, 32);
             this.mnuChucNangQLBD.Text = "Quản lý băng đĩa";
             this.mnuChucNangQLBD.Click += new System.EventHandler(this.mnuChucNangQLBD_Click);
             // 
             // mnuChucNangQLNV
             // 
             this.mnuChucNangQLNV.Name = "mnuChucNangQLNV";
-            this.mnuChucNangQLNV.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangQLNV.Size = new System.Drawing.Size(284, 32);
             this.mnuChucNangQLNV.Text = "Quản lý nhân viên";
             this.mnuChucNangQLNV.Click += new System.EventHandler(this.mnuChucNangQLNV_Click);
             // 
             // mnuChucNangQuanLyPhieuThue
             // 
             this.mnuChucNangQuanLyPhieuThue.Name = "mnuChucNangQuanLyPhieuThue";
-            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(284, 32);
             this.mnuChucNangQuanLyPhieuThue.Text = "Quản lý phiếu thuê";
             this.mnuChucNangQuanLyPhieuThue.Click += new System.EventHandler(this.mnuChucNangQuanLyPhieuThue_Click);
             // 
             // mnuTimKiemBD
             // 
             this.mnuTimKiemBD.Name = "mnuTimKiemBD";
-            this.mnuTimKiemBD.Size = new System.Drawing.Size(229, 26);
+            this.mnuTimKiemBD.Size = new System.Drawing.Size(284, 32);
             this.mnuTimKiemBD.Text = "Tìm kiếm băng đĩa";
             this.mnuTimKiemBD.Click += new System.EventHandler(this.mnuTimKiemBD_Click);
             // 
             // mnuChucNangTimKiemKhachHang
             // 
             this.mnuChucNangTimKiemKhachHang.Name = "mnuChucNangTimKiemKhachHang";
-            this.mnuChucNangTimKiemKhachHang.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangTimKiemKhachHang.Size = new System.Drawing.Size(284, 32);
             this.mnuChucNangTimKiemKhachHang.Text = "Tìm Kiếm khách hàng";
             this.mnuChucNangTimKiemKhachHang.Click += new System.EventHandler(this.mnuChucNangTimKiemKhachHang_Click);
             // 
+            // mnuChucNangSapXepKhachHang
+            // 
+            this.mnuChucNangSapXepKhachHang.Name = "mnuChucNangSapXepKhachHang";
+            this.mnuChucNangSapXepKhachHang.Size = new System.Drawing.Size(284, 32);
+            this.mnuChucNangSapXepKhachHang.Text = "Sắp xếp khách hàng";
+            this.mnuChucNangSapXepKhachHang.Click += new System.EventHandler(this.mnuChucNangSapXepKhachHang_Click);
+            // 
+            // mnuChucNangSapXepNhanVien
+            // 
+            this.mnuChucNangSapXepNhanVien.Name = "mnuChucNangSapXepNhanVien";
+            this.mnuChucNangSapXepNhanVien.Size = new System.Drawing.Size(284, 32);
+            this.mnuChucNangSapXepNhanVien.Text = "Sắp xếp nhân viên";
+            this.mnuChucNangSapXepNhanVien.Click += new System.EventHandler(this.mnuChucNangSapXepNhanVien_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1501, 789);
             this.Controls.Add(this.menuStrip1);
@@ -112,6 +130,7 @@ namespace QuanLyBangDiaCD
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý băng đĩa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
@@ -130,5 +149,7 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQuanLyPhieuThue;
         private System.Windows.Forms.ToolStripMenuItem mnuTimKiemBD;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangTimKiemKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuChucNangSapXepKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuChucNangSapXepNhanVien;
     }
 }
