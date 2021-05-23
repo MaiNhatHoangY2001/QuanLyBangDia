@@ -69,13 +69,13 @@ namespace QuanLyBangDiaCD
 
         private void dgrCongTy_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            dgrCongTy.EditingControl.KeyPress -= dgrCongTy_KeyPress;
-            dgrCongTy.EditingControl.KeyPress += dgrCongTy_KeyPress;
+            dgrCongTy.EditingControl.KeyPress -= EditingControl_KeyPress;
+            dgrCongTy.EditingControl.KeyPress += EditingControl_KeyPress;
         }
 
-        private string patter = "^CT[0-9]{3}$";
+        private string patter = "^(CT[0-9]{3})$";
 
-        private void dgrCongTy_KeyPress(object sender, KeyPressEventArgs e)
+        private void EditingControl_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))
             {

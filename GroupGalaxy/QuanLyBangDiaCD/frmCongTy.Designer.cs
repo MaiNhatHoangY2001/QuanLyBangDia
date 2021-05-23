@@ -201,7 +201,7 @@ namespace QuanLyBangDiaCD
             this.dgrCongTy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrCongTy_CellContentClick);
             this.dgrCongTy.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrCongTy_CellLeave);
             this.dgrCongTy.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgrCongTy_EditingControlShowing);
-            this.dgrCongTy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgrCongTy_KeyPress);
+            this.dgrCongTy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditingControl_KeyPress);
             // 
             // frmCongTy
             // 

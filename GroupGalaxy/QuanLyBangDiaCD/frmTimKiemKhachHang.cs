@@ -93,14 +93,14 @@ namespace QuanLyBangDiaCD
             {
                 KhachHang k = (KhachHang)lvwDSKhachHang.SelectedItems[lvwDSKhachHang.SelectedItems.Count - 1].Tag;
                 maKH = k.maKH;
-                IEnumerable<dynamic> dsPT;
+                IEnumerable<PhieuThue> dsPT;
 
-                dsPT = pt.GetPhieuThueThuocKhachHang(maKH);
+                dsPT = pt.GetPhieuThueThuocKhachHang1(maKH);
                 loadPhieuVaoListView(lvwDSPhieuThue, dsPT);
             }
         }
 
-        private void loadPhieuVaoListView(ListView lvw, IEnumerable<dynamic> dsPT)
+        private void loadPhieuVaoListView(ListView lvw, IEnumerable<PhieuThue> dsPT)
         {
             lvw.Items.Clear();
             ListViewItem item;

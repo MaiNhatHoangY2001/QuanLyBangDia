@@ -61,6 +61,23 @@ namespace QuanLyBangDiaCD
 
         }
 
+        public IEnumerable<PhieuThue> GetPhieuThueThuocKhachHang1(string maKH)
+        {
+            IEnumerable<PhieuThue> pt;
+            if (maKH.Trim().Equals(""))
+            {
+                pt = from n in dt.PhieuThues
+                     select n;
+            }
+            else
+            {
+                pt = from n in dt.PhieuThues
+                     where n.maKH.Equals(maKH)
+                     select n;
+            }
+            return pt;
+        }
+
         public PhieuThue GetPhieuThue(string maPhieu)
         {
             PhieuThue pt = (from n in dt.PhieuThues
