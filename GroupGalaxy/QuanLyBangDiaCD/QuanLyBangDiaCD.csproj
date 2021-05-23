@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsStaticSapXep.cs" />
     <Compile Include="clsCongTy.cs" />
     <Compile Include="clsCTPT.cs" />
+    <Compile Include="clsHonloanKhachHang.cs" />
+    <Compile Include="clsHonloannhanvien.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsBangDia.cs" />
     <Compile Include="clsKhachHang.cs" />
@@ -57,6 +60,18 @@
     <Compile Include="clsNhanVien.cs" />
     <Compile Include="clsPhieuThue.cs" />
     <Compile Include="clsRegex.cs" />
+    <Compile Include="frmHonloanKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHonloanKhachHang.Designer.cs">
+      <DependentUpon>frmHonloanKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHonLoannhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHonLoannhanvien.Designer.cs">
+      <DependentUpon>frmHonLoannhanvien.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +134,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qlCD.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmHonloanKhachHang.resx">
+      <DependentUpon>frmHonloanKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHonLoannhanvien.resx">
+      <DependentUpon>frmHonLoannhanvien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>

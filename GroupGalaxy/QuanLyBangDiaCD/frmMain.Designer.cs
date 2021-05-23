@@ -37,6 +37,8 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQuanLyPhieuThue = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemBD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangTimKiemKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChucNangSapXepKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuChucNangSapXepNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,9 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQLNV,
             this.mnuChucNangQuanLyPhieuThue,
             this.mnuTimKiemBD,
-            this.mnuChucNangTimKiemKhachHang});
+            this.mnuChucNangTimKiemKhachHang,
+            this.mnuChucNangSapXepKhachHang,
+            this.mnuChucNangSapXepNhanVien});
             this.mnuChucNang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnuChucNang.Name = "mnuChucNang";
             this.mnuChucNang.Size = new System.Drawing.Size(96, 25);
@@ -100,6 +104,20 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangTimKiemKhachHang.Text = "Tìm Kiếm khách hàng";
             this.mnuChucNangTimKiemKhachHang.Click += new System.EventHandler(this.mnuChucNangTimKiemKhachHang_Click);
             // 
+            // mnuChucNangSapXepKhachHang
+            // 
+            this.mnuChucNangSapXepKhachHang.Name = "mnuChucNangSapXepKhachHang";
+            this.mnuChucNangSapXepKhachHang.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangSapXepKhachHang.Text = "Sắp xếp khách hàng";
+            this.mnuChucNangSapXepKhachHang.Click += new System.EventHandler(this.mnuChucNangSapXepKhachHang_Click);
+            // 
+            // mnuChucNangSapXepNhanVien
+            // 
+            this.mnuChucNangSapXepNhanVien.Name = "mnuChucNangSapXepNhanVien";
+            this.mnuChucNangSapXepNhanVien.Size = new System.Drawing.Size(229, 26);
+            this.mnuChucNangSapXepNhanVien.Text = "Sắp xếp nhân viên";
+            this.mnuChucNangSapXepNhanVien.Click += new System.EventHandler(this.mnuChucNangSapXepNhanVien_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -130,5 +148,7 @@ namespace QuanLyBangDiaCD
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangQuanLyPhieuThue;
         private System.Windows.Forms.ToolStripMenuItem mnuTimKiemBD;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNangTimKiemKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuChucNangSapXepKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuChucNangSapXepNhanVien;
     }
 }
