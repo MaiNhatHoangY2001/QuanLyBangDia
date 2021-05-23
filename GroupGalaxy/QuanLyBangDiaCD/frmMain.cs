@@ -12,6 +12,7 @@ namespace QuanLyBangDiaCD
 {
     public partial class frmMain : Form
     {
+        public static string quyen;
         public frmMain(Login user)
         {
             InitializeComponent();
@@ -20,6 +21,16 @@ namespace QuanLyBangDiaCD
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if(quyen == "khachhang")
+            {
+                mnuChucNang.Visible = false;
+                mnuSapXep.Visible = false;
+                mnuChucNangTimKiemKhachHang.Visible = false;
+            }
         }
 
         private void mnuChucNangQLBD_Click(object sender, EventArgs e)
@@ -110,6 +121,16 @@ namespace QuanLyBangDiaCD
                 frm.Name = "frmHonLoannhanvien";
                 frm.Show();
             }
+        }
+
+        private void mnuThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("CHƯƠNG TRÌNH QUẢN LÝ BĂNG ĐĨA" + System.Environment.NewLine + "Nhóm thực hiện: Galaxy" + System.Environment.NewLine + "Email: " + System.Environment.NewLine + "SDT: "+System.Environment.NewLine+ "Cảm ơn đã sử dụng ứng dụng của chúng tôi!", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
