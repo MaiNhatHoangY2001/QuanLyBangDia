@@ -82,7 +82,7 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.radNamNV);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.radNuNV);
@@ -111,7 +111,7 @@ namespace QuanLyBangDiaCD
             this.radNamNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radNamNV.Location = new System.Drawing.Point(580, 88);
             this.radNamNV.Name = "radNamNV";
-            this.radNamNV.Size = new System.Drawing.Size(74, 29);
+            this.radNamNV.Size = new System.Drawing.Size(60, 24);
             this.radNamNV.TabIndex = 3;
             this.radNamNV.TabStop = true;
             this.radNamNV.Text = "Nam";
@@ -135,7 +135,7 @@ namespace QuanLyBangDiaCD
             this.radCa3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radCa3.Location = new System.Drawing.Point(488, 25);
             this.radCa3.Name = "radCa3";
-            this.radCa3.Size = new System.Drawing.Size(75, 29);
+            this.radCa3.Size = new System.Drawing.Size(60, 24);
             this.radCa3.TabIndex = 2;
             this.radCa3.TabStop = true;
             this.radCa3.Text = "Ca 3";
@@ -147,7 +147,7 @@ namespace QuanLyBangDiaCD
             this.radCa2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radCa2.Location = new System.Drawing.Point(315, 25);
             this.radCa2.Name = "radCa2";
-            this.radCa2.Size = new System.Drawing.Size(75, 29);
+            this.radCa2.Size = new System.Drawing.Size(60, 24);
             this.radCa2.TabIndex = 1;
             this.radCa2.TabStop = true;
             this.radCa2.Text = "Ca 2";
@@ -159,7 +159,7 @@ namespace QuanLyBangDiaCD
             this.radCa1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radCa1.Location = new System.Drawing.Point(142, 25);
             this.radCa1.Name = "radCa1";
-            this.radCa1.Size = new System.Drawing.Size(75, 29);
+            this.radCa1.Size = new System.Drawing.Size(60, 24);
             this.radCa1.TabIndex = 0;
             this.radCa1.TabStop = true;
             this.radCa1.Text = "Ca 1";
@@ -171,7 +171,7 @@ namespace QuanLyBangDiaCD
             this.radNuNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radNuNV.Location = new System.Drawing.Point(673, 89);
             this.radNuNV.Name = "radNuNV";
-            this.radNuNV.Size = new System.Drawing.Size(58, 29);
+            this.radNuNV.Size = new System.Drawing.Size(47, 24);
             this.radNuNV.TabIndex = 4;
             this.radNuNV.TabStop = true;
             this.radNuNV.Text = "Nữ";
@@ -182,7 +182,7 @@ namespace QuanLyBangDiaCD
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(151, 38);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(311, 34);
+            this.txtMaNV.Size = new System.Drawing.Size(311, 29);
             this.txtMaNV.TabIndex = 0;
             this.txtMaNV.Leave += new System.EventHandler(this.txtMaNV_Leave);
             // 
@@ -192,7 +192,7 @@ namespace QuanLyBangDiaCD
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 25);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã nhân viên ";
             // 
@@ -202,7 +202,7 @@ namespace QuanLyBangDiaCD
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(492, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "SĐT";
             // 
@@ -212,7 +212,7 @@ namespace QuanLyBangDiaCD
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(492, 89);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 25);
+            this.label7.Size = new System.Drawing.Size(67, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Giới tính";
             // 
@@ -222,7 +222,7 @@ namespace QuanLyBangDiaCD
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(11, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Lương ";
             // 
@@ -232,7 +232,7 @@ namespace QuanLyBangDiaCD
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(492, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 25);
+            this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Họ tên";
             // 
@@ -241,7 +241,7 @@ namespace QuanLyBangDiaCD
             this.txtLuongNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongNV.Location = new System.Drawing.Point(151, 84);
             this.txtLuongNV.Name = "txtLuongNV";
-            this.txtLuongNV.Size = new System.Drawing.Size(311, 34);
+            this.txtLuongNV.Size = new System.Drawing.Size(311, 29);
             this.txtLuongNV.TabIndex = 2;
             this.txtLuongNV.Leave += new System.EventHandler(this.txtLuongNV_Leave);
             // 
@@ -250,7 +250,7 @@ namespace QuanLyBangDiaCD
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(566, 132);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(289, 34);
+            this.txtSDT.Size = new System.Drawing.Size(289, 29);
             this.txtSDT.TabIndex = 6;
             this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
@@ -259,7 +259,7 @@ namespace QuanLyBangDiaCD
             this.txtDiaChiNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChiNV.Location = new System.Drawing.Point(151, 132);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
-            this.txtDiaChiNV.Size = new System.Drawing.Size(311, 34);
+            this.txtDiaChiNV.Size = new System.Drawing.Size(311, 29);
             this.txtDiaChiNV.TabIndex = 5;
             this.txtDiaChiNV.Leave += new System.EventHandler(this.txtDiaChiNV_Leave);
             // 
@@ -268,7 +268,7 @@ namespace QuanLyBangDiaCD
             this.txtHoTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTenNV.Location = new System.Drawing.Point(566, 38);
             this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(289, 34);
+            this.txtHoTenNV.Size = new System.Drawing.Size(289, 29);
             this.txtHoTenNV.TabIndex = 1;
             this.txtHoTenNV.Leave += new System.EventHandler(this.txtHoTenNV_Leave);
             // 
@@ -278,7 +278,7 @@ namespace QuanLyBangDiaCD
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 138);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 25);
+            this.label8.Size = new System.Drawing.Size(57, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "Địa chỉ";
             // 
@@ -372,7 +372,7 @@ namespace QuanLyBangDiaCD
             this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTim.Location = new System.Drawing.Point(181, 107);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(333, 34);
+            this.txtTim.Size = new System.Drawing.Size(333, 29);
             this.txtTim.TabIndex = 1;
             // 
             // cboLoaiTim
@@ -385,7 +385,7 @@ namespace QuanLyBangDiaCD
             this.cboLoaiTim.Location = new System.Drawing.Point(181, 45);
             this.cboLoaiTim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboLoaiTim.Name = "cboLoaiTim";
-            this.cboLoaiTim.Size = new System.Drawing.Size(333, 37);
+            this.cboLoaiTim.Size = new System.Drawing.Size(333, 32);
             this.cboLoaiTim.TabIndex = 0;
             this.cboLoaiTim.Text = "Tìm theo mã nhân viên";
             this.cboLoaiTim.SelectedIndexChanged += new System.EventHandler(this.cboLoaiTim_SelectedIndexChanged);
@@ -396,7 +396,7 @@ namespace QuanLyBangDiaCD
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(11, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 25);
+            this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Loại tìm kiếm";
             // 
@@ -406,7 +406,7 @@ namespace QuanLyBangDiaCD
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(7, 113);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(170, 25);
+            this.label9.Size = new System.Drawing.Size(137, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Thông tin tìm kiếm";
             // 
@@ -437,9 +437,9 @@ namespace QuanLyBangDiaCD
             // 
             // frmNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(933, 845);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);

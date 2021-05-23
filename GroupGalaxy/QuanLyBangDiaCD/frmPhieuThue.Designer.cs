@@ -161,7 +161,7 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox6
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
             this.groupBox6.Controls.Add(this.cboTenNV);
             this.groupBox6.Controls.Add(this.cboTenBangDia);
             this.groupBox6.Controls.Add(this.dtpNgayMuon);
@@ -193,7 +193,7 @@ namespace QuanLyBangDiaCD
             this.cboTenNV.FormattingEnabled = true;
             this.cboTenNV.Location = new System.Drawing.Point(611, 53);
             this.cboTenNV.Name = "cboTenNV";
-            this.cboTenNV.Size = new System.Drawing.Size(253, 33);
+            this.cboTenNV.Size = new System.Drawing.Size(253, 28);
             this.cboTenNV.TabIndex = 1;
             // 
             // cboTenBangDia
@@ -201,21 +201,21 @@ namespace QuanLyBangDiaCD
             this.cboTenBangDia.FormattingEnabled = true;
             this.cboTenBangDia.Location = new System.Drawing.Point(611, 175);
             this.cboTenBangDia.Name = "cboTenBangDia";
-            this.cboTenBangDia.Size = new System.Drawing.Size(253, 33);
+            this.cboTenBangDia.Size = new System.Drawing.Size(253, 28);
             this.cboTenBangDia.TabIndex = 5;
             // 
             // dtpNgayMuon
             // 
             this.dtpNgayMuon.Location = new System.Drawing.Point(186, 119);
             this.dtpNgayMuon.Name = "dtpNgayMuon";
-            this.dtpNgayMuon.Size = new System.Drawing.Size(235, 30);
+            this.dtpNgayMuon.Size = new System.Drawing.Size(235, 26);
             this.dtpNgayMuon.TabIndex = 2;
             // 
             // dtpNgayTra
             // 
             this.dtpNgayTra.Location = new System.Drawing.Point(186, 178);
             this.dtpNgayTra.Name = "dtpNgayTra";
-            this.dtpNgayTra.Size = new System.Drawing.Size(235, 30);
+            this.dtpNgayTra.Size = new System.Drawing.Size(235, 26);
             this.dtpNgayTra.TabIndex = 4;
             this.dtpNgayTra.Leave += new System.EventHandler(this.dtpNgayTra_Leave);
             // 
@@ -293,7 +293,7 @@ namespace QuanLyBangDiaCD
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(611, 118);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(253, 34);
+            this.txtSoLuong.Size = new System.Drawing.Size(253, 29);
             this.txtSoLuong.TabIndex = 3;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtMaBangDia_TextChanged);
             this.txtSoLuong.Leave += new System.EventHandler(this.txtSoLuong_Leave);
@@ -303,7 +303,7 @@ namespace QuanLyBangDiaCD
             this.txtMaPhieuThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPhieuThue.Location = new System.Drawing.Point(186, 56);
             this.txtMaPhieuThue.Name = "txtMaPhieuThue";
-            this.txtMaPhieuThue.Size = new System.Drawing.Size(235, 34);
+            this.txtMaPhieuThue.Size = new System.Drawing.Size(235, 29);
             this.txtMaPhieuThue.TabIndex = 0;
             this.txtMaPhieuThue.TextChanged += new System.EventHandler(this.txtMaBangDia_TextChanged);
             this.txtMaPhieuThue.Leave += new System.EventHandler(this.txtMaPhieuThue_Leave);
@@ -314,7 +314,7 @@ namespace QuanLyBangDiaCD
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(449, 118);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 25);
+            this.label7.Size = new System.Drawing.Size(97, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Số lượng đĩa";
             // 
@@ -324,7 +324,7 @@ namespace QuanLyBangDiaCD
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(449, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 25);
+            this.label5.Size = new System.Drawing.Size(108, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "Tên nhân viên";
             // 
@@ -334,7 +334,7 @@ namespace QuanLyBangDiaCD
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(28, 56);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(136, 25);
+            this.label14.Size = new System.Drawing.Size(110, 20);
             this.label14.TabIndex = 2;
             this.label14.Text = "Mã phiếu thuê";
             // 
@@ -344,7 +344,7 @@ namespace QuanLyBangDiaCD
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(28, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 25);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Ngày Trả";
             // 
@@ -354,7 +354,7 @@ namespace QuanLyBangDiaCD
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày mượn";
             // 
@@ -365,7 +365,7 @@ namespace QuanLyBangDiaCD
             this.txtThanhTien.Location = new System.Drawing.Point(611, 226);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(253, 34);
+            this.txtThanhTien.Size = new System.Drawing.Size(253, 29);
             this.txtThanhTien.TabIndex = 7;
             // 
             // txtKhachHang
@@ -375,7 +375,7 @@ namespace QuanLyBangDiaCD
             this.txtKhachHang.Location = new System.Drawing.Point(186, 226);
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.ReadOnly = true;
-            this.txtKhachHang.Size = new System.Drawing.Size(235, 34);
+            this.txtKhachHang.Size = new System.Drawing.Size(235, 29);
             this.txtKhachHang.TabIndex = 6;
             // 
             // label8
@@ -384,7 +384,7 @@ namespace QuanLyBangDiaCD
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(449, 232);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 25);
+            this.label8.Size = new System.Drawing.Size(84, 20);
             this.label8.TabIndex = 2;
             this.label8.Text = "Thành tiền";
             // 
@@ -394,7 +394,7 @@ namespace QuanLyBangDiaCD
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(449, 178);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 25);
+            this.label6.Size = new System.Drawing.Size(101, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "Tên băng đĩa";
             // 
@@ -404,7 +404,7 @@ namespace QuanLyBangDiaCD
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 25);
+            this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Khách hàng";
             // 
@@ -429,7 +429,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmPhieuThue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 705);
             this.Controls.Add(this.splitContainer1);
