@@ -39,9 +39,9 @@ namespace QuanLyBangDiaCD
             this.mnuTimKiemBD = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangTimKiemKhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSapXep = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangSapXepNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNangSapXepKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,7 @@ namespace QuanLyBangDiaCD
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuChucNang,
@@ -72,7 +73,7 @@ namespace QuanLyBangDiaCD
             this.mnuChucNang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mnuChucNang.Image = global::QuanLyBangDiaCD.Properties.Resources.admin;
             this.mnuChucNang.Name = "mnuChucNang";
-            this.mnuChucNang.Size = new System.Drawing.Size(130, 36);
+            this.mnuChucNang.Size = new System.Drawing.Size(134, 36);
             this.mnuChucNang.Text = "Quản lý";
             // 
             // mnuChucNangQLBD
@@ -80,7 +81,7 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangQLBD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mnuChucNangQLBD.Image = global::QuanLyBangDiaCD.Properties.Resources.cdicon;
             this.mnuChucNangQLBD.Name = "mnuChucNangQLBD";
-            this.mnuChucNangQLBD.Size = new System.Drawing.Size(218, 36);
+            this.mnuChucNangQLBD.Size = new System.Drawing.Size(236, 40);
             this.mnuChucNangQLBD.Text = "Băng đĩa";
             this.mnuChucNangQLBD.Click += new System.EventHandler(this.mnuChucNangQLBD_Click);
             // 
@@ -88,7 +89,7 @@ namespace QuanLyBangDiaCD
             // 
             this.mnuChucNangQLNV.Image = global::QuanLyBangDiaCD.Properties.Resources.employee;
             this.mnuChucNangQLNV.Name = "mnuChucNangQLNV";
-            this.mnuChucNangQLNV.Size = new System.Drawing.Size(218, 36);
+            this.mnuChucNangQLNV.Size = new System.Drawing.Size(236, 40);
             this.mnuChucNangQLNV.Text = "Nhân viên";
             this.mnuChucNangQLNV.Click += new System.EventHandler(this.mnuChucNangQLNV_Click);
             // 
@@ -96,7 +97,7 @@ namespace QuanLyBangDiaCD
             // 
             this.mnuChucNangQuanLyPhieuThue.Image = global::QuanLyBangDiaCD.Properties.Resources.bill;
             this.mnuChucNangQuanLyPhieuThue.Name = "mnuChucNangQuanLyPhieuThue";
-            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(218, 36);
+            this.mnuChucNangQuanLyPhieuThue.Size = new System.Drawing.Size(236, 40);
             this.mnuChucNangQuanLyPhieuThue.Text = "Phiếu thuê";
             this.mnuChucNangQuanLyPhieuThue.Click += new System.EventHandler(this.mnuChucNangQuanLyPhieuThue_Click);
             // 
@@ -108,14 +109,14 @@ namespace QuanLyBangDiaCD
             this.mnuTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuTimKiem.Image = global::QuanLyBangDiaCD.Properties.Resources.search;
             this.mnuTimKiem.Name = "mnuTimKiem";
-            this.mnuTimKiem.Size = new System.Drawing.Size(146, 36);
+            this.mnuTimKiem.Size = new System.Drawing.Size(150, 36);
             this.mnuTimKiem.Text = "Tìm kiếm";
             // 
             // mnuTimKiemBD
             // 
             this.mnuTimKiemBD.Image = global::QuanLyBangDiaCD.Properties.Resources.cdicon;
             this.mnuTimKiemBD.Name = "mnuTimKiemBD";
-            this.mnuTimKiemBD.Size = new System.Drawing.Size(228, 36);
+            this.mnuTimKiemBD.Size = new System.Drawing.Size(246, 40);
             this.mnuTimKiemBD.Text = "Băng đĩa";
             this.mnuTimKiemBD.Click += new System.EventHandler(this.mnuTimKiemBD_Click);
             // 
@@ -123,7 +124,7 @@ namespace QuanLyBangDiaCD
             // 
             this.mnuChucNangTimKiemKhachHang.Image = global::QuanLyBangDiaCD.Properties.Resources.customers;
             this.mnuChucNangTimKiemKhachHang.Name = "mnuChucNangTimKiemKhachHang";
-            this.mnuChucNangTimKiemKhachHang.Size = new System.Drawing.Size(228, 36);
+            this.mnuChucNangTimKiemKhachHang.Size = new System.Drawing.Size(246, 40);
             this.mnuChucNangTimKiemKhachHang.Text = "Khách hàng";
             this.mnuChucNangTimKiemKhachHang.Click += new System.EventHandler(this.mnuChucNangTimKiemKhachHang_Click);
             // 
@@ -134,22 +135,14 @@ namespace QuanLyBangDiaCD
             this.mnuChucNangSapXepKhachHang});
             this.mnuSapXep.Image = global::QuanLyBangDiaCD.Properties.Resources.sắp_xếp;
             this.mnuSapXep.Name = "mnuSapXep";
-            this.mnuSapXep.Size = new System.Drawing.Size(131, 36);
+            this.mnuSapXep.Size = new System.Drawing.Size(135, 36);
             this.mnuSapXep.Text = "Sắp xếp";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::QuanLyBangDiaCD.Properties.Resources.about;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(112, 36);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // mnuChucNangSapXepNhanVien
             // 
             this.mnuChucNangSapXepNhanVien.Image = global::QuanLyBangDiaCD.Properties.Resources.employee;
             this.mnuChucNangSapXepNhanVien.Name = "mnuChucNangSapXepNhanVien";
-            this.mnuChucNangSapXepNhanVien.Size = new System.Drawing.Size(228, 36);
+            this.mnuChucNangSapXepNhanVien.Size = new System.Drawing.Size(246, 40);
             this.mnuChucNangSapXepNhanVien.Text = "Nhân viên";
             this.mnuChucNangSapXepNhanVien.Click += new System.EventHandler(this.mnuChucNangSapXepNhanVien_Click);
             // 
@@ -157,15 +150,23 @@ namespace QuanLyBangDiaCD
             // 
             this.mnuChucNangSapXepKhachHang.Image = global::QuanLyBangDiaCD.Properties.Resources.customers;
             this.mnuChucNangSapXepKhachHang.Name = "mnuChucNangSapXepKhachHang";
-            this.mnuChucNangSapXepKhachHang.Size = new System.Drawing.Size(228, 36);
+            this.mnuChucNangSapXepKhachHang.Size = new System.Drawing.Size(246, 40);
             this.mnuChucNangSapXepKhachHang.Text = "Khách hàng";
             this.mnuChucNangSapXepKhachHang.Click += new System.EventHandler(this.mnuChucNangSapXepKhachHang_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::QuanLyBangDiaCD.Properties.Resources.about;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 36);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // mnuThoat
             // 
             this.mnuThoat.Image = global::QuanLyBangDiaCD.Properties.Resources.exit1;
             this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(108, 36);
+            this.mnuThoat.Size = new System.Drawing.Size(112, 36);
             this.mnuThoat.Text = "Thoát";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
@@ -173,6 +174,7 @@ namespace QuanLyBangDiaCD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1501, 789);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));

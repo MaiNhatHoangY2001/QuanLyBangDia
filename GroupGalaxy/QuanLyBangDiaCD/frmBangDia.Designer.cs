@@ -82,7 +82,8 @@ namespace QuanLyBangDiaCD
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -163,6 +164,7 @@ namespace QuanLyBangDiaCD
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox6.BackgroundImage")));
             this.groupBox6.Controls.Add(this.cboLoai);
             this.groupBox6.Controls.Add(this.dtpNgaySX);
             this.groupBox6.Controls.Add(this.groupBox4);
@@ -198,14 +200,14 @@ namespace QuanLyBangDiaCD
             "CD-ROM"});
             this.cboLoai.Location = new System.Drawing.Point(344, 181);
             this.cboLoai.Name = "cboLoai";
-            this.cboLoai.Size = new System.Drawing.Size(290, 28);
+            this.cboLoai.Size = new System.Drawing.Size(290, 37);
             this.cboLoai.TabIndex = 6;
             // 
             // dtpNgaySX
             // 
             this.dtpNgaySX.Location = new System.Drawing.Point(595, 140);
             this.dtpNgaySX.Name = "dtpNgaySX";
-            this.dtpNgaySX.Size = new System.Drawing.Size(213, 26);
+            this.dtpNgaySX.Size = new System.Drawing.Size(213, 35);
             this.dtpNgaySX.TabIndex = 5;
             this.dtpNgaySX.Leave += new System.EventHandler(this.dtpNgaySX_Leave);
             // 
@@ -283,7 +285,7 @@ namespace QuanLyBangDiaCD
             this.txtMaBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaBangDia.Location = new System.Drawing.Point(143, 38);
             this.txtMaBangDia.Name = "txtMaBangDia";
-            this.txtMaBangDia.Size = new System.Drawing.Size(282, 29);
+            this.txtMaBangDia.Size = new System.Drawing.Size(282, 40);
             this.txtMaBangDia.TabIndex = 0;
             this.txtMaBangDia.Leave += new System.EventHandler(this.txtMaBangDia_Leave);
             // 
@@ -293,7 +295,7 @@ namespace QuanLyBangDiaCD
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(17, 38);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 20);
+            this.label14.Size = new System.Drawing.Size(145, 29);
             this.label14.TabIndex = 2;
             this.label14.Text = "Mã băng đĩa";
             // 
@@ -303,7 +305,7 @@ namespace QuanLyBangDiaCD
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(225, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.Size = new System.Drawing.Size(98, 29);
             this.label4.TabIndex = 2;
             this.label4.Text = "Loại đĩa";
             // 
@@ -313,7 +315,7 @@ namespace QuanLyBangDiaCD
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(17, 140);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(34, 20);
+            this.label15.Size = new System.Drawing.Size(50, 29);
             this.label15.TabIndex = 2;
             this.label15.Text = "Giá";
             // 
@@ -323,7 +325,7 @@ namespace QuanLyBangDiaCD
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(461, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.Size = new System.Drawing.Size(162, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày sản xuất";
             // 
@@ -333,7 +335,7 @@ namespace QuanLyBangDiaCD
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(461, 95);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 20);
+            this.label16.Size = new System.Drawing.Size(94, 29);
             this.label16.TabIndex = 2;
             this.label16.Text = "Ghi chú";
             // 
@@ -342,7 +344,7 @@ namespace QuanLyBangDiaCD
             this.txtTenBangDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenBangDia.Location = new System.Drawing.Point(595, 38);
             this.txtTenBangDia.Name = "txtTenBangDia";
-            this.txtTenBangDia.Size = new System.Drawing.Size(271, 29);
+            this.txtTenBangDia.Size = new System.Drawing.Size(271, 40);
             this.txtTenBangDia.TabIndex = 1;
             this.txtTenBangDia.Leave += new System.EventHandler(this.txtTenBangDia_Leave);
             // 
@@ -352,7 +354,7 @@ namespace QuanLyBangDiaCD
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(17, 86);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 20);
+            this.label18.Size = new System.Drawing.Size(101, 29);
             this.label18.TabIndex = 2;
             this.label18.Text = "Thể loại";
             // 
@@ -362,7 +364,7 @@ namespace QuanLyBangDiaCD
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(461, 38);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 20);
+            this.label19.Size = new System.Drawing.Size(155, 29);
             this.label19.TabIndex = 2;
             this.label19.Text = "Tên băng đĩa";
             // 
@@ -371,7 +373,7 @@ namespace QuanLyBangDiaCD
             this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(143, 131);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(282, 29);
+            this.txtGia.Size = new System.Drawing.Size(282, 40);
             this.txtGia.TabIndex = 4;
             this.txtGia.Leave += new System.EventHandler(this.txtGia_Leave);
             // 
@@ -380,7 +382,7 @@ namespace QuanLyBangDiaCD
             this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTheLoai.Location = new System.Drawing.Point(143, 86);
             this.txtTheLoai.Name = "txtTheLoai";
-            this.txtTheLoai.Size = new System.Drawing.Size(282, 29);
+            this.txtTheLoai.Size = new System.Drawing.Size(282, 40);
             this.txtTheLoai.TabIndex = 2;
             this.txtTheLoai.Leave += new System.EventHandler(this.txtTheLoai_Leave);
             // 
@@ -391,7 +393,7 @@ namespace QuanLyBangDiaCD
             this.txtCongTy.Location = new System.Drawing.Point(344, 226);
             this.txtCongTy.Name = "txtCongTy";
             this.txtCongTy.ReadOnly = true;
-            this.txtCongTy.Size = new System.Drawing.Size(290, 29);
+            this.txtCongTy.Size = new System.Drawing.Size(290, 40);
             this.txtCongTy.TabIndex = 7;
             // 
             // txtGhiChu
@@ -399,7 +401,7 @@ namespace QuanLyBangDiaCD
             this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Location = new System.Drawing.Point(596, 86);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(270, 29);
+            this.txtGhiChu.Size = new System.Drawing.Size(270, 40);
             this.txtGhiChu.TabIndex = 3;
             // 
             // label2
@@ -408,7 +410,7 @@ namespace QuanLyBangDiaCD
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(226, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(94, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Công ty";
             // 
@@ -433,7 +435,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmBangDia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 705);
             this.Controls.Add(this.splitContainer1);
