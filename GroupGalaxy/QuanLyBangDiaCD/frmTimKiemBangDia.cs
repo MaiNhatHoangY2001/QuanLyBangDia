@@ -19,7 +19,7 @@ namespace QuanLyBangDiaCD
 
         clsCongTy city;
         clsBangDia bd;
-
+        //fx
         private void frmTimKiemNhanVien_Load(object sender, EventArgs e)
         {
             radMaBD.Checked = true;
