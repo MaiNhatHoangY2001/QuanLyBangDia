@@ -101,7 +101,7 @@ namespace QuanLyBangDiaCD
             // 
             // lvwDSPhieuThue
             // 
-            this.lvwDSPhieuThue.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvwDSPhieuThue.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lvwDSPhieuThue.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.lvwDSPhieuThue.HideSelection = false;
             this.lvwDSPhieuThue.Location = new System.Drawing.Point(12, 29);
@@ -180,7 +180,7 @@ namespace QuanLyBangDiaCD
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(126, 148);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(288, 35);
+            this.txtTimKiem.Size = new System.Drawing.Size(288, 26);
             this.txtTimKiem.TabIndex = 2;
             // 
             // label1
@@ -188,7 +188,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 29);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm:";
             // 
@@ -197,7 +197,7 @@ namespace QuanLyBangDiaCD
             this.radTenKH.AutoSize = true;
             this.radTenKH.Location = new System.Drawing.Point(104, 96);
             this.radTenKH.Name = "radTenKH";
-            this.radTenKH.Size = new System.Drawing.Size(358, 33);
+            this.radTenKH.Size = new System.Drawing.Size(239, 24);
             this.radTenKH.TabIndex = 1;
             this.radTenKH.TabStop = true;
             this.radTenKH.Text = "Tìm kiếm theo tên khách hàng";
@@ -209,7 +209,7 @@ namespace QuanLyBangDiaCD
             this.radMaKH.AutoSize = true;
             this.radMaKH.Location = new System.Drawing.Point(104, 61);
             this.radMaKH.Name = "radMaKH";
-            this.radMaKH.Size = new System.Drawing.Size(300, 33);
+            this.radMaKH.Size = new System.Drawing.Size(201, 24);
             this.radMaKH.TabIndex = 0;
             this.radMaKH.TabStop = true;
             this.radMaKH.Text = "Tìm theo mã khách hàng";
@@ -218,7 +218,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmTimKiemKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 573);
             this.Controls.Add(this.splitContainer1);

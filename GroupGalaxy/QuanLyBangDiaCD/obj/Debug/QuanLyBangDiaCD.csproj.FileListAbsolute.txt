@@ -36,3 +36,4 @@ C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\D
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.frmTimKiemBangDia.resources
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.Properties.Resources.resources
 C:\Users\DMX\Desktop\bt lớn\ab\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csproj.GenerateResource.Cache
+D:\HOC_TAP\Nam 2-HK2\C#\deTai\QuanLyBangDia\GroupGalaxy\QuanLyBangDiaCD\obj\Debug\QuanLyBangDiaCD.csprojAssemblyReference.cache

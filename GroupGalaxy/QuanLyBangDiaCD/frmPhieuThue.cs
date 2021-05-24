@@ -193,13 +193,13 @@ namespace QuanLyBangDiaCD
             }
 
         }
-        
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (i == 0)
             {
                 MessageBox.Show("Bạn chưa chọn khách hàng để thêm", "Thông báo");
-            } 
+            }
             else
             {
                 if (!btnThem.Text.Equals("Hủy Thêm"))
@@ -240,9 +240,9 @@ namespace QuanLyBangDiaCD
             {
                 PhieuThue pt = TaoThongTinPhieuThue();
                 ChiTietPhieuThue ctpt = TaoThongTinChiTietPhieuThue();
-                dtCTPT.themCTPhieu(ctpt);
                 if (dtPhieuThue.themPhieu(pt))
                 {
+                    dtCTPT.themCTPhieu(ctpt);
                     IEnumerable<dynamic> dsPhieuThue = dtPhieuThue.GetPhieuThueThuocKhachHang(treKhachHang.SelectedNode.Tag.ToString());
                     LoadPhieuThueToLvw(lvwDSPhieuThue, dsPhieuThue);
                     btnThem.Text = "Thêm";
