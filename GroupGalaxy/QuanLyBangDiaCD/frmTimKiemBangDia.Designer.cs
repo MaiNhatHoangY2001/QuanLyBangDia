@@ -89,22 +89,25 @@ namespace QuanLyBangDiaCD
             // 
             // lvwBangDia
             // 
+            this.lvwBangDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lvwBangDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvwBangDia.HideSelection = false;
-            this.lvwBangDia.Location = new System.Drawing.Point(3, 26);
+            this.lvwBangDia.Location = new System.Drawing.Point(3, 31);
             this.lvwBangDia.Name = "lvwBangDia";
-            this.lvwBangDia.Size = new System.Drawing.Size(780, 345);
+            this.lvwBangDia.Size = new System.Drawing.Size(780, 340);
             this.lvwBangDia.TabIndex = 0;
             this.lvwBangDia.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.btnThucHien);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtTimKiem);
             this.groupBox3.Controls.Add(this.radTua);
             this.groupBox3.Controls.Add(this.radMaBD);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(786, 155);
@@ -127,7 +130,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(68, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.Size = new System.Drawing.Size(125, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tìm kiếm :";
             // 
@@ -135,7 +138,7 @@ namespace QuanLyBangDiaCD
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(185, 91);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(416, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(416, 35);
             this.txtTimKiem.TabIndex = 2;
             // 
             // radTua
@@ -143,7 +146,7 @@ namespace QuanLyBangDiaCD
             this.radTua.AutoSize = true;
             this.radTua.Location = new System.Drawing.Point(358, 45);
             this.radTua.Name = "radTua";
-            this.radTua.Size = new System.Drawing.Size(221, 29);
+            this.radTua.Size = new System.Drawing.Size(270, 33);
             this.radTua.TabIndex = 1;
             this.radTua.TabStop = true;
             this.radTua.Text = "Tìm theo tựa băng đĩa";
@@ -154,7 +157,7 @@ namespace QuanLyBangDiaCD
             this.radMaBD.AutoSize = true;
             this.radMaBD.Location = new System.Drawing.Point(108, 45);
             this.radMaBD.Name = "radMaBD";
-            this.radMaBD.Size = new System.Drawing.Size(221, 29);
+            this.radMaBD.Size = new System.Drawing.Size(271, 33);
             this.radMaBD.TabIndex = 0;
             this.radMaBD.TabStop = true;
             this.radMaBD.Text = "Tìm theo mã băng đĩa";
@@ -176,10 +179,10 @@ namespace QuanLyBangDiaCD
             // 
             this.lstCongTy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstCongTy.FormattingEnabled = true;
-            this.lstCongTy.ItemHeight = 25;
-            this.lstCongTy.Location = new System.Drawing.Point(3, 26);
+            this.lstCongTy.ItemHeight = 29;
+            this.lstCongTy.Location = new System.Drawing.Point(3, 31);
             this.lstCongTy.Name = "lstCongTy";
-            this.lstCongTy.Size = new System.Drawing.Size(316, 504);
+            this.lstCongTy.Size = new System.Drawing.Size(316, 499);
             this.lstCongTy.TabIndex = 0;
             this.lstCongTy.SelectedIndexChanged += new System.EventHandler(this.lstCongTy_SelectedIndexChanged);
             // 
@@ -214,8 +217,9 @@ namespace QuanLyBangDiaCD
             // 
             // frmTimKiemBangDia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1112, 533);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -29,6 +29,7 @@ namespace QuanLyBangDiaCD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHonLoannhanvien));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btntencochua = new System.Windows.Forms.Button();
             this.btntenchuadau = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.btntencochua);
             this.groupBox1.Controls.Add(this.btntenchuadau);
             this.groupBox1.Controls.Add(this.btnKHtencuoi);
@@ -101,7 +103,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.Size = new System.Drawing.Size(162, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Đầu/Cuối";
             // 
@@ -109,7 +111,7 @@ namespace QuanLyBangDiaCD
             // 
             this.txtgiatri.Location = new System.Drawing.Point(174, 57);
             this.txtgiatri.Name = "txtgiatri";
-            this.txtgiatri.Size = new System.Drawing.Size(330, 30);
+            this.txtgiatri.Size = new System.Drawing.Size(330, 35);
             this.txtgiatri.TabIndex = 0;
             // 
             // dgrhonloanNV
@@ -124,8 +126,9 @@ namespace QuanLyBangDiaCD
             // 
             // frmHonLoannhanvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(821, 526);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgrhonloanNV);

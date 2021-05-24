@@ -45,8 +45,8 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.dgrCongTy = new System.Windows.Forms.DataGridView();
             this.btnReset = new System.Windows.Forms.ToolStripButton();
+            this.dgrCongTy = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorCongTy)).BeginInit();
             this.bindingNavigatorCongTy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrCongTy)).BeginInit();
@@ -57,6 +57,8 @@ namespace QuanLyBangDiaCD
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(838, 100);
@@ -85,14 +87,14 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorDeleteItem,
             this.btnLuu,
             this.btnReset});
-            this.bindingNavigatorCongTy.Location = new System.Drawing.Point(0, 498);
+            this.bindingNavigatorCongTy.Location = new System.Drawing.Point(0, 495);
             this.bindingNavigatorCongTy.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorCongTy.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigatorCongTy.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigatorCongTy.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorCongTy.Name = "bindingNavigatorCongTy";
             this.bindingNavigatorCongTy.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorCongTy.Size = new System.Drawing.Size(838, 27);
+            this.bindingNavigatorCongTy.Size = new System.Drawing.Size(838, 30);
             this.bindingNavigatorCongTy.TabIndex = 2;
             this.bindingNavigatorCongTy.Text = "bindingNavigator1";
             // 
@@ -102,13 +104,13 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 25);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -118,7 +120,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
@@ -128,7 +130,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -137,18 +139,19 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 30);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -157,7 +160,7 @@ namespace QuanLyBangDiaCD
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 30);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -165,7 +168,7 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -174,13 +177,13 @@ namespace QuanLyBangDiaCD
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 25);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 30);
             // 
             // btnLuu
             // 
@@ -188,9 +191,19 @@ namespace QuanLyBangDiaCD
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(24, 24);
+            this.btnLuu.Size = new System.Drawing.Size(34, 25);
             this.btnLuu.Text = "Lưu Công ty";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(34, 25);
+            this.btnReset.Text = "Bỏ edit";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dgrCongTy
             // 
@@ -206,19 +219,9 @@ namespace QuanLyBangDiaCD
             this.dgrCongTy.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrCongTy_CellLeave);
             this.dgrCongTy.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.ValidateByRow);
             // 
-            // btnReset
-            // 
-            this.btnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(24, 24);
-            this.btnReset.Text = "Bỏ edit";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // frmCongTy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 525);
             this.Controls.Add(this.dgrCongTy);

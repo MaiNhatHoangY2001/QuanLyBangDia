@@ -29,6 +29,7 @@ namespace QuanLyBangDiaCD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHonloanKhachHang));
             this.dgrhonloanKH = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btntencochua = new System.Windows.Forms.Button();
@@ -91,7 +92,7 @@ namespace QuanLyBangDiaCD
             // 
             this.txtThongTin.Location = new System.Drawing.Point(164, 36);
             this.txtThongTin.Name = "txtThongTin";
-            this.txtThongTin.Size = new System.Drawing.Size(374, 30);
+            this.txtThongTin.Size = new System.Drawing.Size(374, 35);
             this.txtThongTin.TabIndex = 0;
             this.txtThongTin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -100,7 +101,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.Size = new System.Drawing.Size(162, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Đầu/Cuối";
             // 
@@ -126,8 +127,9 @@ namespace QuanLyBangDiaCD
             // 
             // frmHonloanKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(857, 455);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgrhonloanKH);
