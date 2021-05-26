@@ -18,7 +18,7 @@ namespace QuanLyBangDiaCD
                 double so = Convert.ToDouble(s);
                 return true;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 return false;
             }
@@ -31,7 +31,7 @@ namespace QuanLyBangDiaCD
                 int so = Convert.ToInt32(s);
                 return true;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 return false;
             }

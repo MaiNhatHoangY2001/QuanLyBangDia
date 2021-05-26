@@ -103,7 +103,7 @@ namespace QuanLyBangDiaCD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 29);
+            this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Đầu/Cuối";
             // 
@@ -111,7 +111,7 @@ namespace QuanLyBangDiaCD
             // 
             this.txtgiatri.Location = new System.Drawing.Point(174, 57);
             this.txtgiatri.Name = "txtgiatri";
-            this.txtgiatri.Size = new System.Drawing.Size(330, 35);
+            this.txtgiatri.Size = new System.Drawing.Size(330, 26);
             this.txtgiatri.TabIndex = 0;
             // 
             // dgrhonloanNV
@@ -126,16 +126,17 @@ namespace QuanLyBangDiaCD
             // 
             // frmHonLoannhanvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(821, 526);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgrhonloanNV);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHonLoannhanvien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHonLoannhanvien";
+            this.Text = "Sắp xếp nhân viên";
             this.Load += new System.EventHandler(this.frmHonLoannhanvien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

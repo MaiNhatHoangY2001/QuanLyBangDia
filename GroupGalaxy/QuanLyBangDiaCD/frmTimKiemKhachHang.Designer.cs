@@ -102,7 +102,7 @@ namespace QuanLyBangDiaCD
             // lvwDSPhieuThue
             // 
             this.lvwDSPhieuThue.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lvwDSPhieuThue.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lvwDSPhieuThue.ForeColor = System.Drawing.Color.Black;
             this.lvwDSPhieuThue.HideSelection = false;
             this.lvwDSPhieuThue.Location = new System.Drawing.Point(12, 29);
             this.lvwDSPhieuThue.Name = "lvwDSPhieuThue";
@@ -151,7 +151,6 @@ namespace QuanLyBangDiaCD
             // 
             // groupBox3
             // 
-            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.btnThucHien);
             this.groupBox3.Controls.Add(this.txtTimKiem);
             this.groupBox3.Controls.Add(this.label1);

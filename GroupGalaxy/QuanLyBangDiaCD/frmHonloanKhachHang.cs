@@ -29,6 +29,23 @@ namespace QuanLyBangDiaCD
         {
             hLoanKH = new clsHonloanKhachHang();
             dgrhonloanKH.DataSource = hLoanKH.GetKhachhangcuaphieuthueHonLoan();
+            tieuDe(dgrhonloanKH);
+        }
+
+        private void tieuDe(DataGridView dgr)
+        {
+            dgrhonloanKH.Columns["maKH"].HeaderText = "Mã khách hàng";
+            dgrhonloanKH.Columns["maKH"].Width = 180;
+            dgrhonloanKH.Columns["hoTenKH"].HeaderText = "Họ tên khách hàng";
+            dgrhonloanKH.Columns["hoTenKH"].Width = 180;
+            dgrhonloanKH.Columns["gioiTinh"].HeaderText = "Giới tính";
+            dgrhonloanKH.Columns["SDT"].HeaderText = "Số điện thoại";
+            dgrhonloanKH.Columns["diaChi"].HeaderText = "Địa chỉ";
+            dgrhonloanKH.Columns["diaChi"].Width = 500;
+            dgrhonloanKH.Columns["maPhieu"].HeaderText = "Mã phiếu";
+            dgrhonloanKH.Columns["ngayMuon"].HeaderText = "Ngày mượn";
+            dgrhonloanKH.Columns["ngayMuon"].Width = 150;
+            dgrhonloanKH.Columns["ngayTra"].HeaderText = "Ngày trả";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

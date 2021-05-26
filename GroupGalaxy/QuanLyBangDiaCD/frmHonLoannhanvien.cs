@@ -28,6 +28,25 @@ namespace QuanLyBangDiaCD
         {
             hLoanNV = new clsHonloannhanvien();
             dgrhonloanNV.DataSource = hLoanNV.GetnhanviencuaphieuthueHonLoan();
+            tieuDe(dgrhonloanNV);
+        }
+
+        private void tieuDe(DataGridView dgrhonloanNV)
+        {
+            dgrhonloanNV.Columns["NvPT"].HeaderText = "Mã nhân viên";
+            dgrhonloanNV.Columns["NvPT"].Width = 180;
+            dgrhonloanNV.Columns["maPhieu"].HeaderText = "Mã phiếu";
+            dgrhonloanNV.Columns["hoTenNV"].HeaderText = "Họ tên nhân viên";
+            dgrhonloanNV.Columns["hoTenNV"].Width = 180;
+            dgrhonloanNV.Columns["ngayMuon"].HeaderText = "Ngày mượn";
+            dgrhonloanNV.Columns["ngayMuon"].Width = 150;
+            dgrhonloanNV.Columns["ngayTra"].HeaderText = "Ngày trả";
+            dgrhonloanNV.Columns["gioiTinh"].HeaderText = "Giới tính";
+            dgrhonloanNV.Columns["diaChi"].HeaderText = "Địa chỉ";
+            dgrhonloanNV.Columns["diaChi"].Width = 500;
+            dgrhonloanNV.Columns["SDT"].HeaderText = "Số điện thoại";
+            dgrhonloanNV.Columns["luong"].HeaderText = "Lương";
+            dgrhonloanNV.Columns["caLamViec"].HeaderText = "Ca làm việc";
         }
 
         private void btntheomaNV_Click(object sender, EventArgs e)

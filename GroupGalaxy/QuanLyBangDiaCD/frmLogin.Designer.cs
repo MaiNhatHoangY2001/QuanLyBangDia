@@ -43,16 +43,16 @@ namespace QuanLyBangDiaCD
             this.txtTenDangNhap.Location = new System.Drawing.Point(230, 38);
             this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 35);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(274, 26);
             this.txtTenDangNhap.TabIndex = 0;
-            this.txtTenDangNhap.Text = "admin";
+            this.txtTenDangNhap.Text = "khachhang";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(72, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 29);
+            this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -61,7 +61,7 @@ namespace QuanLyBangDiaCD
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(72, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 29);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -70,9 +70,9 @@ namespace QuanLyBangDiaCD
             this.txtMatKhau.Location = new System.Drawing.Point(230, 110);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(274, 35);
+            this.txtMatKhau.Size = new System.Drawing.Size(274, 26);
             this.txtMatKhau.TabIndex = 1;
-            this.txtMatKhau.Text = "admin";
+            this.txtMatKhau.Text = "khachhang";
             // 
             // btnDangNhap
             // 
@@ -96,7 +96,7 @@ namespace QuanLyBangDiaCD
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(550, 275);
@@ -115,7 +115,7 @@ namespace QuanLyBangDiaCD
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 

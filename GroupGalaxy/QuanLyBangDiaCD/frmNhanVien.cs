@@ -73,7 +73,6 @@ namespace QuanLyBangDiaCD
 
         private void XuLyHoTroAutocomlet()
         {
-            string maNV;
             IEnumerable<NhanVien> dsNV;
 
             dsNV = dtnv.GetAllNhanVien();
